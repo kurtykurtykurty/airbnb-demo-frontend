@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header/Header";
 import Explore from "./Explore/Explore";
 import Experiences from "./Experiences/Experiences";
+import Home from "./Homes/Homes";
 import "./App.css";
 import "./fonts/index.css";
 
@@ -12,6 +13,7 @@ class App extends Component {
         <Header />
         <Explore />
         <Experiences />
+        <Home />
       </div>
     );
   }

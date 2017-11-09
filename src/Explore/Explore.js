@@ -16,13 +16,7 @@ const TitleSection = styled.h2`
   color: #383838;
   text-align: left;
 `;
-// const Row = styled.div`
-//   display: flex;
-//   width: 100%;
-//   align-items: center;
-//   margin: 0 8px 0 8px;
-//   justify-content: flex-start;
-// `;
+
 const Card = styled.div`
   display: flex;
   align-items: center;
