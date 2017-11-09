@@ -32,10 +32,11 @@ const Logo = styled.img`margin: 0px 50px 0px 0px;`;
 
 const Button = styled.button`
   line-height: 24px;
-  font-size: 14px;
   text-align: center;
   color: #383838;
   background: #fff;
+  font-family: CircularAir;
+  font-size: 14px;
   border: 0;
   margin: 8px;
   padding: 8px;
