@@ -3,6 +3,20 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.row {
+  display: flex;
+  margin: 0 -8px 0 -8px;
+}
+
 .col-6 {
   flex-basis: 50%;
+}
+
+.col-4 {
+  flex-basis: 33.333%;
+}
+
+.col-3 {
+  flex-basis: 25%;
 }

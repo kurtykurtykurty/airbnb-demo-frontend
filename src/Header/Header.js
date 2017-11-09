@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "./img/logo.svg";
+import logo from "./logo.svg";
 import styled from "styled-components";
 import InputSearch from "./InputSearch";
-import "./grid.css";
+import "../grid.css";
 
 const Header = styled.header`
   display: flex;

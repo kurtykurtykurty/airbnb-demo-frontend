@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SearchIcon from "./img/search.svg";
+import SearchIcon from "./search.svg";
 
 const SearchBorder = styled.div`
   display: flex;
