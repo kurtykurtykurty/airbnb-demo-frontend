@@ -1,0 +1,8 @@
+.container {
+  width: 976px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.col-6 {
+  flex-basis: 50%;
+}
