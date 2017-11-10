@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -36,6 +37,7 @@ export default function() {
   return (
     <div className="container">
       <Destination>
+        <SectionTitle>Featured destinations</SectionTitle>
         <div className="row">
           <div className="col-2">
             <Card>

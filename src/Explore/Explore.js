@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitle } from "../Section";
 import img1 from "./card1.png";
 import img2 from "./card2.png";
 import img3 from "./card3.png";
@@ -7,14 +8,6 @@ import img3 from "./card3.png";
 const Explore = styled.section`
   margin: 48px 0 48px 0;
   font-family: CircularAir;
-`;
-
-const TitleSection = styled.h2`
-  font-family: CircularAir;
-  line-height: 34px;
-  font-size: 32px;
-  color: #383838;
-  text-align: left;
 `;
 
 const Card = styled.div`
@@ -36,7 +29,7 @@ export default function() {
   return (
     <div className="container">
       <Explore>
-        <TitleSection>Explore Airbnb</TitleSection>
+        <SectionTitle>Explore Airbnb</SectionTitle>
         <div className="row">
           <div className="col-4">
             <Card>
