@@ -23,7 +23,6 @@ const Card = styled.div`
   font-family: CircularAir;
   line-height: normal;
   color: #383838;
-  margin: 0 8px 0 8px;
   text-align: left;
 `;
 const CardFooter = styled.div`
@@ -66,7 +65,7 @@ export default function() {
   return (
     <div className="container">
       <Food>
-        <TitleSection>Experiences</TitleSection>
+        <TitleSection>Popular reservations around the world</TitleSection>
         <div className="row">
           <div className="col-3">
             <Card>

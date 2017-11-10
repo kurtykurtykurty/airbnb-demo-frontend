@@ -45,7 +45,7 @@ export default function() {
   return (
     <Header>
       <div className="container">
-        <Content>
+        <div className="row">
           <div className="col-6">
             <HeadContainerLeft>
               <Logo src={logo} />
@@ -61,7 +61,7 @@ export default function() {
               <Button>Log In</Button>
             </HeadContainerRight>
           </div>
-        </Content>
+        </div>
       </div>
     </Header>
   );

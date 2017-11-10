@@ -30,7 +30,6 @@ const Card = styled.div`
   font-size: 17px;
   color: #383838;
   font-weight: bold;
-  margin: 0 8px 0 8px;
 `;
 const ImgCard = styled.img`margin: 0 24px 0 0;`;
 export default function() {

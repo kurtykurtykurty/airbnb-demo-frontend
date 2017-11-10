@@ -4,6 +4,7 @@ import Explore from "./Explore/Explore";
 import Experiences from "./Experiences/Experiences";
 import Home from "./Homes/Homes";
 import Food from "./Food/Food";
+import Destinations from "./Destinations/Destinations";
 import "./App.css";
 import "./fonts/index.css";
 
@@ -16,6 +17,7 @@ class App extends Component {
         <Experiences />
         <Home />
         <Food />
+        <Destinations />
       </div>
     );
   }

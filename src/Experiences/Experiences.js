@@ -24,7 +24,6 @@ const Card = styled.div`
   font-family: CircularAir;
   line-height: normal;
   color: #383838;
-  margin: 0 8px 0 8px;
   text-align: left;
 `;
 const CardFooter = styled.div`
