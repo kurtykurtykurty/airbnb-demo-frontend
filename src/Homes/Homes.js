@@ -33,10 +33,11 @@ const CardFooter = styled.div`
   font-size: 15px;
   color: #383838;
   justify-content: flex-start;
+  padding: 6px 0 0 0;
 `;
 const Caption = styled.span`
   line-height: normal;
-  font-weight: light;
+  font-weight: bold;
   font-size: 15px;
 `;
 const Price = styled.span`
@@ -51,7 +52,7 @@ const ImgCard = styled.img`
   height: 100%;
 `;
 const Reviews = styled.span`
-  font-family: Circular Air;
+  font-family: CircularAir;
   line-height: 14px;
   font-size: 12px;
   color: #383838;
@@ -62,8 +63,9 @@ const Info = styled.div`
   font-family: CircularAir;
   line-height: 18px;
   font-size: 15px;
-  font-weight: light;
+  font-weight: 200;
   color: #383838;
+  padding: 6px 0 0 0;
 `;
 export default function() {
   return (

@@ -64,3 +64,7 @@
 .col-12 {
   flex-basis: 100%;
 }
+
+.offset-1 {
+  flex-basis: 8.3333%;
+}

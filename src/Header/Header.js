@@ -39,7 +39,8 @@ const Button = styled.button`
   font-size: 14px;
   border: 0;
   margin: 8px;
-  padding: 8px;
+  padding: 0 4px 0 4px;
+  font-weight: bold;
 `;
 export default function() {
   return (

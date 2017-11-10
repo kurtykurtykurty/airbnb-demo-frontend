@@ -9,7 +9,7 @@
   font-family: "CircularAir";
   src: url("Circular_Air-Light.woff") format("woff"),
     url("Circular_Air-Light.ttf") format("truetype");
-  font-weight: light;
+  font-weight: 200;
 }
 
 @font-face {

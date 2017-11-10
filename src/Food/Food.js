@@ -32,6 +32,7 @@ const CardFooter = styled.div`
   font-size: 15px;
   color: #383838;
   justify-content: flex-start;
+  padding: 4px 0 0 0;
 `;
 const Caption = styled.span`
   font-family: CircularAir;
@@ -57,6 +58,7 @@ const Price = styled.span`
   font-family: CircularAir;
   line-height: normal;
   font-size: 18px;
+  font-weight: 200;
   color: #383838;
   mix-blend-mode: normal;
   opacity: 0.9;
