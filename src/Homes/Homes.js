@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitleExtented } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -10,13 +11,6 @@ const Homes = styled.section`
   font-family: CircularAir;
 `;
 
-const TitleSection = styled.h2`
-  font-family: CircularAir;
-  line-height: 34px;
-  font-size: 32px;
-  color: #383838;
-  text-align: left;
-`;
 const Card = styled.div`
   background: #ffffff;
   box-sizing: border-box;
@@ -71,7 +65,7 @@ export default function() {
   return (
     <div className="container">
       <Homes>
-        <TitleSection>Homes</TitleSection>
+        <SectionTitleExtented name="Homes" />
         <div className="row">
           <div className="col-4">
             <Card>

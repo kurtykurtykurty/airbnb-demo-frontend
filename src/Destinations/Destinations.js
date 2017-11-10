@@ -31,19 +31,11 @@ const ImgCard = styled.img`
   width: 100%;
   height: 100%;
 `;
-const TitleSection = styled.h2`
-  font-family: CircularAir;
-  line-height: 34px;
-  font-size: 32px;
-  color: #383838;
-  text-align: left;
-`;
 
 export default function() {
   return (
     <div className="container">
       <Destination>
-        <TitleSection>Popular reservations around the world</TitleSection>
         <div className="row">
           <div className="col-2">
             <Card>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SectionTitleExtented } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -9,14 +10,6 @@ import star from "./star.png";
 const Experiences = styled.section`
   margin: 48px 0 48px 0;
   font-family: CircularAir;
-`;
-
-const TitleSection = styled.h2`
-  font-family: CircularAir;
-  line-height: 34px;
-  font-size: 32px;
-  color: #383838;
-  text-align: left;
 `;
 const Card = styled.div`
   background: #ffffff;
@@ -63,7 +56,7 @@ export default function() {
   return (
     <div className="container">
       <Experiences>
-        <TitleSection>Experiences</TitleSection>
+        <SectionTitleExtented name="Experiences" />
         <div className="row">
           <div className="col-3">
             <Card>
