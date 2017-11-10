@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitleExtented } from "../Section";
+import { SectionTitleExtented, NextPage } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitleExtented } from "../Section";
+import { SectionTitleExtented, NextPage } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -52,6 +52,7 @@ const Reviews = styled.span`
   color: #383838;
   margin: 0 0 0 8px;
 `;
+const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
     <div className="container">
@@ -123,8 +124,12 @@ export default function() {
 
           <div className="col-3">
             <Card>
-              <ImgCard src={img4} />
+              <CardWrapper>
+                <ImgCard src={img4} />
+                <NextPage />
+              </CardWrapper>
               <Price>$50</Price>
+
               <Caption>Salsa Night</Caption>
 
               <CardFooter>
