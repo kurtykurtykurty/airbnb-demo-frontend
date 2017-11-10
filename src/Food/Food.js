@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitleExtented } from "../Section";
+import { SectionTitleExtented, NextPage } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -57,6 +57,7 @@ const Price = styled.span`
   mix-blend-mode: normal;
   opacity: 0.9;
 `;
+const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
     <div className="container">
@@ -107,7 +108,10 @@ export default function() {
 
           <div className="col-3">
             <Card>
-              <ImgCard src={img4} />
+              <CardWrapper>
+                <ImgCard src={img4} />
+                <NextPage />
+              </CardWrapper>
               <Name>Fine seafood</Name>
               <Caption>Seaprice</Caption>
 

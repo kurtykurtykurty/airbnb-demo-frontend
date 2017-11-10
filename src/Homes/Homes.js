@@ -61,6 +61,7 @@ const Info = styled.div`
   color: #383838;
   padding: 6px 0 0 0;
 `;
+const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
     <div className="container">
@@ -112,7 +113,10 @@ export default function() {
 
           <div className="col-4">
             <Card>
-              <ImgCard src={img3} />
+              <CardWrapper>
+                <ImgCard src={img3} />
+                <NextPage />
+              </CardWrapper>
               <Price>$200</Price>
               <Caption>Dreamy Tropical Tree House</Caption>
               <Info>Entire treehouse · 1 bed</Info>

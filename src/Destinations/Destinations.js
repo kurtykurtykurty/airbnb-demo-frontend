@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitle } from "../Section";
+import { SectionTitle, NextPage } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
@@ -32,7 +32,7 @@ const ImgCard = styled.img`
   width: 100%;
   height: 100%;
 `;
-
+const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
     <div className="container">
@@ -75,7 +75,10 @@ export default function() {
           </div>
           <div className="col-2">
             <Card>
-              <ImgCard src={img6} />
+              <CardWrapper>
+                <ImgCard src={img6} />
+                <NextPage />
+              </CardWrapper>
               <Caption>Los Angeles</Caption>
             </Card>
           </div>
