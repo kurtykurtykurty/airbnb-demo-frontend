@@ -8,7 +8,6 @@ import Destinations from "./Destinations/Destinations";
 import Footer from "./Footer/Footer";
 import "./App.css";
 import "./fonts/index.css";
-import "react-flexbox-grid";
 
 class App extends Component {
   render() {

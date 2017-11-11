@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "flexboxgrid2": "^7.0.0-alpha12",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-flexbox-grid": "^2.0.0",
     "react-scripts": "1.0.17",
     "styled-components": "^2.2.3"
   },

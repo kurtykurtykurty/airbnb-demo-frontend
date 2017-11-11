@@ -2597,9 +2597,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flexboxgrid2@^7.0.0-alpha7:
-  version "7.0.0-alpha9"
-  resolved "https://registry.yarnpkg.com/flexboxgrid2/-/flexboxgrid2-7.0.0-alpha9.tgz#f4025e67ef36b2a1e0700af77c94ca3f5eee2ec9"
+flexboxgrid2@^7.0.0-alpha12:
+  version "7.0.0-alpha12"
+  resolved "https://registry.yarnpkg.com/flexboxgrid2/-/flexboxgrid2-7.0.0-alpha12.tgz#13d7d62d079de2a7a41efd1ce2ac2852d7ee33ff"
   dependencies:
     normalize.css "^7.0.0"
 
@@ -5007,7 +5007,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5166,13 +5166,6 @@ react-dom@^16.0.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
-
-react-flexbox-grid@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-flexbox-grid/-/react-flexbox-grid-2.0.0.tgz#6ffbe30a28fc6113e147715a5adc1f6a6f472e54"
-  dependencies:
-    flexboxgrid2 "^7.0.0-alpha7"
-    prop-types "^15.5.8"
 
 react-scripts@1.0.17:
   version "1.0.17"
