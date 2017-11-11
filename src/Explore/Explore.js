@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitle } from "../Section";
+import { SectionTitle, ScrollWrapper, Section } from "../Section";
 import img1 from "./card1.png";
 import img2 from "./card2.png";
 import img3 from "./card3.png";
@@ -8,12 +8,6 @@ import img1m from "./mcard1.png";
 import img2m from "./mcard2.png";
 import img3m from "./mcard3.png";
 import { media } from "../media.js";
-import { ScrollWrapper } from "../Section";
-
-const Explore = styled.section`
-  margin: 48px 0 48px 0;
-  font-family: CircularAir;
-`;
 
 const Card = styled.div`
   background: #ffffff;
@@ -32,11 +26,12 @@ const TitleCard = styled.h2`
   line-height: normal;
   text-align: left;
   font-family: CircularAir;
+  font-size: 12px;
   font-weight: bold;
-  font-size: 17px;
   padding: 0px 0px 0px 12px;
 
   ${media.md`
+    font-size: 17px;
     padding: 0px; 
   `};
 `;
@@ -58,7 +53,7 @@ const ImgCardM = styled.img`
 `;
 export default function() {
   return (
-    <Explore>
+    <Section>
       <div className="container">
         <SectionTitle>Explore Airbnb</SectionTitle>
         <div className="row">
@@ -87,6 +82,6 @@ export default function() {
           </ScrollWrapper>
         </div>
       </div>
-    </Explore>
+    </Section>
   );
 }

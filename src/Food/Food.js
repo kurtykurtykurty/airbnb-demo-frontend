@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitleExtented, NextPage } from "../Section";
+import {
+  SectionTitleExtented,
+  NextPage,
+  Section,
+  ScrollWrapper
+} from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import img4 from "./img4.png";
-
-const Food = styled.section`
-  margin: 48px 0 48px 0;
-  font-family: CircularAir;
-`;
+import { media } from "../media";
 
 const Card = styled.div`
   background: #ffffff;
@@ -23,25 +24,37 @@ const CardFooter = styled.div`
   display: flex;
   font-family: Circular Air;
   line-height: normal;
-  font-size: 15px;
+  font-size: 12px;
   color: #383838;
   justify-content: flex-start;
   padding: 4px 0 0 0;
+
+  ${media.md`
+    font-size: 18px;
+  `};
 `;
 const Caption = styled.span`
   font-family: CircularAir;
   line-height: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   color: #383838;
+
+  ${media.md`
+    font-size: 18px;
+  `};
 `;
 const Name = styled.div`
   font-family: CircularAir;
   line-height: normal;
-  font-size: 10px;
+  font-size: 8px;
   text-transform: uppercase;
   font-weight: bold;
   color: #383838;
+
+  ${media.md`
+    font-size: 10px;
+  `};
 `;
 
 const ImgCard = styled.img`
@@ -60,68 +73,70 @@ const Price = styled.span`
 const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
-    <div className="container">
-      <Food>
+    <Section>
+      <div className="container">
         <SectionTitleExtented name="Popular reservations around the world" />
         <div className="row">
-          <div className="col-lg-3">
-            <Card>
-              <ImgCard src={img1} />
-              <Name>SPEAKEASY</Name>
-              <Caption>Chumley’s</Caption>
+          <ScrollWrapper>
+            <div className="col-xs-6 col-xs-4 col-lg-3">
+              <Card>
+                <ImgCard src={img1} />
+                <Name>SPEAKEASY</Name>
+                <Caption>Chumley’s</Caption>
 
-              <CardFooter>
-                <Price>About $60 per person</Price>
-              </CardFooter>
-            </Card>
-          </div>
+                <CardFooter>
+                  <Price>About $60 per person</Price>
+                </CardFooter>
+              </Card>
+            </div>
 
-          {/* ВТОРАЯ КАРТА */}
+            {/* ВТОРАЯ КАРТА */}
 
-          <div className="col-lg-3">
-            <Card>
-              <ImgCard src={img2} />
-              <Name>Korean gastropub</Name>
-              <Caption>Hanjan</Caption>
+            <div className="col-xs-6 col-xs-4 col-lg-3">
+              <Card>
+                <ImgCard src={img2} />
+                <Name>Korean gastropub</Name>
+                <Caption>Hanjan</Caption>
 
-              <CardFooter>
-                <Price>About $50 per person</Price>
-              </CardFooter>
-            </Card>
-          </div>
+                <CardFooter>
+                  <Price>About $50 per person</Price>
+                </CardFooter>
+              </Card>
+            </div>
 
-          {/* ТРЕТЬЯ КАРТА */}
+            {/* ТРЕТЬЯ КАРТА */}
 
-          <div className="col-lg-3">
-            <Card>
-              <ImgCard src={img3} />
-              <Name>German american</Name>
-              <Caption>Prime Meats</Caption>
+            <div className="col-xs-6 col-xs-4 col-lg-3">
+              <Card>
+                <ImgCard src={img3} />
+                <Name>German american</Name>
+                <Caption>Prime Meats</Caption>
 
-              <CardFooter>
-                <Price>About $55 per person</Price>
-              </CardFooter>
-            </Card>
-          </div>
+                <CardFooter>
+                  <Price>About $55 per person</Price>
+                </CardFooter>
+              </Card>
+            </div>
 
-          {/* ЧЕТВЕРТАЯ КАРТА */}
+            {/* ЧЕТВЕРТАЯ КАРТА */}
 
-          <div className="col-lg-3">
-            <Card>
-              <CardWrapper>
-                <ImgCard src={img4} />
-                <NextPage />
-              </CardWrapper>
-              <Name>Fine seafood</Name>
-              <Caption>Seaprice</Caption>
+            <div className="col-xs-6 col-xs-4 col-lg-3">
+              <Card>
+                <CardWrapper>
+                  <ImgCard src={img4} />
+                  <NextPage />
+                </CardWrapper>
+                <Name>Fine seafood</Name>
+                <Caption>Seaprice</Caption>
 
-              <CardFooter>
-                <Price>About $70 per person</Price>
-              </CardFooter>
-            </Card>
-          </div>
+                <CardFooter>
+                  <Price>About $70 per person</Price>
+                </CardFooter>
+              </Card>
+            </div>
+          </ScrollWrapper>
         </div>
-      </Food>
-    </div>
+      </div>
+    </Section>
   );
 }

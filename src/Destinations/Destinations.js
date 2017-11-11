@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitle, NextPage } from "../Section";
+import { SectionTitle, NextPage, Section, ScrollWrapper } from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import img4 from "./img4.png";
 import img5 from "./img5.png";
 import img6 from "./img6.png";
-
-const Destination = styled.section`
-  margin: 48px 0 48px 0;
-  font-family: CircularAir;
-`;
+import { media } from "../media";
 
 const Card = styled.div`
   background: #ffffff;
@@ -25,8 +21,12 @@ const Caption = styled.span`
   font-family: CircularAir;
   line-height: 18px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   color: #383838;
+
+  ${media.md`
+    font-size: 15px;
+  `};
 `;
 const ImgCard = styled.img`
   width: 100%;
@@ -35,55 +35,57 @@ const ImgCard = styled.img`
 const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
-    <div className="container">
-      <Destination>
+    <Section>
+      <div className="container">
         <SectionTitle>Featured destinations</SectionTitle>
         <div className="row">
-          <div className="col-lg-2">
-            <Card>
-              <ImgCard src={img1} />
-              <Caption>Paris</Caption>
-            </Card>
-          </div>
+          <ScrollWrapper>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <ImgCard src={img1} />
+                <Caption>Paris</Caption>
+              </Card>
+            </div>
 
-          <div className="col-lg-2">
-            <Card>
-              <ImgCard src={img2} />
-              <Caption>Miami</Caption>
-            </Card>
-          </div>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <ImgCard src={img2} />
+                <Caption>Miami</Caption>
+              </Card>
+            </div>
 
-          <div className="col-lg-2">
-            <Card>
-              <ImgCard src={img3} />
-              <Caption>Tokyo</Caption>
-            </Card>
-          </div>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <ImgCard src={img3} />
+                <Caption>Tokyo</Caption>
+              </Card>
+            </div>
 
-          <div className="col-lg-2">
-            <Card>
-              <ImgCard src={img4} />
-              <Caption>Cape Town</Caption>
-            </Card>
-          </div>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <ImgCard src={img4} />
+                <Caption>Cape Town</Caption>
+              </Card>
+            </div>
 
-          <div className="col-lg-2">
-            <Card>
-              <ImgCard src={img5} />
-              <Caption>Seoul</Caption>
-            </Card>
-          </div>
-          <div className="col-lg-2">
-            <Card>
-              <CardWrapper>
-                <ImgCard src={img6} />
-                <NextPage />
-              </CardWrapper>
-              <Caption>Los Angeles</Caption>
-            </Card>
-          </div>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <ImgCard src={img5} />
+                <Caption>Seoul</Caption>
+              </Card>
+            </div>
+            <div className="col-xs-4 col-md-3 col-lg-2">
+              <Card>
+                <CardWrapper>
+                  <ImgCard src={img6} />
+                  <NextPage />
+                </CardWrapper>
+                <Caption>Los Angeles</Caption>
+              </Card>
+            </div>
+          </ScrollWrapper>
         </div>
-      </Destination>
-    </div>
+      </div>
+    </Section>
   );
 }

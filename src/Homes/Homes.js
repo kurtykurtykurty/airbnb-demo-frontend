@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionTitleExtented, NextPage } from "../Section";
+import {
+  SectionTitleExtented,
+  NextPage,
+  ScrollWrapper,
+  Section
+} from "../Section";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
 import img3 from "./img3.png";
 import star from "./star.png";
-
-const Homes = styled.section`
-  margin: 48px 0 48px 0;
-  font-family: CircularAir;
-`;
 
 const Card = styled.div`
   background: #ffffff;
@@ -64,76 +64,78 @@ const Info = styled.div`
 const CardWrapper = styled.div`position: relative;`;
 export default function() {
   return (
-    <div className="container">
-      <Homes>
+    <Section>
+      <div className="container">
         <SectionTitleExtented name="Homes" />
         <div className="row">
-          <div className="col-lg-4">
-            <Card>
-              <ImgCard src={img1} />
-              <Price>$82</Price>
-              <Caption>La Salentina, see, nature & relax</Caption>
-              <Info>Entire house · 9 beds</Info>
-              <CardFooter>
-                <RatingSec>
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                </RatingSec>
+          <ScrollWrapper>
+            <div className="col-xs-8 col-md-5 col-lg-4">
+              <Card>
+                <ImgCard src={img1} />
+                <Price>$82</Price>
+                <Caption>La Salentina, see, nature & relax</Caption>
+                <Info>Entire house · 9 beds</Info>
+                <CardFooter>
+                  <RatingSec>
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                  </RatingSec>
 
-                <Reviews>97 · Superhost</Reviews>
-              </CardFooter>
-            </Card>
-          </div>
+                  <Reviews>97 · Superhost</Reviews>
+                </CardFooter>
+              </Card>
+            </div>
 
-          {/* ВТОРАЯ КАРТА */}
+            {/* ВТОРАЯ КАРТА */}
 
-          <div className="col-lg-4">
-            <Card>
-              <ImgCard src={img2} />
-              <Price>$82</Price>
-              <Caption>Your private 3 bedr. riad and exclusi…</Caption>
-              <Info>Entire house · 5 beds</Info>
-              <CardFooter>
-                <RatingSec>
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                </RatingSec>
-                <Reviews>161 · Superhost</Reviews>
-              </CardFooter>
-            </Card>
-          </div>
+            <div className="col-xs-8 col-md-5 col-lg-4">
+              <Card>
+                <ImgCard src={img2} />
+                <Price>$82</Price>
+                <Caption>Your private 3 bedr. riad and exclusi…</Caption>
+                <Info>Entire house · 5 beds</Info>
+                <CardFooter>
+                  <RatingSec>
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                  </RatingSec>
+                  <Reviews>161 · Superhost</Reviews>
+                </CardFooter>
+              </Card>
+            </div>
 
-          {/* ТРЕТЬЯ КАРТА */}
+            {/* ТРЕТЬЯ КАРТА */}
 
-          <div className="col-lg-4">
-            <Card>
-              <CardWrapper>
-                <ImgCard src={img3} />
-                <NextPage />
-              </CardWrapper>
-              <Price>$200</Price>
-              <Caption>Dreamy Tropical Tree House</Caption>
-              <Info>Entire treehouse · 1 bed</Info>
-              <CardFooter>
-                <RatingSec>
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                  <Star src={star} />
-                </RatingSec>
-                <Reviews>364 · Superhost</Reviews>
-              </CardFooter>
-            </Card>
-          </div>
+            <div className="col-xs-8 col-md-5 col-lg-4">
+              <Card>
+                <CardWrapper>
+                  <ImgCard src={img3} />
+                  <NextPage />
+                </CardWrapper>
+                <Price>$200</Price>
+                <Caption>Dreamy Tropical Tree House</Caption>
+                <Info>Entire treehouse · 1 bed</Info>
+                <CardFooter>
+                  <RatingSec>
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                    <Star src={star} />
+                  </RatingSec>
+                  <Reviews>364 · Superhost</Reviews>
+                </CardFooter>
+              </Card>
+            </div>
+          </ScrollWrapper>
         </div>
-      </Homes>
-    </div>
+      </div>
+    </Section>
   );
 }
