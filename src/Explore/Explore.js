@@ -4,6 +4,11 @@ import { SectionTitle } from "../Section";
 import img1 from "./card1.png";
 import img2 from "./card2.png";
 import img3 from "./card3.png";
+import img1m from "./mcard1.png";
+import img2m from "./mcard2.png";
+import img3m from "./mcard3.png";
+import { media } from "../media.js";
+import { ScrollWrapper } from "../Section";
 
 const Explore = styled.section`
   margin: 48px 0 48px 0;
@@ -11,43 +16,77 @@ const Explore = styled.section`
 `;
 
 const Card = styled.div`
-  display: flex;
-  align-items: center;
   background: #ffffff;
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 17px;
   color: #383838;
-  font-weight: bold;
+
+  ${media.md`
+    display: flex;
+    align-items: center;
+  `};
 `;
-const ImgCard = styled.img`margin: 0 24px 0 0;`;
+const TitleCard = styled.h2`
+  line-height: normal;
+  text-align: left;
+  font-family: CircularAir;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 0px 0px 0px 12px;
+
+  ${media.md`
+    padding: 0px; 
+  `};
+`;
+const ImgCard = styled.img`
+  display: none;
+
+  ${media.md`
+    display: block;
+    margin: 0 24px 0 0
+  `};
+`;
+const ImgCardM = styled.img`
+  height: 100%;
+  width: 100%;
+
+  ${media.md`
+    display: none;
+  `};
+`;
 export default function() {
   return (
-    <div className="container">
-      <Explore>
+    <Explore>
+      <div className="container">
         <SectionTitle>Explore Airbnb</SectionTitle>
         <div className="row">
-          <div className="col-lg-4">
-            <Card>
-              <ImgCard src={img1} />Home
-            </Card>
-          </div>
-          <div className="col-lg-4">
-            <Card>
-              <ImgCard src={img2} />Experiences
-            </Card>
-          </div>
-          <div className="col-lg-4">
-            <Card>
-              <ImgCard src={img3} />Restaurants
-            </Card>
-          </div>
+          <ScrollWrapper>
+            <div className="col-xs-6 col-md-5 col-lg-4">
+              <Card>
+                <ImgCard src={img1} />
+                <ImgCardM src={img1m} />
+                <TitleCard>Home</TitleCard>
+              </Card>
+            </div>
+            <div className="col-xs-6 col-md-5 col-lg-4">
+              <Card>
+                <ImgCard src={img2} />
+                <ImgCardM src={img2m} />
+                <TitleCard>Experiences</TitleCard>
+              </Card>
+            </div>
+            <div className="col-xs-6 col-md-5 col-lg-4">
+              <Card>
+                <ImgCard src={img3} />
+                <ImgCardM src={img3m} />
+                <TitleCard>Restaurants</TitleCard>
+              </Card>
+            </div>
+          </ScrollWrapper>
         </div>
-      </Explore>
-    </div>
+      </div>
+    </Explore>
   );
 }
