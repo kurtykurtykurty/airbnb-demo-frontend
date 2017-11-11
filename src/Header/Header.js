@@ -2,13 +2,23 @@ import React from "react";
 import logo from "./logo.svg";
 import styled from "styled-components";
 import InputSearch from "./InputSearch";
-import "../grid.css";
+import { media } from "../media.js";
 
 const Header = styled.header`
   display: flex;
   height: 80px;
   align-items: center;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+
+  background: rgba(255, 0, 0, 0.5);
+
+  ${media.md`
+    background: rgba(0, 255, 0, 0.5);
+  `};
+
+  ${media.lg`
+    background: rgba(0, 0, 255, 0.5);
+  `};
 `;
 
 const HeadContainerLeft = styled.div`
@@ -42,14 +52,14 @@ export default function() {
     <Header>
       <div className="container">
         <div className="row">
-          <div className="col-6">
+          <div className="col-lg-6">
             <HeadContainerLeft>
               <Logo src={logo} />
               <InputSearch />
             </HeadContainerLeft>
           </div>
 
-          <div className="col-6">
+          <div className="col-lg-6">
             <HeadContainerRight>
               <Button>Become a host</Button>
               <Button>Help</Button>

@@ -39,41 +39,41 @@ export default function() {
       <Destination>
         <SectionTitle>Featured destinations</SectionTitle>
         <div className="row">
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <ImgCard src={img1} />
               <Caption>Paris</Caption>
             </Card>
           </div>
 
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <ImgCard src={img2} />
               <Caption>Miami</Caption>
             </Card>
           </div>
 
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <ImgCard src={img3} />
               <Caption>Tokyo</Caption>
             </Card>
           </div>
 
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <ImgCard src={img4} />
               <Caption>Cape Town</Caption>
             </Card>
           </div>
 
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <ImgCard src={img5} />
               <Caption>Seoul</Caption>
             </Card>
           </div>
-          <div className="col-2">
+          <div className="col-lg-2">
             <Card>
               <CardWrapper>
                 <ImgCard src={img6} />

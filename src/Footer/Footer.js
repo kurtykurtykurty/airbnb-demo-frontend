@@ -98,7 +98,7 @@ export default function() {
       <Socle>
         <div className="container">
           <div className="row">
-            <div className="col-3">
+            <div className="col-lg-3">
               <Select>
                 <Option>English</Option>
                 <Option>Русский</Option>
@@ -108,8 +108,7 @@ export default function() {
                 <Option>Рубли</Option>
               </Select>
             </div>
-            <div className="offset-1" />
-            <div className="col-2">
+            <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Airbnb</LinksTitle>
               <Links>About us</Links>
               <Links>Careers</Links>
@@ -118,8 +117,7 @@ export default function() {
               <Links>Help</Links>
               <Links>About Diversity</Links>
             </div>
-            <div className="offset-1" />
-            <div className="col-2">
+            <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Discover</LinksTitle>
               <Links>Trust & Safety</Links>
               <Links>Travel Credit</Links>
@@ -129,8 +127,7 @@ export default function() {
               <Links>Guidebooks</Links>
               <Links>Airbnbmag</Links>
             </div>
-            <div className="offset-1" />
-            <div className="col-2">
+            <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Hosting</LinksTitle>
               <Links>Why Host</Links>
               <Links>Hospitality</Links>
@@ -143,13 +140,13 @@ export default function() {
       <Basement>
         <div className="container">
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6">
               <BasementLeft>
                 <Logo src={logo} />
                 <Copyright>© Airbnb Inc.</Copyright>
               </BasementLeft>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6">
               <BasementRight>
                 <Button>Terms</Button>
                 <Button>Privacy</Button>

@@ -64,7 +64,7 @@ export default function() {
       <Food>
         <SectionTitleExtented name="Popular reservations around the world" />
         <div className="row">
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img1} />
               <Name>SPEAKEASY</Name>
@@ -78,7 +78,7 @@ export default function() {
 
           {/* ВТОРАЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img2} />
               <Name>Korean gastropub</Name>
@@ -92,7 +92,7 @@ export default function() {
 
           {/* ТРЕТЬЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img3} />
               <Name>German american</Name>
@@ -106,7 +106,7 @@ export default function() {
 
           {/* ЧЕТВЕРТАЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <CardWrapper>
                 <ImgCard src={img4} />

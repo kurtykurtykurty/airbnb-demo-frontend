@@ -31,17 +31,17 @@ export default function() {
       <Explore>
         <SectionTitle>Explore Airbnb</SectionTitle>
         <div className="row">
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <ImgCard src={img1} />Home
             </Card>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <ImgCard src={img2} />Experiences
             </Card>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <ImgCard src={img3} />Restaurants
             </Card>

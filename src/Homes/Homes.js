@@ -68,7 +68,7 @@ export default function() {
       <Homes>
         <SectionTitleExtented name="Homes" />
         <div className="row">
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <ImgCard src={img1} />
               <Price>$82</Price>
@@ -90,7 +90,7 @@ export default function() {
 
           {/* ВТОРАЯ КАРТА */}
 
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <ImgCard src={img2} />
               <Price>$82</Price>
@@ -111,7 +111,7 @@ export default function() {
 
           {/* ТРЕТЬЯ КАРТА */}
 
-          <div className="col-4">
+          <div className="col-lg-4">
             <Card>
               <CardWrapper>
                 <ImgCard src={img3} />

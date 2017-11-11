@@ -59,7 +59,7 @@ export default function() {
       <Experiences>
         <SectionTitleExtented name="Experiences" />
         <div className="row">
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img1} />
               <Price>$29</Price>
@@ -80,7 +80,7 @@ export default function() {
 
           {/* ВТОРАЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img2} />
               <Price>$69</Price>
@@ -101,7 +101,7 @@ export default function() {
 
           {/* ТРЕТЬЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <ImgCard src={img3} />
               <Price>$69</Price>
@@ -122,7 +122,7 @@ export default function() {
 
           {/* ЧЕТВЕРТАЯ КАРТА */}
 
-          <div className="col-3">
+          <div className="col-lg-3">
             <Card>
               <CardWrapper>
                 <ImgCard src={img4} />
