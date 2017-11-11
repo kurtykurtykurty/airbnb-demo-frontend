@@ -42,7 +42,7 @@ const LinksTitle = styled.div`
   font-weight: bold;
   padding: 0 0 8px 0;
 `;
-const Links = styled.div`
+const Link = styled.div`
   text-align: left;
   font-family: CircularAir;
   line-height: normal;
@@ -110,29 +110,29 @@ export default function() {
             </div>
             <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Airbnb</LinksTitle>
-              <Links>About us</Links>
-              <Links>Careers</Links>
-              <Links>Press</Links>
-              <Links>Policies</Links>
-              <Links>Help</Links>
-              <Links>About Diversity</Links>
+              <Link>About us</Link>
+              <Link>Careers</Link>
+              <Link>Press</Link>
+              <Link>Policies</Link>
+              <Link>Help</Link>
+              <Link>About Diversity</Link>
             </div>
             <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Discover</LinksTitle>
-              <Links>Trust & Safety</Links>
-              <Links>Travel Credit</Links>
-              <Links>Gift Cards</Links>
-              <Links>Airbnb Citizen</Links>
-              <Links>Business Travel</Links>
-              <Links>Guidebooks</Links>
-              <Links>Airbnbmag</Links>
+              <Link>Trust & Safety</Link>
+              <Link>Travel Credit</Link>
+              <Link>Gift Cards</Link>
+              <Link>Airbnb Citizen</Link>
+              <Link>Business Travel</Link>
+              <Link>Guidebooks</Link>
+              <Link>Airbnbmag</Link>
             </div>
             <div className="col-lg-offset-1 col-lg-2">
               <LinksTitle>Hosting</LinksTitle>
-              <Links>Why Host</Links>
-              <Links>Hospitality</Links>
-              <Links>Responsible Hosting</Links>
-              <Links>Community Center</Links>
+              <Link>Why Host</Link>
+              <Link>Hospitality</Link>
+              <Link>Responsible Hosting</Link>
+              <Link>Community Center</Link>
             </div>
           </div>
         </div>
