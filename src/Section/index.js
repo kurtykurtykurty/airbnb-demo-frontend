@@ -87,7 +87,7 @@ export const SectionTitleExtented = props => (
   <TitleWrapper>
     <SectionTitle>{props.name}</SectionTitle>
     <SeeAll>
-      See All<Arr src={arr} />
+      See&nbsp;all<Arr src={arr} />
     </SeeAll>
   </TitleWrapper>
 );
