@@ -19,13 +19,13 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const HeadContainerLeft = styled.div`
+const Left = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
 `;
 
-const HeadContainerRight = styled.div`
+const Right = styled.div`
   height: 100%;
   align-items: center;
   justify-content: flex-end;
@@ -66,19 +66,19 @@ export default function() {
         <div className="row">
           <Content>
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
-              <HeadContainerLeft>
+              <Left>
                 <Logo src={logo} />
                 <Arr src={arr} />
                 <InputSearch />
-              </HeadContainerLeft>
+              </Left>
             </div>
             <div className="col-lg-6">
-              <HeadContainerRight>
+              <Right>
                 <Button>Become a host</Button>
                 <Button>Help</Button>
                 <Button>Sign Up</Button>
                 <Button>Log In</Button>
-              </HeadContainerRight>
+              </Right>
             </div>
           </Content>
         </div>

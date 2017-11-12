@@ -102,7 +102,7 @@ const Basement = styled.div`
   `};
 `;
 
-const BasementLeft = styled.div`
+const Left = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
@@ -112,7 +112,7 @@ const BasementLeft = styled.div`
     margin: 0;
   `};
 `;
-const BasementRight = styled.div`
+const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -223,11 +223,11 @@ export default function() {
           </div>
         </Socle>
         <Basement>
-          <BasementLeft>
+          <Left>
             <Logo src={logo} />
             <Copyright>© Airbnb Inc.</Copyright>
-          </BasementLeft>
-          <BasementRight>
+          </Left>
+          <Right>
             <Button>Terms</Button>
             <Button>Privacy</Button>
             <Button>Site map</Button>
@@ -236,7 +236,7 @@ export default function() {
               <SocialIcon src={twit} />
               <SocialIcon src={inst} />
             </Social>
-          </BasementRight>
+          </Right>
         </Basement>
       </div>
     </Footer>
