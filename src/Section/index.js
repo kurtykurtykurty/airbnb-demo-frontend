@@ -45,13 +45,12 @@ const SeeAll = styled.a`
   text-align: right;
   color: #383838;
 
-  ${"" /* margin-bottom: 16px; */} ${media.md`
+  ${media.md`
     font-size: 32px;
-    ${"" /* margin-bottom: 24px; */}
     line-height: 34px;
   `};
 
-  ${"" /* margin-bottom: 16px; */} ${media.md`
+  ${media.md`
     font-size: 14px;
   `};
 `;
