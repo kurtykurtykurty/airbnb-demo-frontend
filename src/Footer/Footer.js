@@ -5,74 +5,132 @@ import logo from "./logo.svg";
 import face from "./face.svg";
 import twit from "./twitter.svg";
 import inst from "./inst.svg";
+import { media } from "../media";
 
 const Footer = styled.footer`box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);`;
-const Socle = styled.div`padding: 48px 0 48px 0;`;
+const Socle = styled.div`
+  padding: 16px 0 24px 0;
+
+  ${media.md`
+    padding: 48px 0 48px 0;
+  `};
+`;
 const Select = styled.select`
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
   width: 100%;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 200;
   line-height: 21px;
   outline: none;
-  padding: 12px 0 13px 16px;
   width: 100%;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 18px;
   color: #383838;
-  margin-bottom: 16px;
   appearance: none;
   outline: none;
   background-image: url(${cur});
-  background-position: 93% center;
   background-repeat: no-repeat;
-  margin-bottom: 16px;
+  background-position: 93% center;
+  padding: 12px 0 12px 8px;
+  displa: flex;
+  ${media.md`
+    font-size: 15px
+    padding: 14px 0 15px 8px;
+    margin-bottom: 16px;
+    `};
+
+  ${media.lg`
+    font-size: 18px;
+    padding: 12px 0 13px 16px;
+  `};
 `;
-const Option = styled.option`font-size: 18px;`;
+const Option = styled.option`
+  font-size: 12px;
+
+  ${media.md`
+    font-size: 15px;
+  `};
+
+  ${media.lg`
+    font-size: 18px;
+  `};
+`;
 
 const LinksTitle = styled.div`
   text-align: left;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 15px;
+  font-size: 12px;
   color: #383838;
   font-weight: bold;
   padding: 0 0 8px 0;
+  font-size: 12px;
+
+  ${media.lg`
+    font-size: 15px;
+  `};
 `;
 const Link = styled.div`
   text-align: left;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 15px;
+  font-size: 12px;
   color: #636363;
   padding: 8px 0 8px 0;
+
+  ${media.lg`
+    font-size: 15px;
+  `};
 `;
 const Basement = styled.div`
   display: flex;
-  align-items: center;
   box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);
-  padding: 25px 0 25px 0;
+  padding: 18px 0 18px 0;
+  flex-direction: column;
+
+  ${media.md`
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 36px 0 36px 0;
+  `};
+
+  ${media.lg`
+    padding: 34px 0 34px 0;
+  `};
 `;
 
 const BasementLeft = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  margin-bottom: 12px;
+
+  ${media.md`
+    margin: 0;
+  `};
 `;
 const BasementRight = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+
+  ${media.md`
+    justify-content: flex-end;
+  `};
 `;
 const Logo = styled.img`margin: 0px 15px 0px 0px;`;
 const Copyright = styled.span`
   font-family: CircularAir;
   line-height: normal;
-  font-size: 15px;
   color: #636363;
+  font-size: 12px;
+
+  ${media.lg`
+  font-size: 15px;
+  `};
 `;
 const Button = styled.button`
   line-height: 24px;
@@ -80,35 +138,63 @@ const Button = styled.button`
   color: #636363;
   background: #fff;
   font-family: CircularAir;
-  font-size: 14px;
+  font-size: 12px;
   border: 0;
-  margin: 8px;
-  padding: 0 8px 0 8px;
+  margin: 0px 8px 0 0;
+  padding: 0 8px 0 0;
+  ${media.md`
+    font-size: 15px;
+  `};
 `;
 const Social = styled.div`
   display: flex;
   align-items: center;
 `;
-const Face = styled.img`margin: 0 6px 0 6px;`;
-const Twit = styled.img`margin: 0 6px 0 6px;`;
-const Inst = styled.img`margin: 0 6px 0 6px;`;
+
+const SocialIcon = styled.img`
+  margin: 0 6px 0 6px;
+  width: 16px;
+  height: 16px;
+
+  ${media.md`
+    width: 24px;
+    height: 24px;
+  `};
+`;
+
+const SelectBox = styled.div`
+  display: flex;
+  margin: 0 -8px 0 -8px;
+
+  ${media.md`
+    flex-direction: column;
+  `};
+`;
+
 export default function() {
   return (
     <Footer>
-      <Socle>
-        <div className="container">
+      <div className="container">
+        <Socle>
           <div className="row">
-            <div className="col-lg-3">
-              <Select>
-                <Option>English</Option>
-                <Option>Русский</Option>
-              </Select>
-              <Select>
-                <Option>United States dollar</Option>
-                <Option>Рубли</Option>
-              </Select>
+            <div className="col-xs-12 col-md-3 col-lg-3">
+              <SelectBox>
+                <div className="col-xs-6 col-md-12">
+                  <Select>
+                    <Option>English</Option>
+                    <Option>Русский</Option>
+                  </Select>
+                </div>
+                <div className="col-xs-6 col-md-12">
+                  <Select>
+                    <Option>United States dollar</Option>
+                    <Option>Рубли</Option>
+                  </Select>
+                </div>
+              </SelectBox>
             </div>
-            <div className="col-lg-offset-1 col-lg-2">
+
+            <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Airbnb</LinksTitle>
               <Link>About us</Link>
               <Link>Careers</Link>
@@ -117,7 +203,7 @@ export default function() {
               <Link>Help</Link>
               <Link>About Diversity</Link>
             </div>
-            <div className="col-lg-offset-1 col-lg-2">
+            <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Discover</LinksTitle>
               <Link>Trust & Safety</Link>
               <Link>Travel Credit</Link>
@@ -127,7 +213,7 @@ export default function() {
               <Link>Guidebooks</Link>
               <Link>Airbnbmag</Link>
             </div>
-            <div className="col-lg-offset-1 col-lg-2">
+            <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Hosting</LinksTitle>
               <Link>Why Host</Link>
               <Link>Hospitality</Link>
@@ -135,32 +221,24 @@ export default function() {
               <Link>Community Center</Link>
             </div>
           </div>
-        </div>
-      </Socle>
-      <Basement>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <BasementLeft>
-                <Logo src={logo} />
-                <Copyright>© Airbnb Inc.</Copyright>
-              </BasementLeft>
-            </div>
-            <div className="col-lg-6">
-              <BasementRight>
-                <Button>Terms</Button>
-                <Button>Privacy</Button>
-                <Button>Site map</Button>
-                <Social>
-                  <Face src={face} />
-                  <Twit src={twit} />
-                  <Inst src={inst} />
-                </Social>
-              </BasementRight>
-            </div>
-          </div>
-        </div>
-      </Basement>
+        </Socle>
+        <Basement>
+          <BasementLeft>
+            <Logo src={logo} />
+            <Copyright>© Airbnb Inc.</Copyright>
+          </BasementLeft>
+          <BasementRight>
+            <Button>Terms</Button>
+            <Button>Privacy</Button>
+            <Button>Site map</Button>
+            <Social>
+              <SocialIcon src={face} />
+              <SocialIcon src={twit} />
+              <SocialIcon src={inst} />
+            </Social>
+          </BasementRight>
+        </Basement>
+      </div>
     </Footer>
   );
 }
