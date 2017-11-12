@@ -12,9 +12,11 @@ export const SectionTitle = styled.h2`
   text-align: left;
   margin-top: 0px;
   margin-bottom: 0px;
-  ${"" /* margin-bottom: 16px; */} ${media.md`
+  margin-bottom: 16px;
+
+  ${media.md`
     font-size: 32px;
-    ${"" /* margin-bottom: 24px; */}
+    margin-bottom: 24px; 
     line-height: 34px;
   `};
 `;
@@ -31,10 +33,8 @@ const TitleWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 16px;
   ${media.md`
     font-size: 32px;
-    margin-bottom: 24px;
     line-height: 34px;
   `};
 `;

@@ -10,24 +10,7 @@ const Header = styled.header`
   align-items: center;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
   padding: 16px 0;
-  background: rgba(255, 0, 0, 0.5);
   margin-bottom: 40px;
-
-  ${media.md`
-    margin-bottom: 48px;
-  `};
-
-  ${media.sm`
-    background: rgba(100, 100, 0, 0.5);
-  `};
-
-  ${media.md`
-    background: rgba(0, 255, 0, 0.5);
-  `};
-
-  ${media.lg`
-    background: rgba(0, 0, 255, 0.5);
-  `};
 `;
 
 const Content = styled.div`
