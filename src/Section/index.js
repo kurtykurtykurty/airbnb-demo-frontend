@@ -20,13 +20,6 @@ export const SectionTitle = styled.h2`
     line-height: 34px;
   `};
 `;
-export const Section = styled.section`
-  margin-bottom: 40px;
-  font-family: CircularAir;
-  ${media.md`
-    margin-bottom: 48px;
-  `};
-`;
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -44,10 +37,11 @@ const SeeAll = styled.a`
   font-size: 12px;
   text-align: right;
   color: #383838;
+  margin-bottom: 16px;
 
   ${media.md`
     font-size: 32px;
-    line-height: 34px;
+    line-height: 24px;
   `};
 
   ${media.md`
@@ -57,7 +51,7 @@ const SeeAll = styled.a`
 
 const Arr = styled.img`margin: 0 0 0 8px;`;
 
-export const NextPage = styled.div`
+export const NextPage = styled.a`
   width: 40px;
   height: 40px;
   display: none;
@@ -90,3 +84,46 @@ export const SectionTitleExtented = props => (
     </SeeAll>
   </TitleWrapper>
 );
+
+export const SectionTitleShort = props => (
+  <TitleWrapper>
+    <SectionTitle>{props.name}</SectionTitle>
+  </TitleWrapper>
+);
+
+const CardWrapper = styled.div`position: relative;`;
+
+const SectionLayout = props => (
+  <div className={props.className}>
+    <CardWrapper>
+      <SectionTitleExtented name={props.name} />
+      <div className="row">{props.children}</div>
+    </CardWrapper>
+  </div>
+);
+
+const SectionLayoutShort = props => (
+  <div className={props.className}>
+    <CardWrapper>
+      <SectionTitleShort name={props.name} />
+      <div className="row">{props.children}</div>
+    </CardWrapper>
+  </div>
+);
+export const Section = styled(SectionLayout)`
+  margin-bottom: 40px;
+  font-family: CircularAir;
+
+  ${media.md`
+    margin-bottom: 48px;
+  `};
+`;
+
+export const SectionShort = styled(SectionLayoutShort)`
+  margin-bottom: 40px;
+  font-family: CircularAir;
+
+  ${media.md`
+    margin-bottom: 48px;
+  `};
+`;
