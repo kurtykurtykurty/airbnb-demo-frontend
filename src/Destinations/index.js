@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { NextPage, SectionShort, ScrollWrapper } from "../Section";
 import Card from "./Card";
 import img1 from "./img1.png";
@@ -8,7 +7,6 @@ import img3 from "./img3.png";
 import img4 from "./img4.png";
 import img5 from "./img5.png";
 import img6 from "./img6.png";
-import { media } from "../media";
 
 export default function() {
   return (
