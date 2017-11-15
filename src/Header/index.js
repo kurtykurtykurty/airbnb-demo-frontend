@@ -3,14 +3,16 @@ import logo from "./logo.svg";
 import arr from "./arr.png";
 import styled from "styled-components";
 import InputSearch from "./InputSearch";
-import { media } from "../media.js";
+import { media } from "../media";
 
 const Header = styled.header`
-  height: 100%;
+  ${"" /* height: 100%; */} width :100%;
   align-items: center;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
   padding: 16px 0;
-  margin-bottom: 40px;
+  ${"" /* margin-bottom: 40px; */} background: #ffffff;
+  position: fixed;
+  z-index: 1;
 `;
 
 const Content = styled.div`

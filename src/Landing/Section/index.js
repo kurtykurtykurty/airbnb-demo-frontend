@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import arr from "./arr.svg";
 import nextpage from "./next-page.png";
-import { media } from "../media.js";
+import { media } from "../../media";
 
 export const SectionTitle = styled.h2`
   font-family: CircularAir;

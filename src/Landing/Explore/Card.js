@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../media.js";
+import { media } from "../../media";
 
 const Card = styled.div`
   background: #ffffff;

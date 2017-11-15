@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Explore from "./Explore";
-import Experiences from "./Experiences";
-import Home from "./Homes";
-import Food from "./Food";
-import Destinations from "./Destinations";
 import Footer from "./Footer";
+import Landing from "./Landing";
+
 import "./fonts/index.css";
 
 class App extends Component {
@@ -13,11 +10,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Explore />
-        <Experiences />
-        <Home />
-        <Food />
-        <Destinations />
+        <Landing />
         <Footer />
       </div>
     );
