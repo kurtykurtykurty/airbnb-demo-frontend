@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import RoomType from "./RoomType";
 
 const Filters = styled.div`
   width: 100%;
@@ -37,6 +38,7 @@ export default function() {
         <Button className="hidden-xs hidden-sm hidden-md">Instant book</Button>
         <Button>More filters</Button>
       </div>
+      <RoomType />
     </Filters>
   );
 }

@@ -1798,6 +1798,12 @@ defined@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/defined/-/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
 
+dehumanize-date@^2.0.1:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/dehumanize-date/-/dehumanize-date-2.5.0.tgz#df5f0385e3e397142679419fbeecec6af7ae22ed"
+  dependencies:
+    is-leap-year "^0.1.0"
+
 del@^2.0.2, del@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/del/-/del-2.2.2.tgz#c12c981d067846c84bcaf862cff930d907ffd1a8"
@@ -3311,6 +3317,10 @@ is-glob@^3.1.0:
   dependencies:
     is-extglob "^2.1.0"
 
+is-leap-year@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/is-leap-year/-/is-leap-year-0.1.0.tgz#e3ee04508d878c3c68a5012361c5b806d1e0fbeb"
+
 is-npm@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
@@ -4419,6 +4429,10 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.1.tgz#104124b6c602c6796881a042541d36db43a5264e"
 
+occasion@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/occasion/-/occasion-1.0.0.tgz#4f6a84e0475bea2d4c2e9a8a9408cf95250a8b00"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -5038,7 +5052,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5161,6 +5175,14 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-date@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-date/-/react-date-2.0.0.tgz#bb2c250ce3f2baf9acb653606ea601d3e31937ad"
+  dependencies:
+    dehumanize-date "^2.0.1"
+    occasion "^1.0.0"
+    prop-types "^15.5.8"
 
 react-dev-utils@^4.2.1:
   version "4.2.1"
