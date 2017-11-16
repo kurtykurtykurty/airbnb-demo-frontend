@@ -44,6 +44,7 @@ const Logo = styled.img`
     margin: 0px 50px 0px 0px;  
   `};
 `;
+
 const Button = styled.button`
   line-height: 24px;
   text-align: center;
@@ -56,11 +57,14 @@ const Button = styled.button`
   padding: 0 4px 0 4px;
   font-weight: bold;
 `;
+
 const Arr = styled.img`
   margin: 0px 8px 0px 0px;
   ${media.lg`
   display: none;`};
 `;
+
+const Link = styled.a`text-decoration: none;`;
 export default function() {
   return (
     <Header>
@@ -69,7 +73,9 @@ export default function() {
           <Content>
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
               <Left>
-                <Logo src={logo} />
+                <Link href="/">
+                  <Logo src={logo} />
+                </Link>
                 <Arr src={arr} />
                 <InputSearch />
               </Left>
