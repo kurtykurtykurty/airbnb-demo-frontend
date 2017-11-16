@@ -48,10 +48,14 @@ const ImgCardM = styled.img`
   `};
 `;
 
+const Link = styled.a`text-decoration: none;`;
+
 export default props => (
-  <Card>
-    <ImgCard src={props.img} />
-    <ImgCardM src={props.imgm} />
-    <TitleCard>{props.title}</TitleCard>
-  </Card>
+  <Link href={props.link}>
+    <Card>
+      <ImgCard src={props.img} />
+      <ImgCardM src={props.imgm} />
+      <TitleCard>{props.title}</TitleCard>
+    </Card>
+  </Link>
 );
