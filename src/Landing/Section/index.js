@@ -70,7 +70,7 @@ export const NextPage = styled.a`
 export const ScrollWrapper = styled.div`
   display: flex;
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   flex-wrap: nowrap;
   width: 100%;
   height: 100%;
@@ -110,6 +110,7 @@ const SectionLayoutShort = props => (
     </CardWrapper>
   </div>
 );
+
 export const Section = styled(SectionLayout)`
   margin-bottom: 40px;
   font-family: CircularAir;

@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../media";
-import { Wrapper, Section } from "../Section";
 import Card from "./Card";
-import Filters from "../Filters";
-
-import MapLocation from "../MapLocation";
+import Location from "./Location";
 
 import img1 from "./img1.png";
 import img2 from "./img2.png";
@@ -16,30 +13,29 @@ import img6 from "./img6.png";
 
 import star from "./star.png";
 
-const MapWrapper = styled.div`
-  position: fixed;
-  top: 80px;
-  bottom: 0;
-  right: 0;
-  left: calc(50% + 162px);
-  z-index: -1;
+const List = styled.div`
+  padding-top: 162px;
+  padding-down: 40px;
 
-  ${media.xl`
-    left: calc(50% + 198px);
+  ${media.md`
+    padding-down: 48px;
   `};
+`;
 
-  ${"" /* ${media.lg`
-    display:
-  `}; */};
+const Wrapper = styled.div`
+  margin-bottom: 24px;
+
+  ${media.md`
+    margin-bottom: 40px;
+  `};
 `;
 
 export default function() {
   return (
     <div className="container">
-      <Filters />
-      <Section>
-        <div className="col-xs-12 col-lg-8">
-          <div className="col-lg-12">
+      <List>
+        <div className="row">
+          <div className="col-xs-12 col-lg-8">
             <div className="row">
               <div className="col-xs-12 col-md-6">
                 <Wrapper>
@@ -131,10 +127,8 @@ export default function() {
             </div>
           </div>
         </div>
-      </Section>
-      <MapWrapper className="hidden-xs hidden-sm hidden-md">
-        <MapLocation center={{ lat: 35.55, lng: 35.77 }} zoom={7} />
-      </MapWrapper>
+      </List>
+      <Location />
     </div>
   );
 }

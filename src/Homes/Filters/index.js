@@ -7,9 +7,9 @@ const Filters = styled.div`
   padding-bottom: 12px;
   border-bottom: 1px solid #eaebf0;
   background: white;
-  margin-top: 82px;
   position: fixed;
-  ${"" /* z-index: 1; */};
+  top: 82px;
+  left: 0px;
 `;
 
 const Button = styled.button`
@@ -30,14 +30,12 @@ export default function() {
   return (
     <Filters>
       <div className="container">
-        <div class="row">
-          <Button>Dates</Button>
-          <Button>Guests</Button>
-          <Button>Room type</Button>
-          <Button>Price</Button>
-          <Button>Instant book</Button>
-          <Button>More filters</Button>
-        </div>
+        <Button>Dates</Button>
+        <Button>Guests</Button>
+        <Button className="hidden-xs hidden-sm hidden-md">Room type</Button>
+        <Button className="hidden-xs hidden-sm hidden-md">Price</Button>
+        <Button className="hidden-xs hidden-sm hidden-md">Instant book</Button>
+        <Button>More filters</Button>
       </div>
     </Filters>
   );

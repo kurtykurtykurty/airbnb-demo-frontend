@@ -19,6 +19,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "now": "^8.5.1",
     "typescript-styled-plugin": "^0.2.0"
   }
 }

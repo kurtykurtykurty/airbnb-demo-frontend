@@ -6,7 +6,7 @@ export default props => {
     <GoogleMapReact
       bootstrapURLKeys={{
         key: "AIzaSyBcxbp8mmiru5-BGizzftdJm8CwpuWO9RY",
-        language: "en"
+        language: "ru"
       }}
       defaultCenter={props.center}
       defaultZoom={props.zoom}

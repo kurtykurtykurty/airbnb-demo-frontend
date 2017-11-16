@@ -1,10 +1,10 @@
 import React from "react";
 import { NextPage, ScrollWrapper, Section } from "../Section";
-import Card from "./Card";
-import img1 from "./img1.png";
-import img2 from "./img2.png";
-import img3 from "./img3.png";
-import star from "./star.png";
+import Card from "../../Homes/List/Card";
+import img1 from "../../Homes/List/img1.png";
+import img2 from "../../Homes/List/img2.png";
+import img3 from "../../Homes/List/img3.png";
+import star from "../../Homes/List/star.png";
 
 export default function() {
   return (
