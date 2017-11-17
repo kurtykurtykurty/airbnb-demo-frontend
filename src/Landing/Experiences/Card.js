@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { media } from "../../media";
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   box-sizing: border-box;
   font-family: CircularAir;
@@ -33,13 +35,17 @@ const Caption = styled.span`
 `;
 
 const Price = styled.span`
+  line-height: normal;
   font-weight: bold;
   margin-right: 4px;
   font-size: 13px;
+
   ${media.md`
     font-size: 15px;
   `};
 `;
+
+const Description = styled.div`margin-top: 8px;`;
 
 const Star = styled.img`margin: 0 4px 0 0;`;
 
@@ -61,9 +67,10 @@ const Reviews = styled.span`
 export default props => (
   <Card>
     <ImgCard src={props.img} />
-    <Price>{props.price}</Price>
-    <Caption>{props.caption}</Caption>
-
+    <Description>
+      <Price>{props.price}</Price>
+      <Caption>{props.caption}</Caption>
+    </Description>
     <CardFooter>
       <RatingSec>
         <Star src={props.star} />

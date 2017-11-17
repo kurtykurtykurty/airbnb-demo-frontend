@@ -56,7 +56,7 @@ const Info = styled.div`
   font-size: 15px;
   font-weight: 200;
   color: #383838;
-  padding: 6px 0 0 0;
+  padding-top: 2px;
 `;
 
 export default props => (

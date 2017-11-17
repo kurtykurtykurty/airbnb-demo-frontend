@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
-import Home from "./Homes";
+import Homes from "./Homes";
 import Food from "./Food";
 import Destinations from "./Destinations/";
 
@@ -12,7 +12,7 @@ export default props => (
   <Landing>
     <Explore />
     <Experiences />
-    <Home />
+    <Homes />
     <Food />
     <Destinations />
   </Landing>

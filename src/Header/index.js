@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReactLink } from "react-router-dom";
 import logo from "./logo.svg";
 import arr from "./arr.png";
 import styled from "styled-components";
@@ -6,13 +7,13 @@ import InputSearch from "./InputSearch";
 import { media } from "../media";
 
 const Header = styled.header`
-  ${"" /* height: 100%; */} width :100%;
+  width: 100%;
   align-items: center;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
   padding: 16px 0;
-  ${"" /* margin-bottom: 40px; */} background: #ffffff;
+  background: #ffffff;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Content = styled.div`
@@ -55,7 +56,6 @@ const Button = styled.button`
   border: 0;
   margin: 8px;
   padding: 0 4px 0 4px;
-  font-weight: bold;
 `;
 
 const Arr = styled.img`
@@ -64,7 +64,8 @@ const Arr = styled.img`
   display: none;`};
 `;
 
-const Link = styled.a`text-decoration: none;`;
+const Link = styled(ReactLink)`text-decoration: none;`;
+
 export default function() {
   return (
     <Header>
@@ -73,7 +74,7 @@ export default function() {
           <Content>
             <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6">
               <Left>
-                <Link href="/">
+                <Link to="/">
                   <Logo src={logo} />
                 </Link>
                 <Arr src={arr} />

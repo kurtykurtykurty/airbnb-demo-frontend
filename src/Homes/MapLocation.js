@@ -5,7 +5,7 @@ export default props => {
   return (
     <GoogleMapReact
       bootstrapURLKeys={{
-        key: "AIzaSyBcxbp8mmiru5-BGizzftdJm8CwpuWO9RY",
+        key: process.env.REACT_APP_SECRET_MAP_CODE,
         language: "ru"
       }}
       defaultCenter={props.center}

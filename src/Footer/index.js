@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link as ReactLink } from "react-router-dom";
 import cur from "./cur.svg";
 import logo from "./logo.svg";
 import face from "./face.svg";
@@ -62,23 +63,24 @@ const LinksTitle = styled.div`
   text-align: left;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 12px;
+  font-size: 15px;
   color: #383838;
   font-weight: bold;
-  padding: 0 0 8px 0;
-  font-size: 12px;
+  padding-bottom: 16px;
 
   ${media.lg`
     font-size: 15px;
   `};
 `;
-const Link = styled.div`
+const Link = styled(ReactLink)`
+  display: block;
   text-align: left;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 12px;
+  font-size: 15px;
   color: #636363;
-  padding: 8px 0 8px 0;
+  padding: 0 0 8px 0;
+  text-decoration: none;
 
   ${media.lg`
     font-size: 15px;
@@ -196,29 +198,29 @@ export default function() {
 
             <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Airbnb</LinksTitle>
-              <Link>About us</Link>
-              <Link>Careers</Link>
-              <Link>Press</Link>
-              <Link>Policies</Link>
-              <Link>Help</Link>
-              <Link>About Diversity</Link>
+              <Link to="">About us</Link>
+              <Link to="">Careers</Link>
+              <Link to="">Press</Link>
+              <Link to="">Policies</Link>
+              <Link to="">Help</Link>
+              <Link to="">Diversity & Belonging</Link>
             </div>
             <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Discover</LinksTitle>
-              <Link>Trust & Safety</Link>
-              <Link>Travel Credit</Link>
-              <Link>Gift Cards</Link>
-              <Link>Airbnb Citizen</Link>
-              <Link>Business Travel</Link>
-              <Link>Guidebooks</Link>
-              <Link>Airbnbmag</Link>
+              <Link to="">Trust & Safety</Link>
+              <Link to="">Travel Credit</Link>
+              <Link to="">Gift Cards</Link>
+              <Link to="">Airbnb Citizen</Link>
+              <Link to="">Business Travel</Link>
+              <Link to="">Guidebooks</Link>
+              <Link to="">Airbnbmag</Link>
             </div>
             <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
               <LinksTitle>Hosting</LinksTitle>
-              <Link>Why Host</Link>
-              <Link>Hospitality</Link>
-              <Link>Responsible Hosting</Link>
-              <Link>Community Center</Link>
+              <Link to="">Why Host</Link>
+              <Link to="">Hospitality</Link>
+              <Link to="">Responsible Hosting</Link>
+              <Link to="">Community Center</Link>
             </div>
           </div>
         </Socle>

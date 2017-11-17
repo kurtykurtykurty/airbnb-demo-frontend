@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReactLink } from "react-router-dom";
 import styled from "styled-components";
 import { media } from "../../media";
 
@@ -48,10 +49,10 @@ const ImgCardM = styled.img`
   `};
 `;
 
-const Link = styled.a`text-decoration: none;`;
+const Link = styled(ReactLink)`text-decoration: none;`;
 
 export default props => (
-  <Link href={props.link}>
+  <Link to={props.link || ""}>
     <Card>
       <ImgCard src={props.img} />
       <ImgCardM src={props.imgm} />

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   box-sizing: border-box;
   font-family: CircularAir;
@@ -56,14 +58,18 @@ const Info = styled.div`
   font-size: 15px;
   font-weight: 200;
   color: #383838;
-  padding: 6px 0 0 0;
+  padding: 2px 0 0 0;
 `;
+
+const Description = styled.div`margin-top: 8px;`;
 
 export default props => (
   <Card>
     <ImgCard src={props.img} />
-    <Price>{props.price}</Price>
-    <Caption>{props.caption}</Caption>
+    <Description>
+      <Price>{props.price}</Price>
+      <Caption>{props.caption}</Caption>
+    </Description>
     <Info>{props.info}</Info>
     <CardFooter>
       <RatingSec>

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { media } from "../../media";
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   box-sizing: border-box;
   font-family: CircularAir;
@@ -17,9 +19,11 @@ const Caption = styled.span`
   font-weight: bold;
   font-size: 12px;
   color: #383838;
+  padding-top: 4px;
 
   ${media.md`
     font-size: 15px;
+    padding-top: 8px;
   `};
 `;
 

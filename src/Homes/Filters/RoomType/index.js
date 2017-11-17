@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import DropContainer from "../DropContainer";
 
-import chkbx from "./chkbx.png";
-import home from "./home.png";
-import proom from "./proom.png";
-import sroom from "./sroom.png";
+import checkbox from "./chkbx.svg";
+import home from "./home.svg";
+import proom from "./proom.svg";
+import sroom from "./sroom.svg";
 
-const Chk = styled.img`
+const Checkbox = styled.img`
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -30,7 +30,7 @@ const Box = styled.div`
   font-weight: 200;
 `;
 
-const BoxWrapp = styled.div`
+const BoxWrap = styled.div`
   display: flex;
   flex-direction: column;
   font-family: CircularAir;
@@ -58,12 +58,12 @@ export default props => (
   <DropContainer>
     <Option>
       <OptionRow>
-        <BoxWrapp>
+        <BoxWrap>
           <Box>
-            <Chk src={chkbx} />Entrie Home
+            <Checkbox src={checkbox} />Entrie Home
           </Box>
           <NoteDescr> Have a place to yourself</NoteDescr>
-        </BoxWrapp>
+        </BoxWrap>
         <Icon>
           <Img src={home} />
         </Icon>
@@ -72,12 +72,12 @@ export default props => (
 
     <Option>
       <OptionRow>
-        <BoxWrapp>
+        <BoxWrap>
           <Box>
-            <Chk src={chkbx} />Private room
+            <Checkbox src={checkbox} />Private room
           </Box>
           <NoteDescr>Have your own room and share some common spaces</NoteDescr>
-        </BoxWrapp>
+        </BoxWrap>
         <Icon>
           <Img src={proom} />
         </Icon>
@@ -86,12 +86,12 @@ export default props => (
 
     <Option>
       <OptionRow>
-        <BoxWrapp>
+        <BoxWrap>
           <Box>
-            <Chk src={chkbx} />Shared room
+            <Checkbox src={checkbox} />Shared room
           </Box>
           <NoteDescr>Stay in a shared space, like a common room</NoteDescr>
-        </BoxWrapp>
+        </BoxWrap>
         <Icon>
           <Img src={sroom} />
         </Icon>
