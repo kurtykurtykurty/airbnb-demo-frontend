@@ -7,7 +7,7 @@ const Card = styled.div`
   flex-direction: column;
   background: #ffffff;
   box-sizing: border-box;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   color: #383838;
   text-align: left;
@@ -28,7 +28,7 @@ const CardFooter = styled.div`
 `;
 
 const Caption = styled.span`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-weight: bold;
   font-size: 14px;
@@ -41,7 +41,7 @@ const Caption = styled.span`
 `;
 
 const Name = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 8px;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ const ImgCard = styled.img`
 `;
 
 const Price = styled.span`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 18px;
   font-weight: 200;

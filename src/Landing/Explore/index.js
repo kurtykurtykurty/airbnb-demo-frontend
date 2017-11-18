@@ -14,7 +14,7 @@ export default function() {
       <SectionShort name="Explore Airbnb">
         <ScrollWrapper>
           <div className="col-xs-6 col-md-5 col-lg-4">
-            <Card link="/homes" img={img1} imgm={img1m} title="Home" />
+            <Card link="/homes" img={img1} imgm={img1m} title="Homes" />
           </div>
           <div className="col-xs-6 col-md-5 col-lg-4">
             <Card img={img2} imgm={img2m} title="Experiences" />

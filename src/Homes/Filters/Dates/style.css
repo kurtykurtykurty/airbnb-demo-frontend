@@ -7,7 +7,7 @@
 }
 
 .CalendarDay_container {
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   border: 1px solid #d5d5d5;
   color: #383838;
   line-height: normal;
@@ -39,7 +39,7 @@
 }
 
 .DayPicker_weekHeader_li {
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: 14px;
   font-size: 12px;
   font-size: 100%;

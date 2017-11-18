@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link as ReactLink } from "react-router-dom";
+import { Link as RLink } from "react-router-dom";
 import cur from "./cur.svg";
 import logo from "./logo.svg";
 import face from "./face.svg";
@@ -26,7 +26,7 @@ const Select = styled.select`
   line-height: 21px;
   outline: none;
   width: 100%;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   color: #383838;
   appearance: none;
@@ -61,7 +61,7 @@ const Option = styled.option`
 
 const LinksTitle = styled.div`
   text-align: left;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 15px;
   color: #383838;
@@ -72,10 +72,10 @@ const LinksTitle = styled.div`
     font-size: 15px;
   `};
 `;
-const Link = styled(ReactLink)`
+const Link = styled(RLink)`
   display: block;
   text-align: left;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 15px;
   color: #636363;
@@ -125,7 +125,7 @@ const Right = styled.div`
 `;
 const Logo = styled.img`margin: 0px 15px 0px 0px;`;
 const Copyright = styled.span`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   color: #636363;
   font-size: 12px;
@@ -139,7 +139,7 @@ const Button = styled.button`
   text-align: center;
   color: #636363;
   background: #fff;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   font-size: 12px;
   border: 0;
   margin: 0px 8px 0 0;

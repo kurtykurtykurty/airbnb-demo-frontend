@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 16px;
   text-align: center;

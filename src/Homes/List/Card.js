@@ -6,7 +6,7 @@ const Card = styled.div`
   flex-direction: column;
   background: #ffffff;
   box-sizing: border-box;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   color: #383838;
   text-align: left;
@@ -44,7 +44,7 @@ const ImgCard = styled.img`
 `;
 
 const Reviews = styled.span`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: 14px;
   font-size: 12px;
   color: #383838;
@@ -53,7 +53,7 @@ const Reviews = styled.span`
 `;
 
 const Info = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: 18px;
   font-size: 15px;
   font-weight: 200;

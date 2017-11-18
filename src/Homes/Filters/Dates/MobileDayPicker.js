@@ -24,7 +24,7 @@ const Header = styled.div`
   padding-top: 16px;
 `;
 
-const CloseButton = styled.button`
+const Close = styled.button`
   background: url(${cross});
   background-position: center;
   background-repeat: no-repeat;
@@ -40,19 +40,21 @@ const Arrow = styled.img`
 `;
 
 const Title = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 14px;
   color: #383838;
 `;
 
 const Reset = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   color: #0f7276;
   line-height: normal;
   font-size: 14px;
   cursor: pointer;
 `;
+
+ 
 
 const Picker = styled.div`
   display: flex;
@@ -63,7 +65,7 @@ const Picker = styled.div`
 
 const CheckIn = styled.div`
   color: #0f7276;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 18px;
   margin-left: 8px;
@@ -80,7 +82,7 @@ const CheckOut = styled(CheckIn)`
 export default props => (
   <Wrapper>
     <Header>
-      <CloseButton onClick={props.onCancel} />
+      <Close onClick={props.onCancel} />
       <Title>When</Title>
       <Reset>Reset</Reset>
     </Header>

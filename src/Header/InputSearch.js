@@ -14,7 +14,7 @@ const SearchBorder = styled.div`
 const SearchInput = styled.input`
   width: 100%;
   border: none;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: 24px;
   font-size: 16px;
 `;

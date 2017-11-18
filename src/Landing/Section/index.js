@@ -5,7 +5,7 @@ import nextpage from "./next-page.png";
 import { media } from "../../media";
 
 export const SectionTitle = styled.h2`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   font-size: 24px;
   line-height: normal;
   color: #383838;
@@ -32,7 +32,7 @@ const TitleWrapper = styled.div`
   `};
 `;
 const SeeAll = styled.a`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: 24px;
   font-size: 12px;
   text-align: right;
@@ -113,7 +113,7 @@ const SectionLayoutShort = props => (
 
 export const Section = styled(SectionLayout)`
   margin-bottom: 40px;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
 
   ${media.md`
     margin-bottom: 48px;
@@ -122,7 +122,7 @@ export const Section = styled(SectionLayout)`
 
 export const SectionShort = styled(SectionLayoutShort)`
   margin-bottom: 40px;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
 
   ${media.md`
     margin-bottom: 48px;

@@ -20,7 +20,7 @@ const Page = styled.div`
   width: 32px;
   margin-left: 6px;
   margin-right: 6px;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 16px;
 `;
@@ -36,7 +36,7 @@ const CurrentPage = styled.div`
   width: 32px;
   margin-left: 6px;
   margin-right: 6px;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 16px;
 `;
@@ -60,7 +60,7 @@ const Numbar = styled.div`
 `;
 
 const Rentals = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 16px;
   text-align: center;
@@ -73,7 +73,7 @@ const Rentals = styled.div`
 `;
 
 const Advice = styled.div`
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 16px;
   text-align: center;

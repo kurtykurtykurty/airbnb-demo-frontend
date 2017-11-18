@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ReactLink } from "react-router-dom";
+import { Link as RLink } from "react-router-dom";
 import logo from "./logo.svg";
 import arr from "./arr.png";
 import styled from "styled-components";
@@ -51,7 +51,7 @@ const Button = styled.button`
   text-align: center;
   color: #383838;
   background: #fff;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   font-size: 14px;
   border: 0;
   margin: 8px;
@@ -64,7 +64,7 @@ const Arr = styled.img`
   display: none;`};
 `;
 
-const Link = styled(ReactLink)`text-decoration: none;`;
+const Link = styled(RLink)`text-decoration: none;`;
 
 export default function() {
   return (

@@ -14,8 +14,7 @@ const Filters = styled.div`
   z-index: 2;
 `;
 
-const ButtonWrapper = styled.div`
-  displa: flex;
+const DropdownWrapper = styled.div`
   padding-top: 12px;
   padding-bottom: 12px;
 `;
@@ -24,12 +23,12 @@ const ButtonRow = styled.div`display: flex;`;
 
 const Button = styled.button`
   box-sizing: border-box;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 14px;
-  color: ${props => (props.isPressed ? "white" : "#383838")};
+  color: ${props => (props.isActive ? "white" : "#383838")};
   padding: 7px 16px;
-  background: ${props => (props.isPressed ? "#008489" : "white")};
+  background: ${props => (props.isActive ? "#008489" : "white")};
   border-radius: 4px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   cursor: pointer;
@@ -46,7 +45,7 @@ const Field = styled.div`
   bottom: 0;
 `;
 
-class Dropdown extends React.Component {
+class Dropdowns extends React.Component {
   state = {
     isOpenRoomType: false,
     isOpenDates: false,
@@ -95,44 +94,40 @@ class Dropdown extends React.Component {
     this.closeFilters();
   };
 
-  getDatesButtonLabel = () => {
-    return this.state.isOpenDates ? "Check in — Check out " : "Dates";
-  };
-
   render() {
     return (
       <ButtonRow>
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             onClick={this.toggleOpenDates}
-            isPressed={this.state.isOpenDates}
+            isActive={this.state.isOpenDates}
           >
-            {this.getDatesButtonLabel()}
+            {getDatesButtonLabel(this.state.isOpenDates)}
           </Button>
           {this.state.isOpenDates && <Dates onCancel={this.onCancel} />}
-        </ButtonWrapper>
+        </DropdownWrapper>
 
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             onClick={this.toggleOpenGuests}
             isPressed={this.state.isOpenGuests}
           >
             Guests
           </Button>
-        </ButtonWrapper>
+        </DropdownWrapper>
 
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             className="hidden-xs hidden-sm hidden-md"
             onClick={this.toggleOpenRoomType}
-            isPressed={this.state.isOpenRoomType}
+            isActive={this.state.isOpenRoomType}
           >
             Room type
           </Button>
           {this.state.isOpenRoomType && <RoomType onCancel={this.onCancel} />}
-        </ButtonWrapper>
+        </DropdownWrapper>
 
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             className="hidden-xs hidden-sm hidden-md"
             onClick={this.toggleOpenPrice}
@@ -140,9 +135,9 @@ class Dropdown extends React.Component {
           >
             Price
           </Button>
-        </ButtonWrapper>
+        </DropdownWrapper>
 
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             className="hidden-xs hidden-sm hidden-md"
             isPressed={this.state.isOpenInstantBook}
@@ -150,16 +145,16 @@ class Dropdown extends React.Component {
           >
             Instant book
           </Button>
-        </ButtonWrapper>
+        </DropdownWrapper>
 
-        <ButtonWrapper>
+        <DropdownWrapper>
           <Button
             onClick={this.toggleOpenMoreFilters}
             isPressed={this.state.isOpenMoreFilters}
           >
             More filters
           </Button>
-        </ButtonWrapper>
+        </DropdownWrapper>
         {(this.state.isOpenRoomType ||
           this.state.isOpenDates ||
           this.state.isOpenGuests ||
@@ -171,11 +166,15 @@ class Dropdown extends React.Component {
   }
 }
 
+function getDatesButtonLabel(isOpenDates) {
+  return isOpenDates ? "Check in — Check out " : "Dates";
+}
+
 export default function(props) {
   return (
     <Filters>
       <div className="container">
-        <Dropdown />
+        <Dropdowns />
       </div>
     </Filters>
   );
