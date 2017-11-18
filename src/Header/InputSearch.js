@@ -25,7 +25,7 @@ export default function() {
   return (
     <SearchBorder>
       <Icon src={SearchIcon} />
-      <SearchInput type="text" />
+      <SearchInput type="text" placeholder="Try “Miami”" />
     </SearchBorder>
   );
 }

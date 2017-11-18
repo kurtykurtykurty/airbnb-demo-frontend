@@ -46,3 +46,35 @@
   text-align: center;
   color: #636363;
 }
+
+/* vertical */
+
+.DayPicker_transitionContainer__vertical {
+  box-shadow: none !important;
+  height: 610px !important;
+}
+
+.DayPickerNavigation_container__vertical {
+  display: none;
+}
+
+.CalendarMonthGrid__vertical_scrollable {
+  overflow-y: hidden;
+}
+
+.DayPicker_transitionContainer__verticalScrollable {
+  overflow-y: hidden;
+}
+
+.CalendarMonth_caption__verticalScrollable {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.DayPicker_transitionContainer__vertical .CalendarMonth_table {
+  margin-top: 0px;
+}
+
+.DayPicker_transitionContainer__vertical .CalendarDay_container {
+  font-size: 12px;
+}

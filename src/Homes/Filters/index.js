@@ -93,6 +93,10 @@ class Dropdown extends React.Component {
     this.closeFilters();
   };
 
+  getDatesButtonLabel = () => {
+    return this.state.isOpenDates ? "Check in — Check out " : "Dates";
+  };
+
   render() {
     return (
       <ButtonRow>
@@ -101,7 +105,7 @@ class Dropdown extends React.Component {
             onClick={this.toggleOpenDates}
             isPressed={this.state.isOpenDates}
           >
-            Dates
+            {this.getDatesButtonLabel()}
           </Button>
           {this.state.isOpenDates && <Dates onCancel={this.onCancel} />}
         </ButtonWraper>
