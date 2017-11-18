@@ -54,48 +54,54 @@ const Img = styled.img`
 
 const Icon = styled.div``;
 
+const Content = styled.div`padding: 10px 16px 0 16px;`;
+
 export default props => (
-  <DropContainer>
-    <Option>
-      <OptionRow>
-        <BoxWrap>
-          <Box>
-            <Checkbox src={checkbox} />Entrie Home
-          </Box>
-          <NoteDescr> Have a place to yourself</NoteDescr>
-        </BoxWrap>
-        <Icon>
-          <Img src={home} />
-        </Icon>
-      </OptionRow>
-    </Option>
+  <DropContainer {...props}>
+    <Content>
+      <Option>
+        <OptionRow>
+          <BoxWrap>
+            <Box>
+              <Checkbox src={checkbox} />Entrie Home
+            </Box>
+            <NoteDescr> Have a place to yourself</NoteDescr>
+          </BoxWrap>
+          <Icon>
+            <Img src={home} />
+          </Icon>
+        </OptionRow>
+      </Option>
 
-    <Option>
-      <OptionRow>
-        <BoxWrap>
-          <Box>
-            <Checkbox src={checkbox} />Private room
-          </Box>
-          <NoteDescr>Have your own room and share some common spaces</NoteDescr>
-        </BoxWrap>
-        <Icon>
-          <Img src={proom} />
-        </Icon>
-      </OptionRow>
-    </Option>
+      <Option>
+        <OptionRow>
+          <BoxWrap>
+            <Box>
+              <Checkbox src={checkbox} />Private room
+            </Box>
+            <NoteDescr>
+              Have your own room and share some common spaces
+            </NoteDescr>
+          </BoxWrap>
+          <Icon>
+            <Img src={proom} />
+          </Icon>
+        </OptionRow>
+      </Option>
 
-    <Option>
-      <OptionRow>
-        <BoxWrap>
-          <Box>
-            <Checkbox src={checkbox} />Shared room
-          </Box>
-          <NoteDescr>Stay in a shared space, like a common room</NoteDescr>
-        </BoxWrap>
-        <Icon>
-          <Img src={sroom} />
-        </Icon>
-      </OptionRow>
-    </Option>
+      <Option>
+        <OptionRow>
+          <BoxWrap>
+            <Box>
+              <Checkbox src={checkbox} />Shared room
+            </Box>
+            <NoteDescr>Stay in a shared space, like a common room</NoteDescr>
+          </BoxWrap>
+          <Icon>
+            <Img src={sroom} />
+          </Icon>
+        </OptionRow>
+      </Option>
+    </Content>
   </DropContainer>
 );

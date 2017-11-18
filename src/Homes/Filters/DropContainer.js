@@ -13,9 +13,9 @@ const Container = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
+  z-index: 2;
+  top: calc(100% - 4px);
 `;
-
-const Options = styled.div`padding: 10px 16px 0 16px;`;
 
 const Button = styled.button`
   font-family: CircularAir;
@@ -29,17 +29,18 @@ const Button = styled.button`
   background: #fff;
 `;
 
-const CButton = styled(Button)`color: #636363;`;
+const CancelButton = styled(Button)`color: #636363;`;
 
 const Footer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export default props => (
-  <Container>
-    <Options>{props.children}</Options>
+  <Container className={props.className}>
+    {props.children}
     <Footer>
-      <CButton>Cancel</CButton>
+      <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
       <Button>Apply</Button>
     </Footer>
   </Container>

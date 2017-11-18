@@ -1,0 +1,48 @@
+.DayPicker__horizontal {
+  box-shadow: none !important;
+}
+
+.CalendarMonth_table {
+  margin-top: 6px;
+}
+
+.CalendarDay_container {
+  font-family: CircularAir;
+  border: 1px solid #d5d5d5;
+  color: #383838;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.CalendarDay__blocked_calendar {
+  background: transparent;
+  border: 1px solid #d5d5d5;
+  color: #cbcbcb;
+}
+
+.DayPickerNavigation_svg__horizontal {
+  fill: #767676;
+}
+
+.DayPickerNavigation_button__default {
+  width: 40px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid rgba(118, 118, 118, 0.3);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.DayPicker_weekHeader {
+  color: #636363;
+}
+
+.DayPicker_weekHeader_li {
+  font-family: CircularAir;
+  line-height: 14px;
+  font-size: 12px;
+  font-size: 100%;
+  text-align: center;
+  color: #636363;
+}

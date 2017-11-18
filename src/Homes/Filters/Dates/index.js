@@ -1,28 +1,41 @@
 import React from "react";
+import "./style.css";
 import styled from "styled-components";
-import {
-  DateRangePicker,
-  SingleDatePicker,
-  DayPickerRangeController
-} from "react-dates";
+import { DayPickerRangeController } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
+import DropContainer from "../DropContainer";
 
-const DateWrapper = styled.div`
-  display: flex;
-  position: absolute;
-  margin-top: 200px;
+const Wrapper = styled(DropContainer)`
+  width: 667px;
+  z-index: 5;
 `;
 
-export default props => (
-  <DateWrapper>
-    <DateRangePicker
-      startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-      endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-      onDatesChange={({ startDate, endDate }) =>
-        this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-      focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-      onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-    />
-  </DateWrapper>
-);
+const Content = styled.div`
+  padding-top: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+`;
+
+export default class Filter extends React.Component {
+  onOutsideClick = () => {};
+  onPrevMonthClick = () => {};
+  onNextMonthClick = () => {};
+
+  render() {
+    return (
+      <Wrapper {...this.props}>
+        <Content>
+          <DayPickerRangeController
+            hideKeyboardShortcutsPanel
+            initialVisibleMonth={null}
+            numberOfMonths={2}
+            onOutsideClick={this.onOutsideClick}
+            onPrevMonthClick={this.onPrevMonthClick}
+            onNextMonthClick={this.onNextMonthClick}
+          />
+        </Content>
+      </Wrapper>
+    );
+  }
+}
