@@ -4,14 +4,14 @@ import { DayPickerRangeController } from "react-dates";
 import cross from "./cross.svg";
 import arr from "./arr.svg";
 
-const Wraper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
   background: white;
-  z-index: 500;
+  z-index: 5;
 `;
 
 const Header = styled.div`
@@ -78,7 +78,7 @@ const CheckOut = styled(CheckIn)`
 `;
 
 export default props => (
-  <Wraper>
+  <Wrapper>
     <Header>
       <CloseButton onClick={props.onCancel} />
       <Title>When</Title>
@@ -90,5 +90,5 @@ export default props => (
       <CheckOut>Check-out</CheckOut>
     </Picker>
     <DayPickerRangeController {...props} />
-  </Wraper>
+  </Wrapper>
 );
