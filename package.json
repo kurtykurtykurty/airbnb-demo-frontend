@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "now": "^8.5.1",
+    "typescript": "^2.6.1",
     "typescript-styled-plugin": "^0.2.0"
   }
 }

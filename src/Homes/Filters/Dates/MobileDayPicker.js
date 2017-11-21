@@ -54,8 +54,6 @@ const Reset = styled.div`
   cursor: pointer;
 `;
 
- 
-
 const Picker = styled.div`
   display: flex;
   flex-direction: row;

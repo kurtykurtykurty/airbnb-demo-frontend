@@ -45,6 +45,10 @@ const Field = styled.div`
   bottom: 0;
 `;
 
+function getDatesButtonLabel(isOpenDates) {
+  return isOpenDates ? "Check in — Check out " : "Dates";
+}
+
 class Dropdowns extends React.Component {
   state = {
     isOpenRoomType: false,
@@ -164,10 +168,6 @@ class Dropdowns extends React.Component {
       </ButtonRow>
     );
   }
-}
-
-function getDatesButtonLabel(isOpenDates) {
-  return isOpenDates ? "Check in — Check out " : "Dates";
 }
 
 export default function(props) {
