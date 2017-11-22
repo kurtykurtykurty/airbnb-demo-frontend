@@ -3,7 +3,7 @@ import styled from "styled-components";
 import RoomType from "./RoomType";
 import Dates from "./Dates";
 
-const Filters = styled.div`
+const FiltersWrapper = styled.div`
   width: 100%;
   border-bottom: 1px solid #eaebf0;
   border-top: 1px solid #eaebf0;
@@ -19,7 +19,9 @@ const DropdownWrapper = styled.div`
   padding-bottom: 12px;
 `;
 
-const ButtonRow = styled.div`display: flex;`;
+const ButtonRow = styled.div`
+  display: flex;
+`;
 
 const Button = styled.button`
   box-sizing: border-box;
@@ -45,126 +47,111 @@ const Field = styled.div`
   bottom: 0;
 `;
 
-function getDatesButtonLabel(isOpenDates) {
-  return isOpenDates ? "Check in — Check out " : "Dates";
+function getDatesButtonLabel(state) {
+  const isActive = state.openedFilter === "Dates";
+  return isActive ? "Check in — Check out " : "Dates";
 }
 
-class Dropdowns extends React.Component {
+const DropdownLogic = props => {
+  const isActive = props.openedFilter === props.id;
+
+  const openFilter = function() {
+    return props.handleOpen(props.id);
+  };
+
+  return (
+    <div className={props.className}>
+      <Button isActive={isActive} onClick={openFilter}>
+        {props.label}
+      </Button>
+      {isActive && <div>{props.children}</div>}
+    </div>
+  );
+};
+
+const Dropdown = styled(DropdownLogic)`
+  padding-top: 12px;
+  padding-bottom: 12px;
+`;
+
+class Filters extends React.Component {
   state = {
-    isOpenRoomType: false,
-    isOpenDates: false,
-    isOpenGuests: false,
-    isOpenPrice: false,
-    isOpenInstantBook: false,
-    isOpenMoreFilters: false
+    openedFilter: null
   };
 
-  closeFilters = () => {
-    this.setState({
-      isOpenRoomType: false,
-      isOpenDates: false,
-      isOpenGuests: false,
-      isOpenPrice: false,
-      isOpenInstantBook: false,
-      isOpenMoreFilters: false
-    });
+  openFilter = key => {
+    this.setState({ openedFilter: key });
   };
 
-  toggleOpenRoomType = () => {
-    this.setState({ isOpenRoomType: true });
-  };
-
-  toggleOpenDates = () => {
-    this.setState({ isOpenDates: true });
-  };
-
-  toggleOpenGuests = () => {
-    this.setState({ isOpenGuests: true });
-  };
-
-  toggleOpenPrice = () => {
-    this.setState({ isOpenPrice: true });
-  };
-
-  toggleOpenInstantBook = () => {
-    this.setState({ isOpenInstantBook: true });
-  };
-
-  toggleOpenMoreFilters = () => {
-    this.setState({ isOpenMoreFilters: true });
+  closeFilter = () => {
+    this.setState({ openedFilter: null });
   };
 
   onCancel = () => {
-    this.closeFilters();
+    this.closeFilter();
   };
 
   render() {
     return (
       <ButtonRow>
-        <DropdownWrapper>
-          <Button
-            onClick={this.toggleOpenDates}
-            isActive={this.state.isOpenDates}
-          >
-            {getDatesButtonLabel(this.state.isOpenDates)}
-          </Button>
-          {this.state.isOpenDates && <Dates onCancel={this.onCancel} />}
-        </DropdownWrapper>
+        <Dropdown
+          id="Dates"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+          label={getDatesButtonLabel(this.state)}
+        >
+          <Dates onCancel={this.onCancel} />
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
 
-        <DropdownWrapper>
-          <Button
-            onClick={this.toggleOpenGuests}
-            isPressed={this.state.isOpenGuests}
-          >
-            Guests
-          </Button>
-        </DropdownWrapper>
+        <Dropdown
+          id="Guests"
+          label="Guests"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+        >
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
 
-        <DropdownWrapper>
-          <Button
-            className="hidden-xs hidden-sm hidden-md"
-            onClick={this.toggleOpenRoomType}
-            isActive={this.state.isOpenRoomType}
-          >
-            Room type
-          </Button>
-          {this.state.isOpenRoomType && <RoomType onCancel={this.onCancel} />}
-        </DropdownWrapper>
+        <Dropdown
+          className="hidden-xs hidden-sm hidden-md"
+          id="RoomType"
+          label="Room Type"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+        >
+          <RoomType onCancel={this.onCancel} />
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
 
-        <DropdownWrapper>
-          <Button
-            className="hidden-xs hidden-sm hidden-md"
-            onClick={this.toggleOpenPrice}
-            isPressed={this.state.isOpenPrice}
-          >
-            Price
-          </Button>
-        </DropdownWrapper>
+        <Dropdown
+          className="hidden-xs hidden-sm hidden-md"
+          id="Price"
+          label="Price"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+        >
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
 
-        <DropdownWrapper>
-          <Button
-            className="hidden-xs hidden-sm hidden-md"
-            isPressed={this.state.isOpenInstantBook}
-            onClick={this.toggleOpenInstantBook}
-          >
-            Instant book
-          </Button>
-        </DropdownWrapper>
+        <Dropdown
+          className="hidden-xs hidden-sm hidden-md"
+          id="Instant book"
+          label="Instant book"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+        >
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
 
-        <DropdownWrapper>
-          <Button
-            onClick={this.toggleOpenMoreFilters}
-            isPressed={this.state.isOpenMoreFilters}
-          >
-            More filters
-          </Button>
-        </DropdownWrapper>
-        {(this.state.isOpenRoomType ||
-          this.state.isOpenDates ||
-          this.state.isOpenGuests ||
-          this.state.isOpenInstantBook ||
-          this.state.isOpenMoreFilters ||
-          this.state.isOpenPrice) && <Field onClick={this.closeFilters} />}
+        <Dropdown
+          id="More filters"
+          label="More filters"
+          handleOpen={this.openFilter}
+          openedFilter={this.state.openedFilter}
+        >
+          <Field onClick={this.closeFilter} />
+        </Dropdown>
       </ButtonRow>
     );
   }
@@ -172,10 +159,10 @@ class Dropdowns extends React.Component {
 
 export default function(props) {
   return (
-    <Filters>
+    <FiltersWrapper>
       <div className="container">
-        <Dropdowns />
+        <Filters />
       </div>
-    </Filters>
+    </FiltersWrapper>
   );
 }
