@@ -14,11 +14,6 @@ const FiltersWrapper = styled.div`
   z-index: 2;
 `;
 
-const DropdownWrapper = styled.div`
-  padding-top: 12px;
-  padding-bottom: 12px;
-`;
-
 const ButtonRow = styled.div`
   display: flex;
 `;
