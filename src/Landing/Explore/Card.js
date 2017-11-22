@@ -1,6 +1,7 @@
 import React from "react";
+import { Link as RLink } from "react-router-dom";
 import styled from "styled-components";
-import { media } from "../media.js";
+import { media } from "../../media";
 
 const Card = styled.div`
   background: #ffffff;
@@ -19,7 +20,7 @@ const Card = styled.div`
 const TitleCard = styled.h2`
   line-height: normal;
   text-align: left;
-  font-family: CircularAir;
+  font-family: CircularAir, sans-serif;
   font-size: 12px;
   font-weight: bold;
   padding: 0px 0px 0px 12px;
@@ -48,10 +49,14 @@ const ImgCardM = styled.img`
   `};
 `;
 
+const Link = styled(RLink)`text-decoration: none;`;
+
 export default props => (
-  <Card>
-    <ImgCard src={props.img} />
-    <ImgCardM src={props.imgm} />
-    <TitleCard>{props.title}</TitleCard>
-  </Card>
+  <Link to={props.link || ""}>
+    <Card>
+      <ImgCard src={props.img} />
+      <ImgCardM src={props.imgm} />
+      <TitleCard>{props.title}</TitleCard>
+    </Card>
+  </Link>
 );

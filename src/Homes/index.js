@@ -1,55 +1,35 @@
 import React from "react";
-import { NextPage, ScrollWrapper, Section } from "../Section";
-import Card from "./Card";
-import img1 from "./img1.png";
-import img2 from "./img2.png";
-import img3 from "./img3.png";
-import star from "./star.png";
+import { Route } from "react-router-dom";
+import styled from "styled-components";
+import List from "./List";
+import Filters from "./Filters";
+import { media } from "../media";
+import MapLocation from "./MapLocation";
+import Footer from "./List/Footer";
 
-export default function() {
-  return (
-    <div className="container">
-      <Section name="Homes">
-        <ScrollWrapper>
-          <div className="col-xs-8 col-md-5 col-lg-4">
-            <Card
-              img={img1}
-              price="$82"
-              caption="La Salentina, see, nature & relax"
-              info="Entire house · 9 beds"
-              star={star}
-              reviews="97 · Superhost"
-            />
-          </div>
+const MapWrapper = styled.div`
+  position: fixed;
+  top: 140px;
+  bottom: 0;
+  right: 0;
+  left: calc(50% + 162px);
 
-          {/* ВТОРАЯ КАРТА */}
+  ${media.xl`
+    left: calc(50% + 198px);
+  `};
 
-          <div className="col-xs-8 col-md-5 col-lg-4">
-            <Card
-              img={img2}
-              price="$82"
-              caption="Your private 3 bedr. riad and exclusi…"
-              info="Entire house · 5 beds"
-              star={star}
-              reviews="161 · Superhost"
-            />
-          </div>
+  ${"" /* ${media.lg`
+    display:
+  `}; */};
+`;
 
-          {/* ТРЕТЬЯ КАРТА */}
-
-          <div className="col-xs-8 col-md-5 col-lg-4">
-            <Card
-              img={img3}
-              price="$200"
-              caption="Dreamy Tropical Tree House"
-              info="Entire treehouse · 1 bed"
-              star={star}
-              reviews="364 · Superhost"
-            />
-          </div>
-        </ScrollWrapper>
-        <NextPage />
-      </Section>
-    </div>
-  );
-}
+export default () => (
+  <div>
+    <Filters />
+    <Route path="/homes" exact component={List} />
+    <MapWrapper className="hidden-xs hidden-sm hidden-md">
+      <MapLocation center={{ lat: 46.55189574, lng: 5.29309273 }} zoom={15} />
+    </MapWrapper>
+    <Footer />
+  </div>
+);

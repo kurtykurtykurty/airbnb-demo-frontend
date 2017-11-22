@@ -4,8 +4,14 @@
   "private": true,
   "dependencies": {
     "flexboxgrid2": "^7.0.0-alpha12",
+    "google-map-react": "^0.25.0",
     "react": "^16.0.0",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^15.1.0",
     "react-dom": "^16.0.0",
+    "react-responsive": "^4.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "styled-components": "^2.2.3"
   },
@@ -16,6 +22,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "now": "^8.5.1",
+    "typescript": "^2.6.1",
     "typescript-styled-plugin": "^0.2.0"
   }
 }
