@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import RoomType from "./RoomType";
 import Dates from "./Dates";
+import Guests from "./Guests";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -105,6 +106,8 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
+          {" "}
+          <Guests onCancel={this.onCancel} />
           <Field onClick={this.closeFilter} />
         </Dropdown>
 

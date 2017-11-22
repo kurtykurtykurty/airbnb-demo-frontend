@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 3</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3124 -3635)">
+<g id="Group 3" opacity="0.5">
+<g id="minus">
+<g id="Rectangle-path">
+<use xlink:href="#path0_fill" transform="translate(3135.2 3650.2)" fill="#008489"/>
+</g>
+</g>
+<g id="Rectangle 3">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(3124 3635)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path2_stroke_2x" transform="translate(3124 3635)" fill="#008489"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0.8C 0 0.358172 0.358172 0 0.8 0L 8.8 0C 9.24183 0 9.6 0.358172 9.6 0.8C 9.6 1.24183 9.24183 1.6 8.8 1.6L 0.8 1.6C 0.358172 1.6 0 1.24183 0 0.8Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 16C 0 7.16344 7.16344 0 16 0C 24.8366 0 32 7.16344 32 16C 32 24.8366 24.8366 32 16 32C 7.16344 32 0 24.8366 0 16Z"/>
+<path id="path2_stroke_2x" d="M 16 31C 7.71573 31 1 24.2843 1 16L -1 16C -1 25.3888 6.61116 33 16 33L 16 31ZM 31 16C 31 24.2843 24.2843 31 16 31L 16 33C 25.3888 33 33 25.3888 33 16L 31 16ZM 16 1C 24.2843 1 31 7.71573 31 16L 33 16C 33 6.61116 25.3888 -1 16 -1L 16 1ZM 16 -1C 6.61116 -1 -1 6.61116 -1 16L 1 16C 1 7.71573 7.71573 1 16 1L 16 -1Z"/>
+</defs>
+</svg>
