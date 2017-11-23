@@ -63,7 +63,7 @@ const Content = styled.div`
 
 const Save = styled.div`
   width: 100%;
-  ${"" /* height: 48px; */} background: #ff5a5f;
+  background: #ff5a5f;
   border-radius: 4px;
   font-family: CircularAir;
   line-height: normal;
@@ -72,11 +72,15 @@ const Save = styled.div`
   text-align: center;
   vertical-align: middle;
   color: #fff;
+  cursor: pointer;
   padding-bottom: 13px;
   padding-top: 12px;
 `;
 
 const Footer = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   box-shadow: 0px -1px 0px #d5d5d5;
   align-items: center;
   padding: 16px 8px;

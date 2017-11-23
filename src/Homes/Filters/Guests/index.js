@@ -18,7 +18,7 @@ const Content = styled.div`
 export default props => (
   <div>
     <div className="hidden-xs hidden-sm ">
-      <DropContainerGuests {...props}>
+      <DropContainerGuests>
         <Content>
           <Option ageName="Adults" />
           <Option ageName="Children" ageDescr="Ages 2 — 12" />
@@ -27,7 +27,7 @@ export default props => (
       </DropContainerGuests>
     </div>
     <div className="hidden-md hidden-lg hidden-xl">
-      <MobileGuests />
+      <MobileGuests onCancel={props.onCancel} />
     </div>
   </div>
 );
