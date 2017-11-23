@@ -29,11 +29,14 @@ const Button = styled.button`
   background: #fff;
 `;
 
-const CancelButton = styled(Button)`color: #636363;`;
+const CancelButton = styled(Button)`
+  color: #636363;
+`;
 
 const Footer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export default props => (

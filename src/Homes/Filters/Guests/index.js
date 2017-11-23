@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import DropContainer from "../DropContainer";
 import Option from "./Option";
+import MobileGuests from "./MobileGuests";
 
 const DropContainerGuests = styled(DropContainer)`
   width: 326px;
-  height: 291px;
 `;
 
 const Content = styled.div`
@@ -16,11 +16,18 @@ const Content = styled.div`
 `;
 
 export default props => (
-  <DropContainerGuests {...props}>
-    <Content>
-      <Option ageName="Adaults" />
-      <Option ageName="Children" ageDescr="Ages 2 — 12" />
-      <Option ageName="Infants" ageDescr="Under 2" />
-    </Content>
-  </DropContainerGuests>
+  <div>
+    <div className="hidden-xs hidden-sm ">
+      <DropContainerGuests {...props}>
+        <Content>
+          <Option ageName="Adults" />
+          <Option ageName="Children" ageDescr="Ages 2 — 12" />
+          <Option ageName="Infants" ageDescr="Under 2" />
+        </Content>
+      </DropContainerGuests>
+    </div>
+    <div className="hidden-md hidden-lg hidden-xl">
+      <MobileGuests />
+    </div>
+  </div>
 );

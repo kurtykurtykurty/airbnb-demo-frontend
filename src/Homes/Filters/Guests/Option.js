@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "../../../media";
 
 import minus from "./minus.svg";
 import plus from "./plus.svg";
@@ -14,17 +15,25 @@ const Option = styled.div`
 const Age = styled.div`
   font-family: CircularAir;
   line-height: normal;
-  font-size: 20px;
+  font-size: 18px;
   color: #383838;
+
+  ${media.md`
+    font-size: 20px; 
+  `};
 `;
 
 const AgeDescription = styled.div`
   font-family: CircularAir;
   line-height: normal;
-  font-size: 16px;
   font-weight: 200;
   color: #383838;
   margin-top: 7px;
+  font-size: 14px;
+
+  ${media.md`
+    font-size: 16px;
+  `};
 `;
 
 const AgeWrapper = styled.div`
