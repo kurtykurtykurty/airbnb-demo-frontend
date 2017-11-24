@@ -4,6 +4,7 @@ import RoomType from "./RoomType";
 import Dates from "./Dates";
 import Guests from "./Guests";
 import InstantBook from "./InstantBook";
+import MoreFilters from "./MoreFilters";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -107,7 +108,6 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          {" "}
           <Guests onCancel={this.onCancel} />
           <Field onClick={this.closeFilter} />
         </Dropdown>
@@ -130,7 +130,7 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <Field onCancel={this.closeFilter} />
+          <Field onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
@@ -150,6 +150,7 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
+          <MoreFilters />
           <Field onClick={this.closeFilter} />
         </Dropdown>
       </ButtonRow>
