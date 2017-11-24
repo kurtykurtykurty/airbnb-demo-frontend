@@ -46,6 +46,7 @@ const CheckBox = styled.button`
   height: 40px;
   border: none;
   background: url(${checkbox});
+  cursor: pointer;
 `;
 
 export default props => (
