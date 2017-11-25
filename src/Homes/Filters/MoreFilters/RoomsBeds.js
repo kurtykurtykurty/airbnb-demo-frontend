@@ -8,14 +8,6 @@ const Filter = styled.div`
   width: 326px;
 `;
 
-const FilterTitle = styled.div`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 20px;
-  color: #383838;
-  text-align: left;
-`;
-
 const FilterBody = styled.div`
   display: flex;
   flex-direction: column;
@@ -71,7 +63,6 @@ const Plus = styled.button`
 
 export default props => (
   <Filter>
-    <FilterTitle>{props.title}</FilterTitle>
     <FilterBody>
       <Row>
         <Label>{props.label1}</Label>

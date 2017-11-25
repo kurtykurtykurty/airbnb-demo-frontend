@@ -5,14 +5,6 @@ import checkbox from "./chkbx.svg";
 import arrow from "./arrowdown.svg";
 
 const Filter = styled.div`
-  ${"" /* width: 495px; */} text-align: left;
-`;
-
-const FilterTitle = styled.div`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 20px;
-  color: #383838;
   text-align: left;
 `;
 
@@ -74,7 +66,6 @@ const Container = styled.div`
 
 export default props => (
   <Filter>
-    <FilterTitle>{props.title}</FilterTitle>
     <Container>{props.children}</Container>
     <SeeAll>
       {props.seeall}

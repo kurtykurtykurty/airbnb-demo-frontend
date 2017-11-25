@@ -44,7 +44,7 @@ export default props => (
     {props.children}
     <Footer>
       <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
-      <Button>Apply</Button>
+      <Button onClick={props.onApply}>Apply</Button>
     </Footer>
   </Container>
 );

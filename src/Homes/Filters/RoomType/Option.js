@@ -12,7 +12,7 @@ const Flag = styled.img`
 const Option = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 24px;
 `;
 
 const Box = styled.div`
@@ -40,7 +40,9 @@ const OptionRow = styled.div`
   justify-content: space-between;
 `;
 
-const NoteDescr = styled.div`padding-left: 36px;`;
+const NoteDescr = styled.div`
+  padding-left: 36px;
+`;
 
 const Img = styled.img`
   height: 32px;

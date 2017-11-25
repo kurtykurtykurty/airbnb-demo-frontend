@@ -33,11 +33,6 @@ const Close = styled.button`
   border: none;
 `;
 
-const Arrow = styled.img`
-  margin-left: 8px;
-  margin-right: 8px;
-`;
-
 const Title = styled.div`
   font-family: CircularAir, sans-serif;
   line-height: normal;

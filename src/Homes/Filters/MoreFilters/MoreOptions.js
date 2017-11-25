@@ -5,14 +5,6 @@ import checkbox from "./slidechkbx.svg";
 
 const Filter = styled.div``;
 
-const FilterTitle = styled.div`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 20px;
-  color: #383838;
-  text-align: left;
-`;
-
 const FilterBody = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,7 +55,6 @@ const CheckBox = styled.button`
 
 export default props => (
   <Filter>
-    <FilterTitle>{props.title}</FilterTitle>
     <FilterBody>
       <Row>
         <Label>

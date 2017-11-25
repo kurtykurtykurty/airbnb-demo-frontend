@@ -19,6 +19,7 @@ const FiltersWrapper = styled.div`
 
 const ButtonRow = styled.div`
   display: flex;
+  position: relative;
 `;
 
 const Button = styled.button`
@@ -36,7 +37,7 @@ const Button = styled.button`
   z-index: 42;
 `;
 
-const Field = styled.div`
+const CloseField = styled.div`
   position: fixed;
   background: rgba(0, 0, 0, 0);
   left: 0;
@@ -45,9 +46,25 @@ const Field = styled.div`
   bottom: 0;
 `;
 
+const formatDate = date => (date ? date.format("MMM Do") : "null");
+
 function getDatesButtonLabel(state) {
   const isActive = state.openedFilter === "Dates";
-  return isActive ? "Check in — Check out " : "Dates";
+  const { selectedStartDate, selectedEndDate } = state;
+
+  if (isActive) {
+    return `${
+      selectedStartDate ? selectedStartDate.format("MMM Do") : "Check in "
+    } — 
+      ${selectedEndDate ? selectedEndDate.format("MMM Do") : "Check out"}`;
+  }
+
+  const { startDate, endDate } = state;
+  if (startDate && endDate) {
+    return `${startDate.format("MMM Do")} — ${endDate.format("MMM Do")}`;
+  }
+
+  return "Date";
 }
 
 const DropdownLogic = props => {
@@ -68,13 +85,19 @@ const DropdownLogic = props => {
 };
 
 const Dropdown = styled(DropdownLogic)`
-  padding-top: 12px;
+  ${"" /* position: relative; */} padding-top: 12px;
   padding-bottom: 12px;
 `;
 
 class Filters extends React.Component {
   state = {
-    openedFilter: null
+    openedFilter: null,
+    dropdown: null,
+    startDate: null,
+    endDate: null,
+    selectedStartDate: null,
+    selectedEndDate: null,
+    focusedInput: "startDate"
   };
 
   openFilter = key => {
@@ -89,7 +112,33 @@ class Filters extends React.Component {
     this.closeFilter();
   };
 
+  onCancelDates = () => {
+    this.setState({
+      selectedStartDate: null,
+      selectedEndDate: null,
+      startDate: null,
+      endDate: null
+    });
+    this.closeFilter();
+  };
+
+  onApplyDates = () => {
+    this.setState({
+      startDate: this.state.selectedStartDate,
+      endDate: this.state.selectedEndDate
+    });
+    this.closeFilter();
+  };
+
   render() {
+    const isOpenMoreFilters = this.state.openedFilter === "Morefilters";
+    console.clear();
+    console.log("focusedInput", this.state.focusedInput);
+    console.log("selectedStartDate", formatDate(this.state.selectedStartDate));
+    console.log("selectedEndDate", formatDate(this.state.selectedEndDate));
+    console.log("startDate", formatDate(this.state.startDate));
+    console.log("endDate", formatDate(this.state.endDate));
+
     return (
       <ButtonRow>
         <Dropdown
@@ -98,8 +147,23 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
           label={getDatesButtonLabel(this.state)}
         >
-          <Dates onCancel={this.onCancel} />
-          <Field onClick={this.closeFilter} />
+          <Dates
+            startDate={this.state.selectedStartDate}
+            endDate={this.state.selectedEndDate}
+            focusedInput={this.state.focusedInput}
+            onFocusChange={focusedInput =>
+              this.setState({ focusedInput: focusedInput || "startDate" })
+            }
+            onDatesChange={({ startDate, endDate }) => {
+              this.setState({
+                selectedStartDate: startDate,
+                selectedEndDate: endDate
+              });
+            }}
+            onCancel={this.onCancelDates}
+            onApply={this.onApplyDates}
+          />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
@@ -109,7 +173,7 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
         >
           <Guests onCancel={this.onCancel} />
-          <Field onClick={this.closeFilter} />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
@@ -120,7 +184,7 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
         >
           <RoomType onCancel={this.onCancel} />
-          <Field onClick={this.closeFilter} />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
@@ -130,29 +194,29 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <Field onClick={this.closeFilter} />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
           className="hidden-xs hidden-sm hidden-md"
-          id="Instant book"
+          id="Instantbook"
           label="Instant book"
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
           <InstantBook onCancel={this.onCancel} />
-          <Field onClick={this.closeFilter} />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
-          id="More filters"
+          id="Morefilters"
           label="More filters"
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <MoreFilters />
-          <Field onClick={this.closeFilter} />
+          <CloseField onClick={this.closeFilter} />
         </Dropdown>
+        {isOpenMoreFilters && <MoreFilters onCancel={this.onCancel} />}
       </ButtonRow>
     );
   }
