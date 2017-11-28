@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { CheckBoxSlider } from "../../../UI";
-import checkbox from "./slidechkbx.svg";
 
 const Filter = styled.div``;
 
@@ -43,14 +42,6 @@ const More = styled.a`
   font-size: 16px;
   font-weight: 200;
   color: #0f7276;
-  cursor: pointer;
-`;
-
-const CheckBox = styled.button`
-  width: 64px;
-  height: 40px;
-  border: none;
-  background: url(${checkbox});
   cursor: pointer;
 `;
 

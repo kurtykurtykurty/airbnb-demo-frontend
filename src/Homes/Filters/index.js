@@ -262,7 +262,6 @@ class Filters extends React.Component {
         >
           <Guests
             data={this.state.guests}
-            onGuestChanged={this.onGuestChanged}
             onFilterChanged={data => this.onFilterChanged("guests", data)}
             onCancel={this.onCancel}
           />
@@ -331,7 +330,7 @@ class Filters extends React.Component {
         {isOpenMoreFilters && (
           <MoreFilters
             // RoomeType props
-            data={this.state.roomtype}
+            data={this.state}
             onRoomTypeChanged={this.onRoomTypeChanged}
             onCancel={this.onCancel}
             //Price props
@@ -340,7 +339,7 @@ class Filters extends React.Component {
             max={this.state.price.max}
             onPriceChanged={this.onPriceChanged}
             //Beds Rooms
-            onBedsRoomsChanged={this.onBedsRoomsChanged}
+            onFilterChanged={this.onFilterChanged}
             dataRoomsBeds={this.state.roomsbeds}
             //More Options
             onMoreOptionsChanged={this.onMoreOptionsChanged}

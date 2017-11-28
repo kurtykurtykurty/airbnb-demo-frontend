@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Minus, Plus } from "../../../UI";
-import { media } from "../../../media";
 
 const CountNumber = styled.div`
   line-height: normal;
@@ -24,14 +23,22 @@ const Counter = styled.div`
   line-height: normal;
 `;
 
+function bound(value, min, max) {
+  return value < min ? min : value && value > max ? max : value;
+}
+
 export default function(props) {
   const { value, min, max, onChange } = props;
 
+  const changeValue = delta => {
+    onChange(bound(value + delta, min, max));
+  };
+
   return (
     <Counter>
-      <Minus onClick={() => onChange(value - 1)} isActive={value > min} />
+      <Minus onClick={() => changeValue(-1)} isActive={value > min} />
       <CountNumber>{value}</CountNumber>
-      <Plus onClick={() => onChange(value + 1)} isActive={value < max} />
+      <Plus onClick={() => changeValue(1)} isActive={value < max} />
     </Counter>
   );
 }

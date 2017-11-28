@@ -46,6 +46,8 @@ export default props => (
       <ScrollContainer>
         <Content
           data={props.data}
+          onFilterChanged={props.onFilterChanged}
+          //Room Type
           onRoomTypeChanged={props.onRoomTypeChanged}
           //Price props
           range={props.range}
@@ -53,7 +55,6 @@ export default props => (
           max={props.max}
           onPriceChanged={props.onPriceChanged}
           //Bads Rooms
-          onBedsRoomsChanged={props.onBedsRoomsChanged}
           dataRoomsBeds={props.dataRoomsBeds}
           //More Options
           onMoreOptionsChanged={props.onMoreOptionsChanged}

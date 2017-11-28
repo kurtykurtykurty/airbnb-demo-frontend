@@ -2,8 +2,6 @@ import React from "react";
 import DropContainer from "../DropContainer";
 import styled from "styled-components";
 import { CheckBoxSlider } from "../../../UI";
-import checkboxoff from "./chkbx-off.svg";
-import checkboxon from "./chkbx-on.svg";
 
 const Content = styled.div`
   margin: 24px 16px 16px 16px;

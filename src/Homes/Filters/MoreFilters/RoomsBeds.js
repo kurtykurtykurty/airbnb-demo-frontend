@@ -35,11 +35,8 @@ const Counter = styled.div`
   line-height: normal;
 `;
 
-function bound(value, min, max) {
-  return value < min ? min : value && value > max ? max : value;
-}
 export default function(props) {
-  const { data = {} } = props;
+  const { data = {}, onFilterChanged } = props;
 
   return (
     <Filter>
@@ -52,7 +49,10 @@ export default function(props) {
               max={props.max}
               value={data.bedrooms}
               onChange={value =>
-                props.onChange("bedrooms", bound(value, props.min, props.max))
+                onFilterChanged({
+                  ...data,
+                  bedrooms: value
+                })
               }
             />
           </Counter>
@@ -65,7 +65,10 @@ export default function(props) {
               max={props.max}
               value={data.beds}
               onChange={value =>
-                props.onChange("beds", bound(value, props.min, props.max))
+                onFilterChanged({
+                  ...data,
+                  beds: value
+                })
               }
             />
           </Counter>
@@ -78,7 +81,10 @@ export default function(props) {
               max={props.max}
               value={data.bathrooms}
               onChange={value =>
-                props.onChange("bathrooms", bound(value, props.min, props.max))
+                onFilterChanged({
+                  ...data,
+                  bathrooms: value
+                })
               }
             />
           </Counter>

@@ -1,19 +1,23 @@
 <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Rectangle 10</title>
+<title>Rectangle 10.1</title>
 <desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-2864 -6108)">
-<g id="Rectangle 10">
-<use xlink:href="#path0_fill" transform="translate(2864 6108)" fill="#FFFFFF"/>
-<mask id="mask0_outline_ins">
-<use xlink:href="#path0_fill" fill="white" transform="translate(2864 6108)"/>
-</mask>
-<g mask="url(#mask0_outline_ins)">
-<use xlink:href="#path1_stroke_2x" transform="translate(2864 6108)" fill="#484848" fill-opacity="0.3"/>
-</g>
-</g>
+<g id="Canvas" transform="translate(-505 915)">
+	<g id="Rectangle 10.1">
+		<use xlink:href="#path0_fill" transform="translate(505 -915)" fill="#008489"/>
+		<mask id="mask0_outline_ins">
+			<use xlink:href="#path0_fill" fill="white" transform="translate(505 -915)"/>
+		</mask>
+		<g mask="url(#mask0_outline_ins)">
+			<use xlink:href="#path1_stroke_2x" transform="translate(505 -915)" fill="#008489"/>
+		</g>
+	</g>
+	<g id="Vector">
+		<use xlink:href="#path0_stroke" transform="translate(511 -907.5)" fill="#FFFFFF"/>
+	</g>
 </g>
 <defs>
 <path id="path0_fill" fill-rule="evenodd" d="M 0 4C 0 1.79086 1.79086 0 4 0L 20 0C 22.2091 0 24 1.79086 24 4L 24 20C 24 22.2091 22.2091 24 20 24L 4 24C 1.79086 24 0 22.2091 0 20L 0 4Z"/>
 <path id="path1_stroke_2x" d="M 4 1L 20 1L 20 -1L 4 -1L 4 1ZM 23 4L 23 20L 25 20L 25 4L 23 4ZM 20 23L 4 23L 4 25L 20 25L 20 23ZM 1 20L 1 4L -1 4L -1 20L 1 20ZM 4 23C 2.34315 23 1 21.6569 1 20L -1 20C -1 22.7614 1.23858 25 4 25L 4 23ZM 23 20C 23 21.6569 21.6569 23 20 23L 20 25C 22.7614 25 25 22.7614 25 20L 23 20ZM 20 1C 21.6569 1 23 2.34315 23 4L 25 4C 25 1.23858 22.7614 -1 20 -1L 20 1ZM 4 -1C 1.23858 -1 -1 1.23858 -1 4L 1 4C 1 2.34315 2.34315 1 4 1L 4 -1Z"/>
+<path id="path0_stroke" d="M 0.807692 3.42825C 0.482062 2.98218 -0.143529 2.88454 -0.589605 3.21017C -1.03568 3.5358 -1.13332 4.16139 -0.807691 4.60746L 0.807692 3.42825ZM 3.6369 9L 2.82921 9.58961C 2.99943 9.82278 3.26212 9.97102 3.54972 9.99619C 3.83731 10.0214 4.12176 9.92101 4.32989 9.72095L 3.6369 9ZM 13.693 0.720948C 14.0912 0.338221 14.1037 -0.294821 13.7209 -0.692989C 13.3382 -1.09116 12.7052 -1.10367 12.307 -0.720947L 13.693 0.720948ZM -0.807691 4.60746L 2.82921 9.58961L 4.4446 8.41039L 0.807692 3.42825L -0.807691 4.60746ZM 4.32989 9.72095L 13.693 0.720948L 12.307 -0.720947L 2.94391 8.27905L 4.32989 9.72095Z"/>
 </defs>
 </svg>
