@@ -1,17 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import checkboxoff from "./chkbx-off.svg";
-import checkboxon from "./chkbx-on.svg";
-
-const CheckBox = styled.button`
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  margin-right: 12px;
-  border: none;
-  background: url(${props => (props.isActive ? checkboxon : checkboxoff)});
-  cursor: pointer;
-`;
+import { CheckBox } from "../../../UI";
+import { isAbsolute } from "path";
 
 const Option = styled.div`
   display: flex;
@@ -55,22 +45,24 @@ const Img = styled.img`
 
 const Icon = styled.div``;
 
-export default props => (
-  <Option>
-    <OptionRow>
-      <BoxWrap>
-        <Box>
-          <CheckBox
-            onClick={() => props.onChange(props.id, props.isActive)}
-            isActive={props.isActive}
-          />
-          {props.typeroom}
-        </Box>
-        <NoteDescr>{props.descr}</NoteDescr>
-      </BoxWrap>
-      <Icon>
-        <Img src={props.roomimg} />
-      </Icon>
-    </OptionRow>
-  </Option>
-);
+export default function(props) {
+  return (
+    <Option>
+      <OptionRow>
+        <BoxWrap>
+          <Box>
+            <CheckBox
+              onClick={() => props.onChange(props.id, !props.isActive)}
+              isActive={props.isActive}
+            />
+            {props.typeroom}
+          </Box>
+          <NoteDescr>{props.descr}</NoteDescr>
+        </BoxWrap>
+        <Icon>
+          <Img src={props.roomimg} />
+        </Icon>
+      </OptionRow>
+    </Option>
+  );
+}

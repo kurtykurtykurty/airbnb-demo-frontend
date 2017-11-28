@@ -7,6 +7,7 @@ import InstantBook from "./InstantBook";
 import MoreFilters from "./MoreFilters";
 import Price from "./Price";
 import { getPriceButtonLabel } from "./Price/Content";
+import { getRoomTypeButtonLabel } from "./RoomType";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -68,32 +69,10 @@ function getDatesButtonLabel(state) {
 
   return "Date";
 }
-const RoomTypeLabel = {
-  entrie: "Entrie Home",
-  private: "Private room",
-  shared: "Shared room"
-};
-
-function getRoomTypeButtonLabel(data) {
-  const selectedRoomType = Object.keys(data).filter(key => data[key]);
-  const selectedLength = selectedRoomType.length;
-  if (selectedLength === 1) {
-    return RoomTypeLabel[selectedRoomType[0]];
-  }
-  if (selectedLength > 1) {
-    return "Room Type · " + selectedLength;
-  }
-
-  return "Room Type";
-}
 
 function getGuestsButtonLabel(data) {
   const guestsCount = Number(data.guests.adults) + Number(data.guests.children);
   const infantCount = Number(data.guests.infants);
-  console.clear();
-  console.log("data.guests", data.guests);
-  console.log("guestsCount", guestsCount);
-  console.log("infantCount", infantCount);
 
   if (guestsCount > 1 && infantCount > 0) {
     return guestsCount + " Guests " + infantCount + " Infants";
@@ -123,7 +102,7 @@ const DropdownLogic = props => {
 };
 
 const Dropdown = styled(DropdownLogic)`
-  ${"" /* position: relative; */} padding-top: 12px;
+  padding-top: 12px;
   padding-bottom: 12px;
 `;
 
@@ -196,11 +175,8 @@ class Filters extends React.Component {
   };
 
   onFilterChanged = (id, value) => {
+    console.log("????????ID VALUE????", id, value);
     this.setState({ [id]: value });
-  };
-
-  onBedsRoomsChanged = (id, value) => {
-    this.setState({ roomsbeds: { ...this.state.roomsbeds, [id]: value } });
   };
 
   onInstantBookChanged = () => {
@@ -209,19 +185,6 @@ class Filters extends React.Component {
 
   onMoreOptionsChanged = () => {
     this.setState({ moreoptions: !this.state.moreoptions });
-  };
-
-  onRoomTypeChanged = (id, isActive) => {
-    this.setState({ roomtype: { ...this.state.roomtype, [id]: !isActive } });
-    console.log(" ROOTYPE setSTATE", {
-      ...this.state.roomtype,
-      [id]: isActive
-    });
-    console.log("isActive", isActive);
-  };
-
-  onPriceChanged = ({ min, max }) => {
-    this.setState({ price: { ...this.state.price, min: min, max: max } });
   };
 
   render() {
@@ -277,7 +240,7 @@ class Filters extends React.Component {
         >
           <RoomType
             data={this.state.roomtype}
-            onRoomTypeChanged={this.onRoomTypeChanged}
+            onFilterChanged={data => this.onFilterChanged("roomtype", data)}
             onCancel={this.onCancel}
           />
           <CloseField onClick={this.closeFilter} />
@@ -312,8 +275,8 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
         >
           <InstantBook
-            onInstantBookChanged={this.onInstantBookChanged}
-            isActive={this.state.instantbook}
+            onFilterChanged={this.onInstantBookChanged}
+            data={this.state.instantbook}
             onCancel={this.onCancel}
           />
           <CloseField onClick={this.closeFilter} />
@@ -332,7 +295,6 @@ class Filters extends React.Component {
             // RoomeType props
             onFilterChanged={this.onFilterChanged}
             data={this.state}
-            onRoomTypeChanged={this.onRoomTypeChanged}
             onCancel={this.onCancel}
             //Price props
             range={rheostatRange}

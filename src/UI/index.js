@@ -5,8 +5,11 @@ import { media } from "../media";
 import minus from "./minus.svg";
 import plus from "./plus.svg";
 
-import checkboxoff from "./chkbx-off.svg";
-import checkboxon from "./chkbx-on.svg";
+import checkboxSlideroff from "./checkboxSlider-off.svg";
+import checkboxSlideron from "./checkboxSlider-on.svg";
+
+import checkboxon from "./checkbox-on.svg";
+import checkboxoff from "./checkbox-off.svg";
 
 export const Minus = styled.button`
   width: 32px;
@@ -29,6 +32,16 @@ export const Plus = styled.button`
 export const CheckBoxSlider = styled.button`
   width: 64px;
   height: 40px;
+  border: none;
+  background: url(${props =>
+    props.isActive ? checkboxSlideron : checkboxSlideroff});
+  cursor: pointer;
+`;
+export const CheckBox = styled.button`
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
   border: none;
   background: url(${props => (props.isActive ? checkboxon : checkboxoff)});
   cursor: pointer;

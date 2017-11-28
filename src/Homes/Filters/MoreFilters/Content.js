@@ -61,7 +61,10 @@ export default props => (
   <div>
     <Filter className="hidden-lg hidden-xl">
       <FilterTitle>Room Type</FilterTitle>
-      <RoomType data={props.data.roomtype} onChange={props.onRoomTypeChanged} />
+      <RoomType
+        data={props.data.roomtype}
+        onFilterChanged={data => props.onFilterChanged("roomtype", data)}
+      />
     </Filter>
     <Filter className="hidden-lg hidden-xl">
       <FilterTitle>Price range</FilterTitle>

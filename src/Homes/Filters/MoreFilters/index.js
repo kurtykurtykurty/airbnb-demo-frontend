@@ -48,7 +48,6 @@ export default props => (
           data={props.data}
           onFilterChanged={props.onFilterChanged}
           //Room Type
-          onRoomTypeChanged={props.onRoomTypeChanged}
           //Price props
           range={props.range}
           //Bads Rooms
@@ -64,14 +63,9 @@ export default props => (
         <Content
           data={props.data}
           onFilterChanged={props.onFilterChanged}
-          onRoomTypeChanged={props.onRoomTypeChanged}
           //Price props
           range={props.range}
-          min={props.min}
-          max={props.max}
-          onPriceChanged={props.onPriceChanged}
           //Bads Rooms
-          onBedsRoomsChanged={props.onBedsRoomsChanged}
           dataRoomsBeds={props.bedrooms}
         />
       </div>
@@ -79,7 +73,6 @@ export default props => (
     <MobileMoreFilters
       data={props.data}
       onFilterChanged={props.onFilterChanged}
-      onRoomTypeChanged={props.onRoomTypeChanged}
       //Price props
       range={props.range}
       onCancel={props.onCancel}

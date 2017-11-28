@@ -53,8 +53,8 @@ export default props => (
           </Label>
           <Check>
             <CheckBoxSlider
-              onClick={props.onInstantBookChanged}
-              isActive={props.isActive}
+              onClick={props.onFilterChanged}
+              isActive={props.data}
             />
           </Check>
         </Row>
