@@ -89,6 +89,18 @@ export default props => (
       <Arrow src={arr} />
       <CheckOut>Check-out</CheckOut>
     </Picker>
-    <DayPickerRangeController {...props} />
+    <DayPickerRangeController
+      startDate={props.startDate}
+      endDate={props.endDate}
+      onFocusChange={props.onFocusChange}
+      // onFocus={props.onFocus}
+      focusedInput={props.focusedInput}
+      onDatesChange={props.onDatesChange}
+      isDayBlocked={props.isDayBlocked}
+      orientation={props.orientation}
+      hideKeyboardShortcutsPanel={props.hideKeyboardShortcutsPanel}
+      initialVisibleMonth={props.initialVisibleMonth}
+      numberOfMonths={props.numberOfMonths}
+    />
   </Wrapper>
 );

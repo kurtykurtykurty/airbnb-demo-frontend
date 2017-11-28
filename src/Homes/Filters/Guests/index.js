@@ -15,6 +15,20 @@ const Content = styled.div`
   margin-top: 31px;
 `;
 
+export function getGuestsButtonLabel(data) {
+  const guestsCount = Number(data.guests.adults) + Number(data.guests.children);
+  const infantCount = Number(data.guests.infants);
+
+  if (guestsCount >= 1 && infantCount > 0) {
+    return guestsCount + " Guests " + infantCount + " Infants";
+  }
+
+  if (guestsCount > 1) {
+    return guestsCount + " Guests";
+  }
+  return "Guests";
+}
+
 export default function(props) {
   const { data, onFilterChanged } = props;
   const { adults, children, infants } = data;

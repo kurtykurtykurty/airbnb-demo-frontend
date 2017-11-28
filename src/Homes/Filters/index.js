@@ -8,6 +8,8 @@ import MoreFilters from "./MoreFilters";
 import Price from "./Price";
 import { getPriceButtonLabel } from "./Price/Content";
 import { getRoomTypeButtonLabel } from "./RoomType";
+import { getGuestsButtonLabel } from "./Guests";
+import { getDatesButtonLabel } from "./Dates";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -49,39 +51,6 @@ const CloseField = styled.div`
   bottom: 0;
 `;
 
-function getDatesButtonLabel(state) {
-  const isActive = state.openedFilter === "Dates";
-  const { selectedStartDate, selectedEndDate } = state;
-
-  if (isActive) {
-    return `${
-      selectedStartDate ? selectedStartDate.format("MMM Do") : "Check in "
-    } — 
-      ${selectedEndDate ? selectedEndDate.format("MMM Do") : "Check out"}`;
-  }
-
-  const { startDate, endDate } = state;
-  if (startDate && endDate) {
-    return `${startDate.format("MMM Do")} — ${endDate.format("MMM Do")}`;
-  }
-
-  return "Date";
-}
-
-function getGuestsButtonLabel(data) {
-  const guestsCount = Number(data.guests.adults) + Number(data.guests.children);
-  const infantCount = Number(data.guests.infants);
-
-  if (guestsCount >= 1 && infantCount > 0) {
-    return guestsCount + " Guests " + infantCount + " Infants";
-  }
-
-  if (guestsCount > 1) {
-    return guestsCount + " Guests";
-  }
-  return "Guests";
-}
-
 const DropdownLogic = props => {
   const isActive = props.openedFilter === props.id;
 
@@ -111,11 +80,12 @@ const rheostatRange = {
 
 const defaultState = {
   openedFilter: null,
-  focusedInput: "startDate",
-  startDate: null,
-  endDate: null,
-  selectedStartDate: null,
-  selectedEndDate: null,
+  dates: {
+    startDate: null,
+    endDate: null,
+    selectedStartDate: null,
+    selectedEndDate: null
+  },
   guests: {
     adults: 1,
     children: 0,
@@ -157,33 +127,28 @@ class Filters extends React.Component {
 
   onCancelDates = () => {
     this.setState({
-      selectedStartDate: null,
-      selectedEndDate: null,
-      startDate: null,
-      endDate: null
+      dates: {
+        selectedStartDate: null,
+        selectedEndDate: null,
+        startDate: null,
+        endDate: null
+      }
     });
     this.closeFilter();
   };
 
   onApplyDates = () => {
     this.setState({
-      startDate: this.state.selectedStartDate,
-      endDate: this.state.selectedEndDate
+      dates: {
+        startDate: this.state.dates.selectedStartDate,
+        endDate: this.state.dates.selectedEndDate
+      }
     });
     this.closeFilter();
   };
 
   onFilterChanged = (id, value) => {
-    console.log("????????ID VALUE????", id, value);
     this.setState({ [id]: value });
-  };
-
-  onInstantBookChanged = () => {
-    this.setState({ instantbook: !this.state.instantbook });
-  };
-
-  onMoreOptionsChanged = () => {
-    this.setState({ moreoptions: !this.state.moreoptions });
   };
 
   render() {
@@ -198,18 +163,8 @@ class Filters extends React.Component {
           label={getDatesButtonLabel(this.state)}
         >
           <Dates
-            startDate={this.state.selectedStartDate}
-            endDate={this.state.selectedEndDate}
-            focusedInput={this.state.focusedInput}
-            onFocusChange={focusedInput =>
-              this.setState({ focusedInput: focusedInput || "startDate" })
-            }
-            onDatesChange={({ startDate, endDate }) => {
-              this.setState({
-                selectedStartDate: startDate,
-                selectedEndDate: endDate
-              });
-            }}
+            data={this.state.dates}
+            onFilterChanged={data => this.onFilterChanged("dates", data)}
             onCancel={this.onCancelDates}
             onApply={this.onApplyDates}
           />
