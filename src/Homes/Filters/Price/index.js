@@ -5,12 +5,11 @@ import "./slider.css";
 
 export default function(props) {
   return (
-    <DropContainer>
+    <DropContainer onCancel={props.onCancel}>
       <Content
+        data={props.data}
         range={props.range}
-        min={props.min}
-        max={props.max}
-        onChange={props.onPriceChanged}
+        onChange={props.onFilterChanged}
       />
     </DropContainer>
   );

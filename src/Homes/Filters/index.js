@@ -296,10 +296,10 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
         >
           <Price
+            data={this.state.price}
             range={rheostatRange}
-            min={this.state.price.min}
-            max={this.state.price.max}
-            onPriceChanged={this.onPriceChanged}
+            onFilterChanged={data => this.onFilterChanged("price", data)}
+            onCancel={this.onCancel}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
@@ -330,16 +330,13 @@ class Filters extends React.Component {
         {isOpenMoreFilters && (
           <MoreFilters
             // RoomeType props
+            onFilterChanged={this.onFilterChanged}
             data={this.state}
             onRoomTypeChanged={this.onRoomTypeChanged}
             onCancel={this.onCancel}
             //Price props
             range={rheostatRange}
-            min={this.state.price.min}
-            max={this.state.price.max}
-            onPriceChanged={this.onPriceChanged}
             //Beds Rooms
-            onFilterChanged={this.onFilterChanged}
             dataRoomsBeds={this.state.roomsbeds}
             //More Options
             onMoreOptionsChanged={this.onMoreOptionsChanged}

@@ -67,9 +67,8 @@ export default props => (
       <FilterTitle>Price range</FilterTitle>
       <Price
         range={props.range}
-        min={props.min}
-        max={props.max}
-        onChange={props.onPriceChanged}
+        data={props.data.price}
+        onChange={data => props.onFilterChanged("price", data)}
       />
     </Filter>
     <Filter>

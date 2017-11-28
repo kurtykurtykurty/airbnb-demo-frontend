@@ -57,12 +57,12 @@ export default props => (
       </Header>
       <Content
         data={props.data}
+        onFilterChanged={props.onFilterChanged}
         onRoomTypeChanged={props.onRoomTypeChanged}
         //Price props
         range={props.range}
         min={props.min}
         max={props.max}
-        onPriceChanged={props.onPriceChanged}
       />
     </div>
   </MobileContainer>

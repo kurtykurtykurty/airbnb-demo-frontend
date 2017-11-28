@@ -66,14 +66,16 @@ export function getPriceButtonLabel(min, max, minRange, maxRange) {
 export default function(props) {
   return (
     <Content>
-      <RangePrice>$10 — $1000+</RangePrice>
+      <RangePrice>
+        {props.data.min}$ — {props.data.max}$
+      </RangePrice>
       <Average>The average nightly price is $75.</Average>
       <Price>
         <RheoWrap>
           <Rheostat
             min={props.range.min}
             max={props.range.max}
-            values={[props.min, props.max]}
+            values={[props.data.min, props.data.max]}
             onValuesUpdated={values =>
               props.onChange({ min: values.values[0], max: values.values[1] })
             }
