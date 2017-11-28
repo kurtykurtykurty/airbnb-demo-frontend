@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "../../../media";
 
-import minus from "./minus.svg";
-import plus from "./plus.svg";
+import NumInput from "./NumInput";
 
 const Option = styled.div`
   display: flex;
@@ -42,38 +41,9 @@ const AgeWrapper = styled.div`
   align-items: left;
 `;
 
-const Counter = styled.div`
-  display: flex;
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 18px;
-  color: #383838;
-  line-height: normal;
-`;
-
-const CountNumber = styled.div`
-  line-height: normal;
-  font-size: 18px;
-  color: #383838;
-  padding-top: 4px;
-  margin-right: 19px;
-  margin-left: 19px;
-  font-weight: 200;
-`;
-
-const Minus = styled.button`
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: url(${minus});
-`;
-
-const Plus = styled.button`
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: url(${plus});
-`;
+function bound(value, min, max) {
+  return value < min ? min : value && value > max ? max : value;
+}
 
 export default props => (
   <Option>
@@ -81,10 +51,13 @@ export default props => (
       <Age>{props.ageName}</Age>
       <AgeDescription>{props.ageDescr}</AgeDescription>
     </AgeWrapper>
-    <Counter>
-      <Minus />
-      <CountNumber>0</CountNumber>
-      <Plus />
-    </Counter>
+    <NumInput
+      value={props.value}
+      max={props.max}
+      min={props.min}
+      onChange={value =>
+        props.onChange(props.id, bound(value, props.min, props.max))
+      }
+    />
   </Option>
 );

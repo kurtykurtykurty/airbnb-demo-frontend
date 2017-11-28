@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import checkbox from "./chkbx.svg";
+import checkboxoff from "./chkbx-off.svg";
+import checkboxon from "./chkbx-on.svg";
 
-const Flag = styled.img`
+const CheckBox = styled.button`
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   margin-right: 12px;
+  border: none;
+  background: url(${props => (props.isActive ? checkboxon : checkboxoff)});
+  cursor: pointer;
 `;
 
 const Option = styled.div`
@@ -56,7 +60,10 @@ export default props => (
     <OptionRow>
       <BoxWrap>
         <Box>
-          <Flag src={checkbox} />
+          <CheckBox
+            onClick={() => props.onChange(props.id, props.isActive)}
+            isActive={props.isActive}
+          />
           {props.typeroom}
         </Box>
         <NoteDescr>{props.descr}</NoteDescr>

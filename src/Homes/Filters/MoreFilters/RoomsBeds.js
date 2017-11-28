@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-import minus from "./minus.svg";
-import plus from "./plus.svg";
+import NumInput from "../Guests/NumInput";
 
 const Filter = styled.div`
   width: 326px;
@@ -37,57 +35,55 @@ const Counter = styled.div`
   line-height: normal;
 `;
 
-const CountNumber = styled.div`
-  line-height: normal;
-  font-size: 18px;
-  color: #383838;
-  padding-top: 4px;
-  margin-right: 12px;
-  margin-left: 16px;
-  font-weight: 200;
-`;
+function bound(value, min, max) {
+  return value < min ? min : value && value > max ? max : value;
+}
+export default function(props) {
+  const { data = {} } = props;
 
-const Minus = styled.button`
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: url(${minus});
-`;
-
-const Plus = styled.button`
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: url(${plus});
-`;
-
-export default props => (
-  <Filter>
-    <FilterBody>
-      <Row>
-        <Label>{props.label1}</Label>
-        <Counter>
-          <Minus />
-          <CountNumber>{props.count}</CountNumber>
-          <Plus />
-        </Counter>
-      </Row>
-      <Row>
-        <Label>{props.label2}</Label>
-        <Counter>
-          <Minus />
-          <CountNumber>{props.count}</CountNumber>
-          <Plus />
-        </Counter>
-      </Row>
-      <Row>
-        <Label>{props.label3}</Label>
-        <Counter>
-          <Minus />
-          <CountNumber>{props.count}</CountNumber>
-          <Plus />
-        </Counter>
-      </Row>
-    </FilterBody>
-  </Filter>
-);
+  return (
+    <Filter>
+      <FilterBody>
+        <Row>
+          <Label>Bedrooms</Label>
+          <Counter>
+            <NumInput
+              min={props.min}
+              max={props.max}
+              value={data.bedrooms}
+              onChange={value =>
+                props.onChange("bedrooms", bound(value, props.min, props.max))
+              }
+            />
+          </Counter>
+        </Row>
+        <Row>
+          <Label>Beds</Label>
+          <Counter>
+            <NumInput
+              min={props.min}
+              max={props.max}
+              value={data.beds}
+              onChange={value =>
+                props.onChange("beds", bound(value, props.min, props.max))
+              }
+            />
+          </Counter>
+        </Row>
+        <Row>
+          <Label>Bathrooms</Label>
+          <Counter>
+            <NumInput
+              min={props.min}
+              max={props.max}
+              value={data.bathrooms}
+              onChange={value =>
+                props.onChange("bathrooms", bound(value, props.min, props.max))
+              }
+            />
+          </Counter>
+        </Row>
+      </FilterBody>
+    </Filter>
+  );
+}

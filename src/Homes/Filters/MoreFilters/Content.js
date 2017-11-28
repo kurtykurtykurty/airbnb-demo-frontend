@@ -5,6 +5,7 @@ import MoreOprions from "./MoreOptions";
 import Amenities, { Amenity } from "./Amenities";
 import { media } from "../../../media";
 import RoomType from "../RoomType/Content";
+import Price from "../Price/Content";
 
 const Filter = styled.div`
   box-shadow: 0px 0.5px 0px 0px rgba(72, 72, 72, 0.3);
@@ -47,24 +48,47 @@ const SeeHomes = styled.button`
 const FilterTitle = styled.div`
   font-family: CircularAir;
   line-height: normal;
-  font-size: 20px;
+  font-size: 18px;
   color: #383838;
   text-align: left;
+
+  ${media.md`
+    font-size: 20px;
+  `};
 `;
 
 export default props => (
   <div>
     <Filter className="hidden-lg hidden-xl">
       <FilterTitle>Room Type</FilterTitle>
-      <RoomType />
+      <RoomType data={props.data} onChange={props.onRoomTypeChanged} />
+    </Filter>
+    <Filter className="hidden-lg hidden-xl">
+      <FilterTitle>Price range</FilterTitle>
+      <Price
+        range={props.range}
+        min={props.min}
+        max={props.max}
+        onChange={props.onPriceChanged}
+      />
     </Filter>
     <Filter>
       <FilterTitle>Rooms and beds</FilterTitle>
-      <RoomBeds label1="Bedrooms" label2="Beds" label3="Bathrooms" count="0+" />
+      <RoomBeds
+        onChange={props.onBedsRoomsChanged}
+        data={props.dataRoomsBeds}
+        min={0}
+        max={15}
+      />
     </Filter>
     <Filter>
       <FilterTitle>More options</FilterTitle>
-      <MoreOprions label="Superhost" descr="Stay with recognized hosts." />
+      <MoreOprions
+        onChange={props.onMoreOptionsChanged}
+        isActive={props.isActive}
+        label="Superhost"
+        descr="Stay with recognized hosts."
+      />
     </Filter>
     <Filter>
       <FilterTitle>Amenities</FilterTitle>

@@ -5,6 +5,8 @@ import Dates from "./Dates";
 import Guests from "./Guests";
 import InstantBook from "./InstantBook";
 import MoreFilters from "./MoreFilters";
+import Price from "./Price";
+import { getPriceButtonLabel } from "./Price/Content";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -46,7 +48,7 @@ const CloseField = styled.div`
   bottom: 0;
 `;
 
-const formatDate = date => (date ? date.format("MMM Do") : "null");
+//const formatDate = date => (date ? date.format("MMM Do") : "null");
 
 function getDatesButtonLabel(state) {
   const isActive = state.openedFilter === "Dates";
@@ -65,6 +67,42 @@ function getDatesButtonLabel(state) {
   }
 
   return "Date";
+}
+const RoomTypeLabel = {
+  entrie: "Entrie Home",
+  private: "Private room",
+  shared: "Shared room"
+};
+
+function getRoomTypeButtonLabel(data) {
+  const selectedRoomType = Object.keys(data).filter(key => data[key]);
+  const selectedLength = selectedRoomType.length;
+  if (selectedLength === 1) {
+    return RoomTypeLabel[selectedRoomType[0]];
+  }
+  if (selectedLength > 1) {
+    return "Room Type · " + selectedLength;
+  }
+
+  return "Room Type";
+}
+
+function getGuestsButtonLabel(data) {
+  const guestsCount = Number(data.guests.adults) + Number(data.guests.children);
+  const infantCount = Number(data.guests.infants);
+  console.clear();
+  console.log("data.guests", data.guests);
+  console.log("guestsCount", guestsCount);
+  console.log("infantCount", infantCount);
+
+  if (guestsCount > 1 && infantCount > 0) {
+    return guestsCount + " Guests " + infantCount + " Infants";
+  }
+
+  if (guestsCount > 1) {
+    return guestsCount + " Guests";
+  }
+  return "Guests";
 }
 
 const DropdownLogic = props => {
@@ -89,16 +127,43 @@ const Dropdown = styled(DropdownLogic)`
   padding-bottom: 12px;
 `;
 
+const rheostatRange = {
+  min: 0,
+  max: 1000
+};
+
+const defaultState = {
+  openedFilter: null,
+  focusedInput: "startDate",
+  startDate: null,
+  endDate: null,
+  selectedStartDate: null,
+  selectedEndDate: null,
+  guests: {
+    adults: 1,
+    children: 0,
+    infants: 0
+  },
+  instantbook: false,
+  roomtype: {
+    entrie: false,
+    private: false,
+    shared: false
+  },
+  price: {
+    min: 0,
+    max: 1000
+  },
+  roomsbeds: {
+    bedrooms: 0,
+    beds: 0,
+    bathrooms: 0
+  },
+  moreoptions: false
+};
+
 class Filters extends React.Component {
-  state = {
-    openedFilter: null,
-    dropdown: null,
-    startDate: null,
-    endDate: null,
-    selectedStartDate: null,
-    selectedEndDate: null,
-    focusedInput: "startDate"
-  };
+  state = defaultState;
 
   openFilter = key => {
     this.setState({ openedFilter: key });
@@ -130,14 +195,37 @@ class Filters extends React.Component {
     this.closeFilter();
   };
 
+  onFilterChanged = (id, value) => {
+    this.setState({ [id]: value });
+  };
+
+  onBedsRoomsChanged = (id, value) => {
+    this.setState({ roomsbeds: { ...this.state.roomsbeds, [id]: value } });
+  };
+
+  onInstantBookChanged = () => {
+    this.setState({ instantbook: !this.state.instantbook });
+  };
+
+  onMoreOptionsChanged = () => {
+    this.setState({ moreoptions: !this.state.moreoptions });
+  };
+
+  onRoomTypeChanged = (id, isActive) => {
+    this.setState({ roomtype: { ...this.state.roomtype, [id]: !isActive } });
+    console.log(" ROOTYPE setSTATE", {
+      ...this.state.roomtype,
+      [id]: isActive
+    });
+    console.log("isActive", isActive);
+  };
+
+  onPriceChanged = ({ min, max }) => {
+    this.setState({ price: { ...this.state.price, min: min, max: max } });
+  };
+
   render() {
     const isOpenMoreFilters = this.state.openedFilter === "Morefilters";
-    console.clear();
-    console.log("focusedInput", this.state.focusedInput);
-    console.log("selectedStartDate", formatDate(this.state.selectedStartDate));
-    console.log("selectedEndDate", formatDate(this.state.selectedEndDate));
-    console.log("startDate", formatDate(this.state.startDate));
-    console.log("endDate", formatDate(this.state.endDate));
 
     return (
       <ButtonRow>
@@ -168,32 +256,52 @@ class Filters extends React.Component {
 
         <Dropdown
           id="Guests"
-          label="Guests"
+          label={getGuestsButtonLabel(this.state)}
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <Guests onCancel={this.onCancel} />
+          <Guests
+            data={this.state.guests}
+            onGuestChanged={this.onGuestChanged}
+            onFilterChanged={data => this.onFilterChanged("guests", data)}
+            onCancel={this.onCancel}
+          />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
           className="hidden-xs hidden-sm hidden-md"
           id="RoomType"
-          label="Room Type"
+          label={getRoomTypeButtonLabel(this.state.roomtype)}
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <RoomType onCancel={this.onCancel} />
+          <RoomType
+            data={this.state.roomtype}
+            onRoomTypeChanged={this.onRoomTypeChanged}
+            onCancel={this.onCancel}
+          />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
         <Dropdown
           className="hidden-xs hidden-sm hidden-md"
           id="Price"
-          label="Price"
+          label={getPriceButtonLabel(
+            this.state.price.min,
+            this.state.price.max,
+            rheostatRange.min,
+            rheostatRange.max
+          )}
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
+          <Price
+            range={rheostatRange}
+            min={this.state.price.min}
+            max={this.state.price.max}
+            onPriceChanged={this.onPriceChanged}
+          />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
@@ -204,7 +312,11 @@ class Filters extends React.Component {
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
-          <InstantBook onCancel={this.onCancel} />
+          <InstantBook
+            onInstantBookChanged={this.onInstantBookChanged}
+            isActive={this.state.instantbook}
+            onCancel={this.onCancel}
+          />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
 
@@ -216,7 +328,25 @@ class Filters extends React.Component {
         >
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
-        {isOpenMoreFilters && <MoreFilters onCancel={this.onCancel} />}
+        {isOpenMoreFilters && (
+          <MoreFilters
+            // RoomeType props
+            data={this.state.roomtype}
+            onRoomTypeChanged={this.onRoomTypeChanged}
+            onCancel={this.onCancel}
+            //Price props
+            range={rheostatRange}
+            min={this.state.price.min}
+            max={this.state.price.max}
+            onPriceChanged={this.onPriceChanged}
+            //Beds Rooms
+            onBedsRoomsChanged={this.onBedsRoomsChanged}
+            dataRoomsBeds={this.state.roomsbeds}
+            //More Options
+            onMoreOptionsChanged={this.onMoreOptionsChanged}
+            isActive={this.state.moreoptions}
+          />
+        )}
       </ButtonRow>
     );
   }

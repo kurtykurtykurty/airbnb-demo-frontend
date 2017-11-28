@@ -1,0 +1,38 @@
+<svg width="64" height="40" viewBox="0 0 64 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>btn</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-565 798)">
+<g id="btn">
+<g id="Rectangle 7">
+<use xlink:href="#path0_fill" transform="translate(565 -798)" fill="#008489"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(565 -798)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(565 -798)" fill="#008489" fill-opacity="0.3"/>
+</g>
+</g>
+<g id="Rectangle 9">
+<use xlink:href="#path2_fill" transform="translate(589 -798)" fill="#FFFFFF"/>
+<mask id="mask1_outline_ins">
+<use xlink:href="#path2_fill" fill="white" transform="translate(589 -798)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path3_stroke_2x" transform="translate(589 -798)" fill="#008489"/>
+</g>
+</g>
+<g id="check-on">
+<g id="Vector">
+<use xlink:href="#path4_stroke" transform="translate(602 -783)" fill="#008489"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 20C 0 8.95431 8.95431 0 20 0L 44 0C 55.0457 0 64 8.95431 64 20C 64 31.0457 55.0457 40 44 40L 20 40C 8.95431 40 0 31.0457 0 20Z"/>
+<path id="path1_stroke_2x" d="M 20 1L 44 1L 44 -1L 20 -1L 20 1ZM 44 39L 20 39L 20 41L 44 41L 44 39ZM 20 39C 9.50659 39 1 30.4934 1 20L -1 20C -1 31.598 8.40202 41 20 41L 20 39ZM 63 20C 63 30.4934 54.4934 39 44 39L 44 41C 55.598 41 65 31.598 65 20L 63 20ZM 44 1C 54.4934 1 63 9.50659 63 20L 65 20C 65 8.40202 55.598 -1 44 -1L 44 1ZM 20 -1C 8.40202 -1 -1 8.40202 -1 20L 1 20C 1 9.50659 9.50659 1 20 1L 20 -1Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 0 20C 0 8.95431 8.95431 0 20 0C 31.0457 0 40 8.95431 40 20C 40 31.0457 31.0457 40 20 40C 8.95431 40 0 31.0457 0 20Z"/>
+<path id="path3_stroke_2x" d="M 20 39C 9.50659 39 1 30.4934 1 20L -1 20C -1 31.598 8.40202 41 20 41L 20 39ZM 39 20C 39 30.4934 30.4934 39 20 39L 20 41C 31.598 41 41 31.598 41 20L 39 20ZM 20 1C 30.4934 1 39 9.50659 39 20L 41 20C 41 8.40202 31.598 -1 20 -1L 20 1ZM 20 -1C 8.40202 -1 -1 8.40202 -1 20L 1 20C 1 9.50659 9.50659 1 20 1L 20 -1Z"/>
+<path id="path4_stroke" d="M 1.19536 3.49861C 0.6949 2.83843 -0.24598 2.70895 -0.906157 3.20941C -1.56633 3.70986 -1.69581 4.65074 -1.19536 5.31092L 1.19536 3.49861ZM 4.14048 9.86667L 2.94512 10.7728C 3.20089 11.1102 3.58735 11.3238 4.00912 11.3609C 4.43089 11.398 4.84869 11.2551 5.15941 10.9675L 4.14048 9.86667ZM 15.8189 1.10081C 16.4269 0.53807 16.4636 -0.41097 15.9008 -1.01893C 15.3381 -1.62689 14.389 -1.66355 13.7811 -1.10081L 15.8189 1.10081ZM -1.19536 5.31092L 2.94512 10.7728L 5.33583 8.96051L 1.19536 3.49861L -1.19536 5.31092ZM 5.15941 10.9675L 15.8189 1.10081L 13.7811 -1.10081L 3.12155 8.76586L 5.15941 10.9675Z"/>
+</defs>
+</svg>

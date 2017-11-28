@@ -55,7 +55,15 @@ export default props => (
         <Title>Guest</Title>
         <Reset>Reset</Reset>
       </Header>
-      <Content />
+      <Content
+        data={props.data}
+        onRoomTypeChanged={props.onRoomTypeChanged}
+        //Price props
+        range={props.range}
+        min={props.min}
+        max={props.max}
+        onPriceChanged={props.onPriceChanged}
+      />
     </div>
   </MobileContainer>
 );

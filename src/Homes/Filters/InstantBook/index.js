@@ -1,8 +1,9 @@
 import React from "react";
 import DropContainer from "../DropContainer";
 import styled from "styled-components";
-
-import checkbox from "./chkbx.svg";
+import { CheckBoxSlider } from "../../../UI";
+import checkboxoff from "./chkbx-off.svg";
+import checkboxon from "./chkbx-on.svg";
 
 const Content = styled.div`
   margin: 24px 16px 16px 16px;
@@ -41,14 +42,6 @@ const Description = styled.div`
 
 const Check = styled.div``;
 
-const CheckBox = styled.button`
-  width: 64px;
-  height: 40px;
-  border: none;
-  background: url(${checkbox});
-  cursor: pointer;
-`;
-
 export default props => (
   <div className="hidden-xs hidden-sm hidden-md">
     <DropContainer onCancel={props.onCancel}>
@@ -61,7 +54,10 @@ export default props => (
             </Description>
           </Label>
           <Check>
-            <CheckBox />
+            <CheckBoxSlider
+              onClick={props.onInstantBookChanged}
+              isActive={props.isActive}
+            />
           </Check>
         </Row>
       </Content>

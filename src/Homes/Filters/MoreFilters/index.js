@@ -41,16 +41,54 @@ const ScrollContainer = styled.div`
 
 export default props => (
   <DropWraper>
+    {console.log("More Filters index data", props)}
     <DropContainer className="hidden-xs hidden-sm hidden-md">
       <ScrollContainer>
-        <Content />
+        <Content
+          data={props.data}
+          onRoomTypeChanged={props.onRoomTypeChanged}
+          //Price props
+          range={props.range}
+          min={props.min}
+          max={props.max}
+          onPriceChanged={props.onPriceChanged}
+          //Bads Rooms
+          onBedsRoomsChanged={props.onBedsRoomsChanged}
+          dataRoomsBeds={props.dataRoomsBeds}
+          //More Options
+          onMoreOptionsChanged={props.onMoreOptionsChanged}
+          isActive={props.isActive}
+        />
       </ScrollContainer>
     </DropContainer>
     <FixedContainer className="hidden-xs hidden-sm hidden-lg hidden-xl">
       <div className="container">
-        <Content />
+        <Content
+          data={props.data}
+          onRoomTypeChanged={props.onRoomTypeChanged}
+          //Price props
+          range={props.range}
+          min={props.min}
+          max={props.max}
+          onPriceChanged={props.onPriceChanged}
+          //Bads Rooms
+          onBedsRoomsChanged={props.onBedsRoomsChanged}
+          dataRoomsBeds={props.bedrooms}
+        />
       </div>
     </FixedContainer>
-    <MobileMoreFilters onCancel={props.onCancel} />
+    <MobileMoreFilters
+      data={props.data}
+      onRoomTypeChanged={props.onRoomTypeChanged}
+      //Price props
+      range={props.range}
+      min={props.min}
+      max={props.max}
+      onPriceChanged={props.onPriceChanged}
+      onCancel={props.onCancel}
+      //Bads Rooms
+      onBedsRoomsChanged={props.onBedsRoomsChanged}
+      dataRoomsBeds={props.bedrooms}
+    />
   </DropWraper>
 );

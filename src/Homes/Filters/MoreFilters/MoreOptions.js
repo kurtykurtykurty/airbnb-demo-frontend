@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { CheckBoxSlider } from "../../../UI";
 import checkbox from "./slidechkbx.svg";
 
 const Filter = styled.div``;
@@ -62,7 +63,7 @@ export default props => (
           <Description>{props.descr}</Description>
           <More>Learn more</More>
         </Label>
-        <CheckBox />
+        <CheckBoxSlider onClick={props.onChange} isActive={props.isActive} />
       </Row>
     </FilterBody>
   </Filter>

@@ -9,9 +9,9 @@ const Wrapper = styled.div`
 `;
 
 export default props => (
-  <DropContainer {...props}>
+  <DropContainer>
     <Wrapper>
-      <Content />
+      <Content data={props.data} onChange={props.onRoomTypeChanged} />
     </Wrapper>
   </DropContainer>
 );
