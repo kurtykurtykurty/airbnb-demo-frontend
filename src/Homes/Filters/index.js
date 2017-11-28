@@ -72,7 +72,7 @@ function getGuestsButtonLabel(data) {
   const guestsCount = Number(data.guests.adults) + Number(data.guests.children);
   const infantCount = Number(data.guests.infants);
 
-  if (guestsCount > 1 && infantCount > 0) {
+  if (guestsCount >= 1 && infantCount > 0) {
     return guestsCount + " Guests " + infantCount + " Infants";
   }
 

@@ -48,7 +48,8 @@ const Price = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   height: 94px;
-  ${"" /* background-size: 100% 100%; */} background-position-y: calc(100% - 15px);
+  background-size: 100% 80%;
+  background-position-y: calc(100% - 15px);
   background-position-x: center;
 `;
 

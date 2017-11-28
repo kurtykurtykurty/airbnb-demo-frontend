@@ -26,7 +26,7 @@ export default function(props) {
   return (
     <div>
       <div className="hidden-xs hidden-sm ">
-        <DropContainerGuests>
+        <DropContainerGuests onCancel={props.onCancel}>
           <Content>
             <Option
               id="adults"
