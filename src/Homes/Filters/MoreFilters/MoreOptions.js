@@ -54,7 +54,10 @@ export default props => (
           <Description>{props.descr}</Description>
           <More>Learn more</More>
         </Label>
-        <CheckBoxSlider onClick={props.onChange} isActive={props.isActive} />
+        <CheckBoxSlider
+          onClick={() => props.onChange(!props.isActive)}
+          isActive={props.isActive}
+        />
       </Row>
     </FilterBody>
   </Filter>

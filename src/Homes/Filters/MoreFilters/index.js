@@ -47,14 +47,11 @@ export default props => (
         <Content
           data={props.data}
           onFilterChanged={props.onFilterChanged}
-          //Room Type
+          onCancel={props.onCancel}
           //Price props
           range={props.range}
           //Bads Rooms
           dataRoomsBeds={props.dataRoomsBeds}
-          //More Options
-          onMoreOptionsChanged={props.onMoreOptionsChanged}
-          isActive={props.isActive}
         />
       </ScrollContainer>
     </DropContainer>
@@ -63,6 +60,7 @@ export default props => (
         <Content
           data={props.data}
           onFilterChanged={props.onFilterChanged}
+          onCancel={props.onCancel}
           //Price props
           range={props.range}
           //Bads Rooms
@@ -73,9 +71,9 @@ export default props => (
     <MobileMoreFilters
       data={props.data}
       onFilterChanged={props.onFilterChanged}
+      onCancel={props.onCancel}
       //Price props
       range={props.range}
-      onCancel={props.onCancel}
       //Bads Rooms
       onBedsRoomsChanged={props.onBedsRoomsChanged}
       dataRoomsBeds={props.bedrooms}

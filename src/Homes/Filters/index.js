@@ -49,8 +49,6 @@ const CloseField = styled.div`
   bottom: 0;
 `;
 
-//const formatDate = date => (date ? date.format("MMM Do") : "null");
-
 function getDatesButtonLabel(state) {
   const isActive = state.openedFilter === "Dates";
   const { selectedStartDate, selectedEndDate } = state;
@@ -138,7 +136,8 @@ const defaultState = {
     beds: 0,
     bathrooms: 0
   },
-  moreoptions: false
+  moreoptions: false,
+  amenities: {}
 };
 
 class Filters extends React.Component {
@@ -275,7 +274,7 @@ class Filters extends React.Component {
           openedFilter={this.state.openedFilter}
         >
           <InstantBook
-            onFilterChanged={this.onInstantBookChanged}
+            onFilterChanged={data => this.onFilterChanged("instantbook", data)}
             data={this.state.instantbook}
             onCancel={this.onCancel}
           />
@@ -292,7 +291,6 @@ class Filters extends React.Component {
         </Dropdown>
         {isOpenMoreFilters && (
           <MoreFilters
-            // RoomeType props
             onFilterChanged={this.onFilterChanged}
             data={this.state}
             onCancel={this.onCancel}
@@ -300,9 +298,6 @@ class Filters extends React.Component {
             range={rheostatRange}
             //Beds Rooms
             dataRoomsBeds={this.state.roomsbeds}
-            //More Options
-            onMoreOptionsChanged={this.onMoreOptionsChanged}
-            isActive={this.state.moreoptions}
           />
         )}
       </ButtonRow>

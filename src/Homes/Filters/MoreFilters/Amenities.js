@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { CheckBox } from "../../../UI";
 import checkbox from "./chkbx.svg";
 import arrow from "./arrowdown.svg";
 
@@ -26,14 +26,6 @@ const Label = styled.div`
   color: #383838;
   margin-bottom: 14px;
   width: 50%;
-`;
-
-const CheckBox = styled.button`
-  border: none;
-  width: 24px;
-  height: 24px;
-  background: url(${checkbox});
-  margin-right: 12px;
 `;
 
 const SeeAll = styled.a`

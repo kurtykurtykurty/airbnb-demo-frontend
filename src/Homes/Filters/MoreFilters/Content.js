@@ -86,8 +86,8 @@ export default props => (
     <Filter>
       <FilterTitle>More options</FilterTitle>
       <MoreOprions
-        onChange={props.onMoreOptionsChanged}
-        isActive={props.isActive}
+        onChange={data => props.onFilterChanged("moreoptions", data)}
+        isActive={props.data.moreoptions}
         label="Superhost"
         descr="Stay with recognized hosts."
       />
@@ -111,7 +111,7 @@ export default props => (
       </Amenities>
     </Filter>
     <Footer>
-      <Cancel>Cancel</Cancel>
+      <Cancel onClick={props.onCancel}>Cancel</Cancel>
       <SeeHomes>See Homes</SeeHomes>
     </Footer>
   </div>
