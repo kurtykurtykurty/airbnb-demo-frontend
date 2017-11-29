@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { DayPickerRangeController } from "react-dates";
 import cross from "./cross.svg";
 import arr from "./arr.svg";
+import { ScrollContainer } from "../MoreFilters";
+//import "./style_mobile.css";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -77,6 +79,15 @@ const CheckOut = styled(CheckIn)`
   border-bottom: none;
 `;
 
+const Calendar = styled.div`
+  top: 120px;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+`;
+
 export default props => (
   <Wrapper>
     <Header>
@@ -89,18 +100,21 @@ export default props => (
       <Arrow src={arr} />
       <CheckOut>Check-out</CheckOut>
     </Picker>
-    <DayPickerRangeController
-      startDate={props.startDate}
-      endDate={props.endDate}
-      onFocusChange={props.onFocusChange}
-      // onFocus={props.onFocus}
-      focusedInput={props.focusedInput}
-      onDatesChange={props.onDatesChange}
-      isDayBlocked={props.isDayBlocked}
-      orientation={props.orientation}
-      hideKeyboardShortcutsPanel={props.hideKeyboardShortcutsPanel}
-      initialVisibleMonth={props.initialVisibleMonth}
-      numberOfMonths={props.numberOfMonths}
-    />
+    <Calendar>
+      <ScrollContainer>
+        <DayPickerRangeController
+          startDate={props.startDate}
+          endDate={props.endDate}
+          onFocusChange={props.onFocusChange}
+          focusedInput={props.focusedInput}
+          onDatesChange={props.onDatesChange}
+          isDayBlocked={props.isDayBlocked}
+          orientation={props.orientation}
+          hideKeyboardShortcutsPanel={props.hideKeyboardShortcutsPanel}
+          initialVisibleMonth={props.initialVisibleMonth}
+          numberOfMonths={props.numberOfMonths}
+        />
+      </ScrollContainer>
+    </Calendar>
   </Wrapper>
 );

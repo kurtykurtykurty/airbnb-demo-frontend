@@ -2,15 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Content from "./Content";
 import cross from "../Dates/cross.svg";
+import { ScrollContainer } from "./index";
 
 const MobileContainer = styled.div`
-  position: fixed;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
   background: white;
-  z-index: 5;
 `;
 
 const Header = styled.div`
@@ -48,24 +47,7 @@ const Reset = styled.div`
 `;
 
 export default function(props) {
-  console.log("$$$$$$$$$$$", props);
   return (
-    <MobileContainer className="hidden-md hidden-lg hidden-xl">
-      <div className="container">
-        <Header>
-          <Close onClick={props.onCancel} />
-          <Title>Guest</Title>
-          <Reset>Reset</Reset>
-        </Header>
-        <Content
-          data={props.data}
-          onFilterChanged={props.onFilterChanged}
-          //Price props
-          range={props.range}
-          min={props.min}
-          max={props.max}
-        />
-      </div>
-    </MobileContainer>
+
   );
 }

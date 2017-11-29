@@ -1,0 +1,83 @@
+.DayPicker__horizontal {
+  box-shadow: none !important;
+}
+
+.CalendarMonth_table {
+  margin-top: 6px;
+}
+
+.CalendarDay_container {
+  font-family: CircularAir, sans-serif;
+  border: 1px solid #d5d5d5;
+  color: #383838;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.CalendarDay__blocked_calendar {
+  background: transparent;
+  border: 1px solid #d5d5d5;
+  color: #cbcbcb;
+}
+
+.DayPickerNavigation_svg__horizontal {
+  fill: #767676;
+}
+
+.DayPickerNavigation_button__default {
+  width: 40px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid rgba(118, 118, 118, 0.3);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.DayPicker_weekHeader {
+  position: fixed;
+  margin-top: 100px;
+  color: #636363;
+  margin-top: 100px;
+}
+
+.DayPicker_weekHeader_li {
+  font-family: CircularAir, sans-serif;
+  line-height: 14px;
+  font-size: 12px;
+  font-size: 100%;
+  text-align: center;
+  color: #636363;
+}
+
+/* vertical */
+
+.DayPicker_transitionContainer__vertical {
+  box-shadow: none !important;
+  height: 610px !important;
+}
+
+.DayPickerNavigation_container__vertical {
+  display: none;
+}
+
+.CalendarMonthGrid__vertical_scrollable {
+  overflow-y: hidden;
+}
+
+.DayPicker_transitionContainer__verticalScrollable {
+  overflow-y: hidden;
+}
+
+.CalendarMonth_caption__verticalScrollable {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.DayPicker_transitionContainer__vertical .CalendarMonth_table {
+  margin-top: 0px;
+}
+
+.DayPicker_transitionContainer__vertical .CalendarDay_container {
+  font-size: 12px;
+}

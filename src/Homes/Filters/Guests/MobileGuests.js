@@ -80,21 +80,52 @@ const Footer = styled.div`
   align-items: center;
   padding: 16px 8px;
 `;
+export default function(props) {
+  const { data, onFilterChanged } = props;
+  const { adults, children, infants } = data;
 
-export default props => (
-  <Wrapper>
-    <Header>
-      <Close onClick={props.onCancel} />
-      <Title>Guest</Title>
-      <Reset>Reset</Reset>
-    </Header>
-    <Content>
-      <Option ageName="Adults" />
-      <Option ageName="Children" ageDescr="Ages 2 — 12" />
-      <Option ageName="Infants" ageDescr="Under 2" />
-    </Content>
-    <Footer>
-      <Save>Save</Save>
-    </Footer>
-  </Wrapper>
-);
+  const onOptionChange = (id, value) => {
+    onFilterChanged({ ...data, [id]: value });
+  };
+
+  return (
+    <Wrapper>
+      <Header>
+        <Close onClick={props.onCancel} />
+        <Title>Guest</Title>
+        <Reset>Reset</Reset>
+      </Header>
+      <Content>
+        <Option
+          id="adults"
+          ageName="Adults"
+          value={adults}
+          onChange={onOptionChange}
+          min={1}
+          max={15}
+        />
+        <Option
+          id="children"
+          ageName="Children"
+          value={children}
+          ageDescr="Ages 2 — 12"
+          onChange={onOptionChange}
+          min={0}
+          max={5}
+        />
+        <Option
+          id="infants"
+          ageName="Infants"
+          value={infants}
+          ageDescr="Under 2"
+          onChange={onOptionChange}
+          min={0}
+          max={5}
+        />
+      </Content>
+      <Footer>
+        <Save>Save</Save>
+      </Footer>
+    </Wrapper>
+  );
+}

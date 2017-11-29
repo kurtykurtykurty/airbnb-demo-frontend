@@ -72,7 +72,11 @@ export default function(props) {
         </DropContainerGuests>
       </div>
       <div className="hidden-md hidden-lg hidden-xl">
-        <MobileGuests onCancel={props.onCancel} />
+        <MobileGuests
+          data={props.data}
+          onFilterChanged={props.onFilterChanged}
+          onCancel={props.onCancel}
+        />
       </div>
     </div>
   );

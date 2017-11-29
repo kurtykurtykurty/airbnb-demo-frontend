@@ -1,62 +1,123 @@
 import React from "react";
 import styled from "styled-components";
 import Content from "./Content";
-import MobileMoreFilters from "./MobileMoreFilters";
+import Footer from "./Footer";
 
-const FixedContainer = styled.div`
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  background: #fff;
-  width: 100%;
-  margin-top: 140px;
-  ${"" /* border: 5px solid green; */};
-`;
+import { media } from "../../../media";
+import { ScrollWrapper } from "../../../Landing/Section/index";
+
+import cross from "../Dates/cross.svg";
 
 const DropWraper = styled.div`
-  z-index: 2;
-  top: calc(100% - 4px);
-  position: absolute;
-  width: 66.66%;
-  ${"" /* height: 100%; */} ${"" /* border: 5px solid red; */};
+  top: 0px;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  ${"" /* border: 3px solid red; */} ${media.md`
+    top: 140px;
+  `};
 `;
 
 const DropContainer = styled.div`
-  ${"" /* border: 5px solid red; */} display: flex;
+  display: flex;
+  position: relative;
   flex-direction: column;
   text-align: center;
-  ${"" /* overflow-wrap: break-word; */} background: #fff;
   box-sizing: border-box;
-  ${"" /* position: relative; */} padding-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  ${"" /* border: 3px solid green; */} height: 100%;
+  ${media.md`
+    width: 768px;
+  `};
+
+  ${media.lg`
+    width: 991px;
+  `};
+
+  ${media.xl`
+    width: 1200px;
+  `};
 `;
 
-const ScrollContainer = styled.div`
-  ${"" /* border: 5px solid green; */} overflow-y: scroll;
+const SizeContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  ${media.lg`
+    width: 66%;
+  `};
+`;
+
+export const ScrollContainer = styled.div`
+  overflow-y: scroll;
+  padding-left: 16px;
+  padding-right: 16px;
   background: #fff;
-  position: fixed;
-  height: calc(100% - 160px);
-  width: 58%;
+  ${"" /* border: 3px solid purple; */} height: 100%;
+  padding-bottom: 100px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+  background: #fff;
+  z-index: 2;
+`;
+
+const Close = styled.button`
+  background: url(${cross});
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+  border: none;
+`;
+
+const Title = styled.div`
+  font-family: CircularAir, sans-serif;
+  line-height: normal;
+  font-size: 14px;
+  color: #383838;
+`;
+
+const Reset = styled.div`
+  font-family: CircularAir, sans-serif;
+  color: #0f7276;
+  line-height: normal;
+  font-size: 14px;
+  cursor: pointer;
 `;
 
 export default props => (
   <DropWraper>
-    {console.log("More Filters index data", props)}
     <DropContainer className="hidden-xs hidden-sm hidden-md">
-      <ScrollContainer>
-        <Content
-          data={props.data}
-          onFilterChanged={props.onFilterChanged}
-          onCancel={props.onCancel}
-          //Price props
-          range={props.range}
-          //Bads Rooms
-          dataRoomsBeds={props.dataRoomsBeds}
-        />
-      </ScrollContainer>
+      <SizeContainer>
+        <ScrollContainer>
+          <Content
+            data={props.data}
+            onFilterChanged={props.onFilterChanged}
+            onCancel={props.onCancel}
+            //Price props
+            range={props.range}
+            //Bads Rooms
+            dataRoomsBeds={props.dataRoomsBeds}
+          />
+        </ScrollContainer>
+        <Footer onCancel={props.onCancel} />
+      </SizeContainer>
     </DropContainer>
-    <FixedContainer className="hidden-xs hidden-sm hidden-lg hidden-xl">
-      <div className="container">
+    <DropContainer className="hidden-xs hidden-sm hidden-lg hidden-xl">
+      <ScrollContainer>
         <Content
           data={props.data}
           onFilterChanged={props.onFilterChanged}
@@ -66,17 +127,27 @@ export default props => (
           //Bads Rooms
           dataRoomsBeds={props.bedrooms}
         />
-      </div>
-    </FixedContainer>
-    <MobileMoreFilters
-      data={props.data}
-      onFilterChanged={props.onFilterChanged}
-      onCancel={props.onCancel}
-      //Price props
-      range={props.range}
-      //Bads Rooms
-      onBedsRoomsChanged={props.onBedsRoomsChanged}
-      dataRoomsBeds={props.bedrooms}
-    />
+      </ScrollContainer>
+      <Footer onCancel={props.onCancel} />
+    </DropContainer>
+    <DropContainer className="hidden-md hidden-lg hidden-xl">
+      <Header>
+        <Close onClick={props.onCancel} />
+        <Title>Guest</Title>
+        <Reset>Reset</Reset>
+      </Header>
+      <ScrollContainer>
+        <Content
+          data={props.data}
+          onFilterChanged={props.onFilterChanged}
+          onCancel={props.onCancel}
+          //Price props
+          range={props.range}
+          min={props.min}
+          max={props.max}
+        />
+      </ScrollContainer>
+      <Footer onCancel={props.onCancel} />
+    </DropContainer>
   </DropWraper>
 );

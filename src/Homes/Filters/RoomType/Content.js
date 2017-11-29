@@ -11,7 +11,6 @@ export default function(props) {
 
   const onOptionChange = (id, value) => {
     onFilterChanged({ ...data, [id]: value });
-    console.log("DATA ID", [id], value);
   };
 
   return (

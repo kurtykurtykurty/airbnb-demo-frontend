@@ -82,9 +82,16 @@ export default class Dates extends React.Component {
             <DayPickerRangeController
               startDate={selectedStartDate}
               endDate={selectedEndDate}
-              onFocusChange={props.onFocusChange}
               focusedInput={this.state.focusedInput}
-              onDatesChange={props.onDatesChange}
+              onFocusChange={focusedInput => {
+                this.setState({ focusedInput: focusedInput || "startDate" });
+              }}
+              onDatesChange={({ startDate, endDate }) => {
+                props.onFilterChanged({
+                  selectedStartDate: startDate,
+                  selectedEndDate: endDate
+                });
+              }}
               isDayBlocked={day => day.isBefore(moment(), "day")}
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}
@@ -95,9 +102,16 @@ export default class Dates extends React.Component {
             <MobileDayPicker
               startDate={selectedStartDate}
               endDate={selectedEndDate}
-              onFocusChange={props.onFocusChange}
+              onFocusChange={focusedInput => {
+                this.setState({ focusedInput: focusedInput || "startDate" });
+              }}
               focusedInput={this.state.focusedInput}
-              onDatesChange={props.onDatesChange}
+              onDatesChange={({ startDate, endDate }) => {
+                props.onFilterChanged({
+                  selectedStartDate: startDate,
+                  selectedEndDate: endDate
+                });
+              }}
               onCancel={props.onCancel}
               isDayBlocked={day => day.isBefore(moment(), "day")}
               orientation="verticalScrollable"
