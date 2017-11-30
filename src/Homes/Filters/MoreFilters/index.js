@@ -108,30 +108,30 @@ const Reset = styled.div`
   cursor: pointer;
 `;
 
-const defaultStateMoreFilters = {
-  roomsbeds: {
-    bedrooms: 0,
-    beds: 0,
-    bathrooms: 0
-  },
-  moreoptions: false,
-  amenities: {
-    heating: false,
-    tv: false,
-    kitchen: false,
-    wireless: false
-  },
-  facilities: {
-    elevator: false,
-    parking: false,
-    pool: false,
-    accessible: false
-  }
-};
+const fullFiltersList = [
+  "instantbook",
+  "roomtype",
+  "price",
+  "roomsbeds",
+  "moreoptions",
+  "amenities",
+  "facilities"
+];
 
-export function getMoreFiltersButtonLabel(data) {
-  const changedFilters = Object.keys(defaultStateMoreFilters).filter(
-    key => !isEqual(data[key], defaultStateMoreFilters[key])
+const shortFiltersList = [
+  "roomsbeds",
+  "moreoptions",
+  "amenities",
+  "facilities"
+];
+
+function getFiltersList() {
+  return shortFiltersList;
+}
+
+export function getMoreFiltersButtonLabel(data, defaultData) {
+  const changedFilters = getFiltersList().filter(
+    key => !isEqual(data[key], defaultData[key])
   );
   const changedFiltersCount = changedFilters.length;
   return changedFiltersCount > 0
@@ -154,7 +154,14 @@ export default props => (
             dataRoomsBeds={props.dataRoomsBeds}
           />
         </ScrollContainer>
-        <Footer onCancel={props.onCancel} />
+        <Footer
+          onApply={props.onApply}
+          onCancel={() =>
+            getFiltersList().forEach(id => {
+              props.onCancel(id);
+            })
+          }
+        />
       </SizeContainer>
     </DropContainer>
     <DropContainer className="hidden-xs hidden-sm hidden-lg hidden-xl">
@@ -162,7 +169,12 @@ export default props => (
         <Content
           data={props.data}
           onFilterChanged={props.onFilterChanged}
-          onCancel={props.onCancel}
+          onCancel={() =>
+            getFiltersList().forEach(id => {
+              props.onCancel(id);
+            })
+          }
+          onApply={props.onApply}
           //Price props
           range={props.range}
           //Bads Rooms
@@ -173,9 +185,17 @@ export default props => (
     </DropContainer>
     <DropContainer className="hidden-md hidden-lg hidden-xl">
       <Header>
-        <Close onClick={props.onCancel} />
+        <Close onClick={props.onApply} />
         <Title>Guest</Title>
-        <Reset>Reset</Reset>
+        <Reset
+          onClick={() =>
+            fullFiltersList.forEach(id => {
+              props.onReset(id);
+            })
+          }
+        >
+          Reset
+        </Reset>
       </Header>
       <ScrollContainer>
         <Content
@@ -188,7 +208,14 @@ export default props => (
           max={props.max}
         />
       </ScrollContainer>
-      <Footer onCancel={props.onCancel} />
+      <Footer
+        onApply={props.onApply}
+        onCancel={() =>
+          getFiltersList().forEach(id => {
+            props.onCancel(id);
+          })
+        }
+      />
     </DropContainer>
   </DropWraper>
 );

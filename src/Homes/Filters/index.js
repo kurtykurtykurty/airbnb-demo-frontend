@@ -79,8 +79,7 @@ const rheostatRange = {
   max: 1000
 };
 
-const defaultState = {
-  openedFilter: null,
+const defaultFiltersData = {
   dates: {
     startDate: null,
     endDate: null,
@@ -122,6 +121,11 @@ const defaultState = {
   }
 };
 
+const defaultState = {
+  openedFilter: null,
+  ...defaultFiltersData
+};
+
 class Filters extends React.Component {
   state = defaultState;
 
@@ -134,8 +138,17 @@ class Filters extends React.Component {
     this.setState({ openedFilter: null });
   };
 
-  onCancel = () => {
+  onCancel = id => {
+    this.setState({ [id]: defaultState[id] });
     this.closeFilter();
+  };
+
+  onApply = () => {
+    this.closeFilter();
+  };
+
+  onReset = id => {
+    this.setState({ [id]: defaultState[id] });
   };
 
   onCancelDates = () => {
@@ -162,17 +175,6 @@ class Filters extends React.Component {
 
   onFilterChanged = (id, value) => {
     this.setState({ [id]: value });
-  };
-
-  onClose = () => {
-    //under construction ༼ ͡° ͜ʖ ͡° ༽
-    const id = String(this.state.openedFilter);
-    this.setState({ [id]: defaultState[id] });
-  };
-
-  onApply = () => {
-    //under construction ¯\_( ͡° ͜ʖ ͡°)_/¯
-    this.setState({ openedFilter: null });
   };
 
   render() {
@@ -204,7 +206,7 @@ class Filters extends React.Component {
           <Guests
             data={this.state.guests}
             onFilterChanged={data => this.onFilterChanged("guests", data)}
-            onCancel={this.onCancel}
+            onCancel={() => this.onCancel("guests")}
             onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
@@ -220,7 +222,7 @@ class Filters extends React.Component {
           <RoomType
             data={this.state.roomtype}
             onFilterChanged={data => this.onFilterChanged("roomtype", data)}
-            onCancel={this.onCancel}
+            onCancel={() => this.onCancel("roomtype")}
             onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
@@ -242,7 +244,7 @@ class Filters extends React.Component {
             data={this.state.price}
             range={rheostatRange}
             onFilterChanged={data => this.onFilterChanged("price", data)}
-            onCancel={this.onCancel}
+            onCancel={() => this.onCancel("price")}
             onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
@@ -258,7 +260,7 @@ class Filters extends React.Component {
           <InstantBook
             onFilterChanged={data => this.onFilterChanged("instantbook", data)}
             data={this.state.instantbook}
-            onCancel={this.onCancel}
+            onCancel={() => this.onCancel("instantbook")}
             onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
@@ -266,7 +268,7 @@ class Filters extends React.Component {
 
         <Dropdown
           id="Morefilters"
-          label={getMoreFiltersButtonLabel(this.state)}
+          label={getMoreFiltersButtonLabel(this.state, defaultFiltersData)}
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >
@@ -278,10 +280,9 @@ class Filters extends React.Component {
             data={this.state}
             onCancel={this.onCancel}
             onApply={this.onApply}
+            onReset={this.onReset}
             //Price props
             range={rheostatRange}
-            //Beds Rooms
-            dataRoomsBeds={this.state.roomsbeds}
           />
         )}
       </ButtonRow>

@@ -8,14 +8,6 @@ const Filter = styled.div`
   text-align: left;
 `;
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-  margin-top: 25px;
-`;
-
 const Label = styled.div`
   display: inline-block;
   font-family: CircularAir;
@@ -37,6 +29,7 @@ const SeeAll = styled.a`
   cursor: pointer;
   margin-top: 7px;
   cursor: pointer;
+  text-decoration: none;
   tabindex: 1;
 `;
 
@@ -61,7 +54,7 @@ export const Option = props => (
 export default props => (
   <Filter>
     <Container>{props.children}</Container>
-    <SeeAll>
+    <SeeAll href="">
       {props.seeAll}
       <Arrow src={arrow} />
     </SeeAll>

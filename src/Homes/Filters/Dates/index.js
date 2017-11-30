@@ -50,6 +50,17 @@ export function getDatesButtonLabel(state) {
 export default class Dates extends React.Component {
   state = { focusedInput: "startDate" };
 
+  onDatesChange = ({ startDate, endDate }) => {
+    this.props.onFilterChanged({
+      selectedStartDate: startDate,
+      selectedEndDate: endDate
+    });
+  };
+
+  onFocusChange = focusedInput => {
+    this.setState({ focusedInput: focusedInput || "startDate" });
+  };
+
   render() {
     const props = this.props;
     const { data } = props;
@@ -63,15 +74,8 @@ export default class Dates extends React.Component {
               startDate={selectedStartDate}
               endDate={selectedEndDate}
               focusedInput={this.state.focusedInput}
-              onDatesChange={({ startDate, endDate }) => {
-                props.onFilterChanged({
-                  selectedStartDate: startDate,
-                  selectedEndDate: endDate
-                });
-              }}
-              onFocusChange={focusedInput => {
-                this.setState({ focusedInput: focusedInput || "startDate" });
-              }}
+              onDatesChange={this.onDatesChange}
+              onFocusChange={this.onFocusChange}
               isDayBlocked={day => day.isBefore(moment(), "day")}
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}

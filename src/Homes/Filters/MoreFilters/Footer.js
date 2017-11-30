@@ -71,7 +71,7 @@ export default props => (
   <Footer>
     <Wrapper>
       <Cancel onClick={props.onCancel}>Cancel</Cancel>
-      <SeeHomes>See Homes</SeeHomes>
+      <SeeHomes onClick={props.onApply}>See Homes</SeeHomes>
     </Wrapper>
   </Footer>
 );
