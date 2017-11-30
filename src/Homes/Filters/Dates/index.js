@@ -102,7 +102,8 @@ export default class Dates extends React.Component {
               focusedInput={this.state.focusedInput}
               onDatesChange={this.onDatesChange}
               onFocusChange={this.onFocusChange}
-              onCancel={props.onCancel}
+              onApply={props.onApply}
+              onReset={props.onReset}
               isDayBlocked={day => day.isBefore(moment(), "day")}
               orientation="verticalScrollable"
               hideKeyboardShortcutsPanel

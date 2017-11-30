@@ -4,6 +4,7 @@ import { DayPickerRangeController } from "react-dates";
 import cross from "./cross.svg";
 import arr from "./arr.svg";
 import { ScrollContainer } from "../MoreFilters";
+import { getDatesButtonLabel } from "./index";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -90,9 +91,9 @@ const Calendar = styled.div`
 export default props => (
   <Wrapper>
     <Header>
-      <Close onClick={props.onCancel} />
+      <Close onClick={props.onApply} />
       <Title>When</Title>
-      <Reset>Reset</Reset>
+      <Reset onClick={props.onReset}>Reset</Reset>
     </Header>
     <Picker>
       <CheckIn>Check-in</CheckIn>

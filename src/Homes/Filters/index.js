@@ -148,6 +148,7 @@ class Filters extends React.Component {
   };
 
   onReset = id => {
+    console.log("mobile date reset", id);
     this.setState({ [id]: defaultState[id] });
   };
 
@@ -193,6 +194,7 @@ class Filters extends React.Component {
             onFilterChanged={data => this.onFilterChanged("dates", data)}
             onCancel={this.onCancelDates}
             onApply={this.onApplyDates}
+            onReset={() => this.onReset("dates")}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
