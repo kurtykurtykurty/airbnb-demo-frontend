@@ -10,6 +10,7 @@ import { getPriceButtonLabel } from "./Price/Content";
 import { getRoomTypeButtonLabel } from "./RoomType";
 import { getGuestsButtonLabel } from "./Guests";
 import { getDatesButtonLabel } from "./Dates";
+import { getMoreFiltersButtonLabel } from "./MoreFilters";
 
 const FiltersWrapper = styled.div`
   width: 100%;
@@ -251,7 +252,7 @@ class Filters extends React.Component {
 
         <Dropdown
           id="Morefilters"
-          label="More filters"
+          label={getMoreFiltersButtonLabel(this.state)}
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
         >

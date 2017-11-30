@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Content from "./Content";
 import Footer from "./Footer";
+import { isEqual } from "lodash";
 
 import { media } from "../../../media";
-import { ScrollWrapper } from "../../../Landing/Section/index";
 
 import cross from "../Dates/cross.svg";
 
@@ -16,7 +16,8 @@ const DropWraper = styled.div`
   bottom: 0px;
   position: fixed;
   background: rgba(255, 255, 255, 0.5);
-  ${"" /* border: 3px solid red; */} ${media.md`
+
+  ${media.md`
     top: 140px;
   `};
 `;
@@ -29,7 +30,8 @@ const DropContainer = styled.div`
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  ${"" /* border: 3px solid green; */} height: 100%;
+  height: 100%;
+
   ${media.md`
     width: 768px;
   `};
@@ -96,6 +98,37 @@ const Reset = styled.div`
   font-size: 14px;
   cursor: pointer;
 `;
+
+const defaultStateMoreFilters = {
+  roomsbeds: {
+    bedrooms: 0,
+    beds: 0,
+    bathrooms: 0
+  },
+  moreoptions: false,
+  amenities: {
+    heating: false,
+    tv: false,
+    kitchen: false,
+    wireless: false
+  },
+  facilities: {
+    elevator: false,
+    parking: false,
+    pool: false,
+    accessible: false
+  }
+};
+
+export function getMoreFiltersButtonLabel(data) {
+  const changedFilters = Object.keys(defaultStateMoreFilters).filter(
+    key => !isEqual(data[key], defaultStateMoreFilters[key])
+  );
+  const changedFiltersCount = changedFilters.length;
+  return changedFiltersCount > 0
+    ? changedFiltersCount + " · More Filters"
+    : "More Filters";
+}
 
 export default props => (
   <DropWraper>
