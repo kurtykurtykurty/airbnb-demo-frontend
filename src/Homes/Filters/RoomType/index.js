@@ -28,7 +28,7 @@ export function getRoomTypeButtonLabel(data) {
 
 export default function(props) {
   return (
-    <DropContainer onCancel={props.onCancel}>
+    <DropContainer onApply={props.onApply} onCancel={props.onCancel}>
       <Wrapper>
         <Content data={props.data} onFilterChanged={props.onFilterChanged} />
       </Wrapper>

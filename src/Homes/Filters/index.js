@@ -161,8 +161,18 @@ class Filters extends React.Component {
   };
 
   onFilterChanged = (id, value) => {
-    console.log("onFilterChanged", id, value);
     this.setState({ [id]: value });
+  };
+
+  onClose = () => {
+    //under construction ༼ ͡° ͜ʖ ͡° ༽
+    const id = String(this.state.openedFilter);
+    this.setState({ [id]: defaultState[id] });
+  };
+
+  onApply = () => {
+    //under construction ¯\_( ͡° ͜ʖ ͡°)_/¯
+    this.setState({ openedFilter: null });
   };
 
   render() {
@@ -195,6 +205,7 @@ class Filters extends React.Component {
             data={this.state.guests}
             onFilterChanged={data => this.onFilterChanged("guests", data)}
             onCancel={this.onCancel}
+            onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
@@ -210,6 +221,7 @@ class Filters extends React.Component {
             data={this.state.roomtype}
             onFilterChanged={data => this.onFilterChanged("roomtype", data)}
             onCancel={this.onCancel}
+            onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
@@ -231,6 +243,7 @@ class Filters extends React.Component {
             range={rheostatRange}
             onFilterChanged={data => this.onFilterChanged("price", data)}
             onCancel={this.onCancel}
+            onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
@@ -246,6 +259,7 @@ class Filters extends React.Component {
             onFilterChanged={data => this.onFilterChanged("instantbook", data)}
             data={this.state.instantbook}
             onCancel={this.onCancel}
+            onApply={this.onApply}
           />
           <CloseField onClick={this.closeFilter} />
         </Dropdown>
@@ -263,6 +277,7 @@ class Filters extends React.Component {
             onFilterChanged={this.onFilterChanged}
             data={this.state}
             onCancel={this.onCancel}
+            onApply={this.onApply}
             //Price props
             range={rheostatRange}
             //Beds Rooms

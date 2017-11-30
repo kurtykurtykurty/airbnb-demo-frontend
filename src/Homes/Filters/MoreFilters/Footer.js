@@ -8,6 +8,7 @@ const Footer = styled.div`
   width: 100%;
   margin-left: 16px;
   margin-right: 30px;
+  background: #fff;
   justify-content: center;
   z-index: 2;
 

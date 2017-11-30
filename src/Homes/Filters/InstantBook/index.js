@@ -42,7 +42,7 @@ const Check = styled.div``;
 
 export default props => (
   <div className="hidden-xs hidden-sm hidden-md">
-    <DropContainer onCancel={props.onCancel}>
+    <DropContainer onApply={props.onApply} onCancel={props.onCancel}>
       <Content>
         <Row>
           <Label>

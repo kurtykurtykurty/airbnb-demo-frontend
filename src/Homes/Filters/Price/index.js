@@ -5,7 +5,7 @@ import "./slider.css";
 
 export default function(props) {
   return (
-    <DropContainer onCancel={props.onCancel}>
+    <DropContainer onApply={props.onApply} onCancel={props.onCancel}>
       <Content
         data={props.data}
         range={props.range}

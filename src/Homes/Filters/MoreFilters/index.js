@@ -61,6 +61,17 @@ export const ScrollContainer = styled.div`
   padding-right: 16px;
   background: #fff;
   height: 100%;
+  bottom: 56px;
+  position: absolute;
+
+  ${media.md`
+    position: static;
+    overflow-y: scroll;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #fff;
+    height: 100%;
+  `};
 `;
 
 const Header = styled.div`

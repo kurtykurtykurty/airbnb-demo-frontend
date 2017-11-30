@@ -37,6 +37,7 @@ const SeeAll = styled.a`
   cursor: pointer;
   margin-top: 7px;
   cursor: pointer;
+  tabindex: 1;
 `;
 
 const Arrow = styled.img`
