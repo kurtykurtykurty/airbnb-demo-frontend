@@ -98,7 +98,7 @@ export default function(props) {
       <Content>
         <Option
           id="adults"
-          ageName="Adults"
+          label="Adults"
           value={adults}
           onChange={onOptionChange}
           min={1}
@@ -106,18 +106,18 @@ export default function(props) {
         />
         <Option
           id="children"
-          ageName="Children"
+          label="Children"
           value={children}
-          ageDescr="Ages 2 — 12"
+          descr="Ages 2 — 12"
           onChange={onOptionChange}
           min={0}
           max={5}
         />
         <Option
           id="infants"
-          ageName="Infants"
+          label="Infants"
           value={infants}
-          ageDescr="Under 2"
+          descr="Under 2"
           onChange={onOptionChange}
           min={0}
           max={5}

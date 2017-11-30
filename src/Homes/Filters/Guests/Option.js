@@ -11,7 +11,7 @@ const Option = styled.div`
   margin-bottom: 18px;
 `;
 
-const Age = styled.div`
+const Title = styled.div`
   font-family: CircularAir;
   line-height: normal;
   font-size: 18px;
@@ -22,7 +22,7 @@ const Age = styled.div`
   `};
 `;
 
-const AgeDescription = styled.div`
+const Description = styled.div`
   font-family: CircularAir;
   line-height: normal;
   font-weight: 200;
@@ -35,7 +35,7 @@ const AgeDescription = styled.div`
   `};
 `;
 
-const AgeWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -47,10 +47,10 @@ function bound(value, min, max) {
 
 export default props => (
   <Option>
-    <AgeWrapper>
-      <Age>{props.ageName}</Age>
-      <AgeDescription>{props.ageDescr}</AgeDescription>
-    </AgeWrapper>
+    <Wrapper>
+      <Title>{props.label}</Title>
+      <Description>{props.descr}</Description>
+    </Wrapper>
     <NumInput
       value={props.value}
       max={props.max}
