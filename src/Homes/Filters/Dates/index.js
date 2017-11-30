@@ -44,7 +44,7 @@ export function getDatesButtonLabel(state) {
     return `${startDate.format("MMM Do")} — ${endDate.format("MMM Do")}`;
   }
 
-  return "Date";
+  return "Dates";
 }
 
 export default class Dates extends React.Component {
