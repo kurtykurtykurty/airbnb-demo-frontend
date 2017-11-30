@@ -58,8 +58,7 @@ export const ScrollContainer = styled.div`
   padding-left: 16px;
   padding-right: 16px;
   background: #fff;
-  ${"" /* border: 3px solid purple; */} height: 100%;
-  padding-bottom: 100px;
+  height: 100%;
 `;
 
 const Header = styled.div`

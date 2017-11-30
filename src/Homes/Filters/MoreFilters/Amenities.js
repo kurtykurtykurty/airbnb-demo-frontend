@@ -1,67 +1,34 @@
 import React from "react";
-import styled from "styled-components";
-import { CheckBox } from "../../../UI";
-import checkbox from "./chkbx.svg";
-import arrow from "./arrowdown.svg";
 
-const Filter = styled.div`
-  text-align: left;
-`;
+import CheckBoxFilter, { Option } from "./CheckBoxFilter";
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-  margin-top: 25px;
-`;
-
-const Label = styled.div`
-  display: inline-block;
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 18px;
-  font-weight: 200;
-  text-align: left;
-  color: #383838;
-  margin-bottom: 14px;
-  width: 50%;
-`;
-
-const SeeAll = styled.a`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 16px;
-  color: #0f7276;
-  cursor: pointer;
-  margin-top: 7px;
-  cursor: pointer;
-`;
-
-const Arrow = styled.img`
-  width: 12px;
-  height: 7px;
-  margin-left: 8px;
-`;
-
-export const Amenity = props => (
-  <Label>
-    <CheckBox />
-    {props.label}
-  </Label>
-);
-
-const Container = styled.div`
-  width: 100%;
-  margin-top: 24px;
-`;
-
-export default props => (
-  <Filter>
-    <Container>{props.children}</Container>
-    <SeeAll>
-      {props.seeall}
-      <Arrow src={arrow} />
-    </SeeAll>
-  </Filter>
-);
+export default function(props) {
+  return (
+    <CheckBoxFilter seeAll="See all amenities">
+      <Option
+        label="Heating"
+        onChange={props.onFilterChanged}
+        isActive={props.data.heating}
+        id="heating"
+      />
+      <Option
+        label="Kitchen"
+        onChange={props.onFilterChanged}
+        isActive={props.data.kitchen}
+        id="kitchen"
+      />
+      <Option
+        label="TV"
+        onChange={props.onFilterChanged}
+        isActive={props.data.tv}
+        id="tv"
+      />
+      <Option
+        label="Wireless Internet"
+        onChange={props.onFilterChanged}
+        isActive={props.data.wireless}
+        id="wireless"
+      />
+    </CheckBoxFilter>
+  );
+}

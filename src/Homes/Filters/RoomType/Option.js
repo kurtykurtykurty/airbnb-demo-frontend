@@ -27,6 +27,7 @@ const BoxWrap = styled.div`
   font-size: 12px;
   font-weight: 200;
   text-align: left;
+  cursor: pointer;
 `;
 
 const OptionRow = styled.div`
@@ -49,12 +50,9 @@ export default function(props) {
   return (
     <Option>
       <OptionRow>
-        <BoxWrap>
+        <BoxWrap onClick={() => props.onChange(props.id, !props.isActive)}>
           <Box>
-            <CheckBox
-              onClick={() => props.onChange(props.id, !props.isActive)}
-              isActive={props.isActive}
-            />
+            <CheckBox isActive={props.isActive} />
             {props.typeroom}
           </Box>
           <NoteDescr>{props.descr}</NoteDescr>

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../media";
-import circle from "./circle.png";
-import next from "./next.png";
+import circle from "./circle.svg";
+import next from "./next.svg";
 
 const Footer = styled.div`
   display: flex;

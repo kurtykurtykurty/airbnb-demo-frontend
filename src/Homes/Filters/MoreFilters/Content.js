@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import RoomBeds from "./RoomsBeds";
 import MoreOprions from "./MoreOptions";
-import Amenities, { Amenity } from "./Amenities";
 import { media } from "../../../media";
 import RoomType from "../RoomType/Content";
 import Price from "../Price/Content";
+import Amenities from "./Amenities";
 import Footer from "./Footer";
+import Facilities from "./Facilities";
 
 const Filter = styled.div`
   box-shadow: 0px 0.5px 0px 0px rgba(72, 72, 72, 0.3);
@@ -14,7 +15,7 @@ const Filter = styled.div`
   padding-top: 23px;
 `;
 
-const FilterTitle = styled.div`
+const Title = styled.div`
   font-family: CircularAir;
   line-height: normal;
   font-size: 18px;
@@ -26,17 +27,21 @@ const FilterTitle = styled.div`
   `};
 `;
 
+const Wrap = styled.div`
+  padding-bottom: 48px;
+`;
+
 export default props => (
-  <div>
+  <Wrap>
     <Filter className="hidden-lg hidden-xl">
-      <FilterTitle>Room Type</FilterTitle>
+      <Title>Room Type</Title>
       <RoomType
         data={props.data.roomtype}
         onFilterChanged={data => props.onFilterChanged("roomtype", data)}
       />
     </Filter>
     <Filter className="hidden-lg hidden-xl">
-      <FilterTitle>Price range</FilterTitle>
+      <Title>Price range</Title>
       <Price
         range={props.range}
         data={props.data.price}
@@ -44,7 +49,7 @@ export default props => (
       />
     </Filter>
     <Filter>
-      <FilterTitle>Rooms and beds</FilterTitle>
+      <Title>Rooms and beds</Title>
       <RoomBeds
         onFilterChanged={data => props.onFilterChanged("roomsbeds", data)}
         data={props.data.roomsbeds}
@@ -53,7 +58,7 @@ export default props => (
       />
     </Filter>
     <Filter>
-      <FilterTitle>More options</FilterTitle>
+      <Title>More options</Title>
       <MoreOprions
         onChange={data => props.onFilterChanged("moreoptions", data)}
         isActive={props.data.moreoptions}
@@ -62,22 +67,28 @@ export default props => (
       />
     </Filter>
     <Filter>
-      <FilterTitle>Amenities</FilterTitle>
-      <Amenities seeall="See all amenities">
-        <Amenity label="Heating" />
-        <Amenity label="Kitchen" />
-        <Amenity label="TV" />
-        <Amenity label="Wireless Internet" />
-      </Amenities>
+      <Title>Amenities</Title>
+      <Amenities
+        data={props.data.amenities}
+        onFilterChanged={(id, data) =>
+          props.onFilterChanged("amenities", {
+            ...props.data.amenities,
+            [id]: data
+          })
+        }
+      />
     </Filter>
     <Filter>
-      <FilterTitle>Facilities</FilterTitle>
-      <Amenities seeall="See all facilities">
-        <Amenity label="Elevator" />
-        <Amenity label="Free parking on premises" />
-        <Amenity label="Pool" />
-        <Amenity label="Wheelchair accessible" />
-      </Amenities>
+      <Title>Facilities</Title>
+      <Facilities
+        data={props.data.facilities}
+        onFilterChanged={(id, data) =>
+          props.onFilterChanged("facilities", {
+            ...props.data.facilities,
+            [id]: data
+          })
+        }
+      />
     </Filter>
-  </div>
+  </Wrap>
 );

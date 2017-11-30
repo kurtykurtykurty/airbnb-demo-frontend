@@ -44,10 +44,10 @@ const Button = styled.button`
 
 const CloseField = styled.div`
   position: fixed;
-  background: rgba(0, 0, 0, 0);
+  background: none;
   left: 0;
   right: 0;
-  top: 0;
+  top: 138px;
   bottom: 0;
 `;
 
@@ -107,13 +107,25 @@ const defaultState = {
     bathrooms: 0
   },
   moreoptions: false,
-  amenities: {}
+  amenities: {
+    heating: false,
+    tv: false,
+    kitchen: false,
+    wireless: false
+  },
+  facilities: {
+    elevator: false,
+    parking: false,
+    pool: false,
+    accessible: false
+  }
 };
 
 class Filters extends React.Component {
   state = defaultState;
 
   openFilter = key => {
+    if (key === this.state.openedFilter) return this.closeFilter();
     this.setState({ openedFilter: key });
   };
 
@@ -148,6 +160,7 @@ class Filters extends React.Component {
   };
 
   onFilterChanged = (id, value) => {
+    console.log("onFilterChanged", id, value);
     this.setState({ [id]: value });
   };
 
