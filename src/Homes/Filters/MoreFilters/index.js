@@ -61,8 +61,6 @@ export const ScrollContainer = styled.div`
   padding-right: 16px;
   background: #fff;
   height: 100%;
-  bottom: 56px;
-  position: absolute;
 
   ${media.md`
     position: static;
