@@ -28,20 +28,26 @@ const Content = styled.div`
   padding-right: 8px;
 `;
 
-export function getDatesButtonLabel(state) {
-  const isActive = state.openedFilter === "Dates";
-  const { selectedStartDate, selectedEndDate } = state.dates;
+function fotmatDate(date, placeholder = "") {
+  return date ? date.format("MMM Do") : placeholder;
+}
 
-  if (isActive) {
-    return `${
-      selectedStartDate ? selectedStartDate.format("MMM Do") : "Check in "
-    } — 
-      ${selectedEndDate ? selectedEndDate.format("MMM Do") : "Check out"}`;
+export function getDatesButtonLabel(data, isActive) {
+  const { startDate, endDate } = data;
+  const { selectedStartDate, selectedEndDate } = data;
+
+  console.log("data", data);
+  console.log("selectedStartDate", selectedStartDate);
+
+  if (startDate && endDate) {
+    return `${fotmatDate(startDate)} — ${fotmatDate(endDate)}`;
   }
 
-  const { startDate, endDate } = state.dates;
-  if (startDate && endDate) {
-    return `${startDate.format("MMM Do")} — ${endDate.format("MMM Do")}`;
+  if (isActive) {
+    return `${fotmatDate(selectedStartDate, "Check in")} — ${fotmatDate(
+      selectedEndDate,
+      "Check out"
+    )}`;
   }
 
   return "Dates";
@@ -76,6 +82,7 @@ export default class Dates extends React.Component {
               focusedInput={this.state.focusedInput}
               onDatesChange={this.onDatesChange}
               onFocusChange={this.onFocusChange}
+              isActive={props.isActive}
               isDayBlocked={day => day.isBefore(moment(), "day")}
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}

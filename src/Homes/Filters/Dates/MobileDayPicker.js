@@ -4,7 +4,6 @@ import { DayPickerRangeController } from "react-dates";
 import cross from "./cross.svg";
 import arr from "./arr.svg";
 import { ScrollContainer } from "../MoreFilters";
-import { getDatesButtonLabel } from "./index";
 
 const Wrapper = styled.div`
   position: fixed;

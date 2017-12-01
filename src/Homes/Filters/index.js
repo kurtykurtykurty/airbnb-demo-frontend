@@ -187,7 +187,10 @@ class Filters extends React.Component {
           id="Dates"
           handleOpen={this.openFilter}
           openedFilter={this.state.openedFilter}
-          label={getDatesButtonLabel(this.state)}
+          label={getDatesButtonLabel(
+            this.state.dates,
+            this.state.openedFilter === "Dates"
+          )}
         >
           <Dates
             data={this.state.dates}

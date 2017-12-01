@@ -2,6 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Minus, Plus } from "../../../UI";
 
+const Counter = styled.div`
+  display: flex;
+  font-family: CircularAir;
+  line-height: normal;
+  font-size: 18px;
+  color: #383838;
+  line-height: normal;
+`;
+
 const CountNumber = styled.div`
   line-height: normal;
   font-size: 18px;
@@ -12,15 +21,6 @@ const CountNumber = styled.div`
   font-weight: 200;
   width: 24px;
   height: 23px;
-`;
-
-const Counter = styled.div`
-  display: flex;
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 18px;
-  color: #383838;
-  line-height: normal;
 `;
 
 function bound(value, min, max) {
