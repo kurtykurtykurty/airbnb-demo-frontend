@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import SocialButton from "./SocialButton";
+import MobileSocialButton from "./MobileSocialButton";
+import { media } from "../../media";
 
 import bigroom from "./big_room.png";
 import share from "./share.svg";
+import mobileShare from "./share_mobile.svg";
 import like from "./like.svg";
+import mobileLike from "./like_mobile.svg";
 
 const MainImage = styled.div`
   width: 100%;
@@ -25,6 +30,18 @@ const Wrapper = styled.div`
   height: 440px;
 `;
 
+const Bottom = styled.div`
+  margin: 8px 16px 8px 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  height: 100%;
+
+  ${media.md`
+    justify-content: flex-start;
+  `};
+`;
+
 const Button = styled.button`
   display: flex;
   height: 40px;
@@ -39,15 +56,8 @@ const Button = styled.button`
   font-size: 14px;
   color: #383838;
   cursor: pointer;
-`;
-
-const Share = styled(Button)`
-  margin-top: 16px;
-  margin-right: 16px;
-`;
-
-const Save = styled(Button)`
-  margin-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
 `;
 
 const ViewPhotos = styled(Button)`
@@ -55,30 +65,26 @@ const ViewPhotos = styled(Button)`
   margin-bottom: 16px;
 `;
 
-const ShareImg = styled.div`
-  width: 16px;
-  height: 16px;
-  margin-right: 12px;
-  margin: 8px 8px 8px 16px;
-  background-image: url(${share});
+const Share = styled(SocialButton)`
+  margin-top: 16px;
+  margin-right: 16px;
 `;
 
-const LikeImg = styled.div`
-  display: flex;
-  width: 18px;
-  height: 16px;
-  margin-right: 12px;
-  background-image: url(${like});
+const MobileShare = styled(MobileSocialButton)`
+  margin-top: 12px;
+  margin-right: 16px;
 `;
 
-const Bottom = styled.div`
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
+const Like = styled(SocialButton)`
+  margin-top: 16px;
+`;
+
+const MobileLike = styled(MobileSocialButton)`
+  margin-top: 12px;
 `;
 
 const Label = styled.div`
-  margin: 8px 16px 8px 0;
+  margin: 8px 0 8px 0;
   display: flex;
   text-align: center;
 `;
@@ -89,16 +95,23 @@ export default () => (
       <div className="container">
         <Wrapper>
           <Social>
-            <Share>
-              <ShareImg />
-              <Label>Share</Label>
+            <Share label="Share">
+              <img src={share} />
             </Share>
-            <Save>
-              <LikeImg />Save
-            </Save>
+            <MobileShare>
+              <img src={mobileShare} />
+            </MobileShare>
+            <Like label="Save">
+              <img src={like} />
+            </Like>
+            <MobileLike>
+              <img src={mobileLike} />
+            </MobileLike>
           </Social>
           <Bottom>
-            <ViewPhotos>ViewPhotos</ViewPhotos>
+            <ViewPhotos>
+              <Label>ViewPhotos</Label>
+            </ViewPhotos>
           </Bottom>
         </Wrapper>
       </div>
