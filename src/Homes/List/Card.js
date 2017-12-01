@@ -10,6 +10,7 @@ const Card = styled.div`
   line-height: normal;
   color: #383838;
   text-align: left;
+  cursor: pointer;
 `;
 
 const CardFooter = styled.div`

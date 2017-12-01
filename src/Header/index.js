@@ -12,7 +12,7 @@ const Header = styled.header`
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
   padding: 16px 0;
   background: #ffffff;
-  position: fixed;
+  position: ${props => (props.isFixed ? "fixed" : "static")};
   z-index: 2;
 `;
 
@@ -64,11 +64,13 @@ const Arr = styled.img`
   display: none;`};
 `;
 
-const Link = styled(RLink)`text-decoration: none;`;
+const Link = styled(RLink)`
+  text-decoration: none;
+`;
 
-export default function() {
+export default function(props) {
   return (
-    <Header>
+    <Header isFixed={props.isFixed}>
       <div className="container">
         <div className="row">
           <Content>
