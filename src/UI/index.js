@@ -37,6 +37,7 @@ export const CheckBoxSlider = styled.button`
     props.isActive ? checkboxSlideron : checkboxSlideroff});
   cursor: pointer;
 `;
+
 export const CheckBox = styled.button`
   box-sizing: border-box;
   width: 24px;

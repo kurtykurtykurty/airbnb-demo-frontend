@@ -28,7 +28,7 @@ const Content = styled.div`
   padding-right: 8px;
 `;
 
-function fotmatDate(date, placeholder = "") {
+function formatDate(date, placeholder = "") {
   return date ? date.format("MMM Do") : placeholder;
 }
 
@@ -40,11 +40,11 @@ export function getDatesButtonLabel(data, isActive) {
   console.log("selectedStartDate", selectedStartDate);
 
   if (startDate && endDate) {
-    return `${fotmatDate(startDate)} — ${fotmatDate(endDate)}`;
+    return `${formatDate(startDate)} — ${formatDate(endDate)}`;
   }
 
   if (isActive) {
-    return `${fotmatDate(selectedStartDate, "Check in")} — ${fotmatDate(
+    return `${formatDate(selectedStartDate, "Check in")} — ${formatDate(
       selectedEndDate,
       "Check out"
     )}`;
