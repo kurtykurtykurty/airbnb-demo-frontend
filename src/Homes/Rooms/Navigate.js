@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { media } from "../../media";
+
 const Navigate = styled.div`
   background: #ffffff;
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
@@ -13,9 +15,13 @@ const Link = styled.button`
   background: #fff;
   font-family: CircularAir;
   line-height: normal;
-  font-size: 14px;
+  font-size: 12px;
   color: #0f7276;
   cursor: pointer;
+
+  ${media.md`
+    font-size: 14px;
+  `};
 `;
 
 export default () => (

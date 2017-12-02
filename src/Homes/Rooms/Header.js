@@ -12,9 +12,17 @@ import mobileLike from "./like_mobile.svg";
 
 const MainImage = styled.div`
   width: 100%;
-  height: 440px;
+  height: 290px;
   background: url(${bigroom});
   background-size: cover;
+
+  ${media.md`
+    height: 360px;
+  `};
+
+  ${media.lg`
+    height: 440px;
+  `};
 `;
 
 const Social = styled.div`
@@ -27,7 +35,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 440px;
+  height: 290px;
+
+  ${media.md`
+    height: 360px;
+  `};
+
+  ${media.lg`
+    height: 440px;
+  `};
 `;
 
 const Bottom = styled.div`
@@ -44,7 +60,6 @@ const Bottom = styled.div`
 
 const Button = styled.button`
   display: flex;
-  height: 40px;
   border: none;
   background: #ffffff;
   align-items: center;
@@ -52,12 +67,9 @@ const Button = styled.button`
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
   font-family: CircularAir;
-  line-height: 24px;
-  font-size: 14px;
   color: #383838;
   cursor: pointer;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding: 8px 16px;
 `;
 
 const ViewPhotos = styled(Button)`
@@ -84,9 +96,13 @@ const MobileLike = styled(MobileSocialButton)`
 `;
 
 const Label = styled.div`
-  margin: 8px 0 8px 0;
-  display: flex;
-  text-align: center;
+  font-size: 12px;
+  line-height: normal;
+
+  ${media.md`
+  line-height: 24px;
+    font-size: 14px;
+  `};
 `;
 
 export default () => (
@@ -110,7 +126,7 @@ export default () => (
           </Social>
           <Bottom>
             <ViewPhotos>
-              <Label>ViewPhotos</Label>
+              <Label>View Photos</Label>
             </ViewPhotos>
           </Bottom>
         </Wrapper>
