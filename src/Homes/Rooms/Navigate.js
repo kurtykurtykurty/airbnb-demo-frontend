@@ -5,9 +5,13 @@ import { media } from "../../media";
 
 const Navigate = styled.div`
   background: #ffffff;
-  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.2);
   color: #0f7276;
-  padding: 16px 0 15px 0;
+  padding: 11px 0 11px 0;
+
+  ${media.md`
+    padding: 16px 0 15px 0;
+  `};
 `;
 
 const Link = styled.button`

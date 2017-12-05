@@ -47,7 +47,6 @@ const Wrapper = styled.div`
 `;
 
 const Bottom = styled.div`
-  margin: 8px 16px 8px 0;
   align-items: flex-end;
   justify-content: flex-end;
   display: flex;
@@ -75,6 +74,10 @@ const Button = styled.button`
 const ViewPhotos = styled(Button)`
   font-weight: bold;
   margin-bottom: 16px;
+
+  ${media.md`
+    margin-bottom: 24px;    
+  `};
 `;
 
 const Share = styled(SocialButton)`
