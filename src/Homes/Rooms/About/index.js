@@ -4,6 +4,8 @@ import { media } from "../../../media";
 import Spoiler from "../Spoiler";
 import userpic from "./userpic.png";
 
+import medal from "./medal.svg";
+
 import baths from "./baths.svg";
 import bed from "./bed.svg";
 import door from "./door.svg";
@@ -52,11 +54,16 @@ const User = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-right: 62px;
+  margin-right: 0px;
   max-width: 70px;
+
+  ${media.md`
+    margin-right: 0px;
+  `};
 `;
 
 const UserPic = styled.div`
+  position: relative;
   background: url(${userpic});
   background-size: 100%;
   width: 40px;
@@ -66,6 +73,21 @@ const UserPic = styled.div`
   ${media.md`
     width: 64px;
     height: 64px;
+  `};
+`;
+
+const Medal = styled.div`
+  position: absolute;
+  background: url(${medal});
+  background-size: 100%;
+  width: 10px;
+  height: 18px;
+  left: 78%;
+  top: 60%;
+
+  ${media.md`
+    width: 16px;
+    height: 30px;
   `};
 `;
 
@@ -126,6 +148,7 @@ const About = styled.div`
     font-size: 18px;
   `};
 `;
+
 const Contact = styled.div`
   font-family: CircularAir;
   line-height: normal;
@@ -167,7 +190,9 @@ export default () => (
             </RowWrap>
           </Header>
           <User>
-            <UserPic />
+            <UserPic>
+              <Medal />
+            </UserPic>
             <UserName>
               <div className="hidden-xs">Yudi & Victoria</div>
             </UserName>

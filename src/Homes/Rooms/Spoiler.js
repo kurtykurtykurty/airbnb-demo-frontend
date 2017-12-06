@@ -16,6 +16,7 @@ const Img = styled.img`
   width: 11px;
   height: 6px;
 `;
+
 export default props => (
   <Spoiler>
     {props.children}

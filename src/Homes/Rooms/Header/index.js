@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SocialButton from "./SocialButton";
 import MobileSocialButton from "./MobileSocialButton";
-import { media } from "../../media";
+import { media } from "../../../media";
 
 import bigroom from "./big_room.png";
 import share from "./share.svg";
