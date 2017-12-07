@@ -9,6 +9,9 @@ import Rules from "./Rules";
 import Cancellations from "./Cancellations";
 import Reviews from "./Reviews";
 import Host from "./Host";
+import Neighborhood from "./Neighborhood";
+import Report from "./Report";
+import Similar from "./Similar";
 
 export default () => (
   <div>
@@ -22,5 +25,8 @@ export default () => (
     <Cancellations />
     <Reviews />
     <Host />
+    <Neighborhood />
+    <Report />
+    <Similar />
   </div>
 );

@@ -1,9 +1,9 @@
 <svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Rectangle 2</title>
 <desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-8059 -1370)">
+<g id="Canvas" transform="translate(-3032 -122)">
 <g id="Rectangle 2">
-<use xlink:href="#path0_fill" transform="translate(8059 1370)" fill="#008489"/>
+<use xlink:href="#path0_fill" transform="translate(3032 122)" fill="#008489"/>
 </g>
 </g>
 <defs>

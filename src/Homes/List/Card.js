@@ -15,7 +15,7 @@ const Card = styled.div`
 
 const CardFooter = styled.div`
   display: flex;
-  font-family: Circular Air;
+  font-family: CircularAir, sans-serif;
   line-height: normal;
   font-size: 15px;
   color: #383838;

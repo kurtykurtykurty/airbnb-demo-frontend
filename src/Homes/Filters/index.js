@@ -148,7 +148,6 @@ class Filters extends React.Component {
   };
 
   onReset = id => {
-    console.log("mobile date reset", id);
     this.setState({ [id]: defaultState[id] });
   };
 

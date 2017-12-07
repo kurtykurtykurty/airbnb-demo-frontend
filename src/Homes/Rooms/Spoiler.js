@@ -18,7 +18,7 @@ const Img = styled.img`
 `;
 
 export default props => (
-  <Spoiler>
+  <Spoiler className={props.className}>
     {props.children}
     <Img src={arrow} />
   </Spoiler>

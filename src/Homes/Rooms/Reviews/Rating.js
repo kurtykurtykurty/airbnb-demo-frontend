@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../../media";
-import Stars from "./Stars";
+import Stars from "../Stars";
 
 const Table = styled.div`
   display: flex;

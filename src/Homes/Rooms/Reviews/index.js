@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../../media";
-import Stars from "./Stars";
+import Star from "../Stars";
 import Search from "./InputSearch";
 import Rating, { RatingRow } from "./Rating";
 import Review from "./Review";
@@ -55,6 +55,10 @@ const More = styled.div`
   font-weight: 200;
   color: #0f7276;
   cursor: pointer;
+`;
+
+const Stars = styled(Star)`
+  margin-left: 12px;
 `;
 
 export default () => (

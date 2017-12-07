@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../../../media";
+import { media } from "../../media";
 import stars from "./star.svg";
 
 const Row = styled.div`
   display: flex;
-  margin-left: 12px;
+`;
+
+const MiniStars = styled.div`
+  background: url(${stars});
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 `;
 
 const Stars = styled.div`
@@ -33,11 +41,15 @@ const BigStars = styled.div`
 
 function setStars(size, stars) {
   const num = stars > 5 ? (stars = 5) : stars;
-  const StarSize = size === "big" ? BigStars : Stars;
+
+  const StarSize =
+    size === "big" ? BigStars : size === "min" ? MiniStars : Stars;
   const count = Array(num)
     .fill()
     .map(() => React.createElement(StarSize));
-  return count;
+  if (num) return count;
 }
 
-export default props => <Row>{setStars(props.size, props.num)}</Row>;
+export default props => (
+  <Row className={props.className}>{setStars(props.size, props.num)}</Row>
+);
