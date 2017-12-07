@@ -12,6 +12,8 @@ import Host from "./Host";
 import Neighborhood from "./Neighborhood";
 import Report from "./Report";
 import Similar from "./Similar";
+import Footer from "../../Footer";
+import Booking from "./Booking";
 
 export default () => (
   <div>
@@ -28,5 +30,7 @@ export default () => (
     <Neighborhood />
     <Report />
     <Similar />
+    <Booking />
+    <Footer />
   </div>
 );

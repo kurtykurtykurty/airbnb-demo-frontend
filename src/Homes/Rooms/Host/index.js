@@ -30,7 +30,6 @@ const User = styled.div`
   background-repeat: no-repeat;
   width: 60px;
   height: 60px;
-  min-width: 60px;
   margin-left: 16px;
   margin-right: 5px;
 

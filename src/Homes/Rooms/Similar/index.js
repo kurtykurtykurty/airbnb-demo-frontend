@@ -10,6 +10,7 @@ import card3 from "./card3.png";
 
 const Section = styled.div`
   margin-top: 47px;
+  margin-bottom: 40px;
 `;
 
 const Title = styled.h3`
@@ -29,16 +30,18 @@ const ScrollWrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
+
 const CardWrapper = styled.div`
   position: relative;
 `;
+
 const NextPage = styled.a`
   width: 40px;
   height: 40px;
   display: none;
   position: absolute;
   left: calc(100% - 20px);
-  top: calc(50% - 55px);
+  top: calc(50% - 65px);
   background-image: url(${nextpage});
   background-size: cover;
   z-index: 1;
@@ -74,6 +77,7 @@ export default () => (
                 type="Entire apartment  ·  4 beds"
                 descr="Full apartment in the best area of the city"
                 price="$51"
+                isNew={true}
               />
             </div>
 

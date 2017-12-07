@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "../../../media";
 
-import flag from "./flag.svg";
+import flag from "../flag.svg";
 
 const Section = styled.div`
   padding-top: 24px;

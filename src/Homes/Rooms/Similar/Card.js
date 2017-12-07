@@ -65,6 +65,24 @@ const Rating = styled.div`
   color: #383838;
 `;
 
+const New = styled.div`
+  display: ${props => (props.isNew ? "block" : "none")};
+  width: 40px;
+  height: 24px;
+  background: #008489;
+  border-radius: 2px;
+`;
+
+const Label = styled.div`
+  font-family: CircularAir;
+  line-height: normal;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 4px;
+  margin-left: 5px;
+`;
+
 export default function(props) {
   console.log("isRed", props.isRed);
   return (
@@ -78,6 +96,9 @@ export default function(props) {
         <Stars num={props.stars} size="min" />
         {props.reviews}
       </Rating>
+      <New isNew={props.isNew}>
+        <Label>New</Label>
+      </New>
     </Card>
   );
 }

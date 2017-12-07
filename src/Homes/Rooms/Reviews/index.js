@@ -72,15 +72,15 @@ export default () => (
           <Input />
         </Header>
       </div>
-      <RatingWrap>
-        <div className="col-xs-12 col-md-6 col-lg-4">
+      <RatingWrap className="col-xs-12 col-md-12 col-lg-8">
+        <div className="col-xs-12 col-md-6 col-lg-6">
           <Rating>
             <RatingRow propertie="Accuracy" rating={5} />
             <RatingRow propertie="Communication" rating={5} />
             <RatingRow propertie="Cleanliness" rating={5} />
           </Rating>
         </div>
-        <div className="col-xs-12 col-md-6 col-lg-4">
+        <div className="col-xs-12 col-md-6 col-lg-6">
           <Rating>
             <RatingRow propertie="Location" rating={5} />
             <RatingRow propertie="Check In" rating={5} />
