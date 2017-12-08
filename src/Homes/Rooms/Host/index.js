@@ -166,47 +166,42 @@ const Property = styled.span`
 
 export default () => (
   <Wrap>
-    <div className="container">
-      <div className="col-xs-12 col-lg-8">
-        <Header>
-          <Info>
-            <Title>Hosted by Yudy & Victoria</Title>
-            <Location>
-              Santa Ana, California, United States · Joined in August 2014
-            </Location>
-            <UserInfoWrap>
-              <UserInfo>
-                <Reviews />Reviews
-              </UserInfo>
-              <UserInfo>
-                <Verify />Verified
-              </UserInfo>
-            </UserInfoWrap>
-          </Info>
-          <User>
-            <Medal />
-          </User>
-        </Header>
-        <About>
-          Yudy and I (Victoria) are sisters-in law. Yudy lives in Colombia and
-          would be your hostess on the property. I live in California and am the
-          owner of the property. It is my goal to create a "boutique eco-resort"
-          on the approximately 5 acre farm we have in the coffee growing reg…<More
-          >
-            Read more
-          </More>
-        </About>
-        <Contact>Contact host</Contact>
-        <Param>
-          <Property>Languages: </Property>English, Español
-        </Param>
-        <Param>
-          <Property>Response rate: </Property>100%
-        </Param>
-        <Param>
-          <Property>Response time: </Property>within a few hours
-        </Param>
-      </div>
-    </div>
+    <Header>
+      <Info>
+        <Title>Hosted by Yudy & Victoria</Title>
+        <Location>
+          Santa Ana, California, United States · Joined in August 2014
+        </Location>
+        <UserInfoWrap>
+          <UserInfo>
+            <Reviews />Reviews
+          </UserInfo>
+          <UserInfo>
+            <Verify />Verified
+          </UserInfo>
+        </UserInfoWrap>
+      </Info>
+      <User>
+        <Medal />
+      </User>
+    </Header>
+    <About>
+      Yudy and I (Victoria) are sisters-in law. Yudy lives in Colombia and would
+      be your hostess on the property. I live in California and am the owner of
+      the property. It is my goal to create a "boutique eco-resort" on the
+      approximately 5 acre farm we have in the coffee growing reg…<More>
+        Read more
+      </More>
+    </About>
+    <Contact>Contact host</Contact>
+    <Param>
+      <Property>Languages: </Property>English, Español
+    </Param>
+    <Param>
+      <Property>Response rate: </Property>100%
+    </Param>
+    <Param>
+      <Property>Response time: </Property>within a few hours
+    </Param>
   </Wrap>
 );

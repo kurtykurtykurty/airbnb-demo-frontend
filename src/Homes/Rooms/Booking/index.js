@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Stars from "../Stars";
 import Footer from "./Views";
+import { Sticky } from "react-sticky";
 
 import flag from "../flag.svg";
 
@@ -58,6 +59,7 @@ const Report = styled.div`
   justify-content: center;
   margin-top: 16px;
   cursor: pointer;
+  margin-bottom: 16px;
 `;
 
 const Flag = styled.div`
@@ -76,9 +78,11 @@ const Label = styled.div`
   color: #383838;
 `;
 
-export default () => (
-  <div className="container">
-    <div className="hidden-xs hidden-sm hidden-md col-lg-4">
+const navHeight = 48;
+
+function Booking({ isSticky, style }) {
+  return (
+    <div style={{ ...style, paddingTop: isSticky ? navHeight : 24 }}>
       <Section>
         <Header>
           <Title>
@@ -96,5 +100,7 @@ export default () => (
         <Label>Report this listing</Label>
       </Report>
     </div>
-  </div>
-);
+  );
+}
+
+export default () => <Sticky topOffset={-24}>{Booking}</Sticky>;

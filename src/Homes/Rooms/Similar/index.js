@@ -54,48 +54,46 @@ const NextPage = styled.a`
 
 export default () => (
   <Section>
-    <div className="container">
-      <Title>Similar listings</Title>
-      <CardWrapper>
-        <div className="row">
-          <ScrollWrapper>
-            <div className="col-xs-10 col-md-5 col-lg-4">
-              <Card
-                img={card1}
-                type="Entire apartment · 3 beds"
-                descr="Apartamento, piscina y parqueadero para 8 personas"
-                price="$50"
-                stars={5}
-                reviews="4"
-              />
-            </div>
+    <Title>Similar listings</Title>
+    <CardWrapper>
+      <div className="row">
+        <ScrollWrapper>
+          <div className="col-xs-10 col-md-5 col-lg-4">
+            <Card
+              img={card1}
+              type="Entire apartment · 3 beds"
+              descr="Apartamento, piscina y parqueadero para 8 personas"
+              price="$50"
+              stars={5}
+              reviews="4"
+            />
+          </div>
 
-            <div className="col-xs-10 col-md-5 col-lg-4">
-              <Card
-                img={card2}
-                isRed={true}
-                type="Entire apartment  ·  4 beds"
-                descr="Full apartment in the best area of the city"
-                price="$51"
-                isNew={true}
-              />
-            </div>
+          <div className="col-xs-10 col-md-5 col-lg-4">
+            <Card
+              img={card2}
+              isRed={true}
+              type="Entire apartment  ·  4 beds"
+              descr="Full apartment in the best area of the city"
+              price="$51"
+              isNew={true}
+            />
+          </div>
 
-            <div className="col-xs-10 col-md-5 col-lg-4">
-              <Card
-                img={card3}
-                isRed={true}
-                type="Entire apartment  ·  4 beds"
-                descr="Beautiful Apartament North Armenia Quindio"
-                price="$45"
-                stars={5}
-                reviews="3"
-              />
-            </div>
-          </ScrollWrapper>
-        </div>
-        <NextPage />
-      </CardWrapper>
-    </div>
+          <div className="col-xs-10 col-md-5 col-lg-4">
+            <Card
+              img={card3}
+              isRed={true}
+              type="Entire apartment  ·  4 beds"
+              descr="Beautiful Apartament North Armenia Quindio"
+              price="$45"
+              stars={5}
+              reviews="3"
+            />
+          </div>
+        </ScrollWrapper>
+      </div>
+      <NextPage />
+    </CardWrapper>
   </Section>
 );

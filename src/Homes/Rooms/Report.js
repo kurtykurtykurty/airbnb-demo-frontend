@@ -17,11 +17,9 @@ const Report = styled.div`
 `;
 
 export default () => (
-  <div className="container">
-    <div className="hidden-lg hidden-xl">
-      <Section>
-        <Report>Report this listing</Report>
-      </Section>
-    </div>
+  <div className="hidden-lg hidden-xl">
+    <Section>
+      <Report>Report this listing</Report>
+    </Section>
   </div>
 );

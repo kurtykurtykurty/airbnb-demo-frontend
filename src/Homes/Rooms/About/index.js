@@ -159,55 +159,51 @@ const Contact = styled.div`
 `;
 
 export default () => (
-  <div className="container">
-    <div className="col-xs-12 col-lg-8">
-      <Wrap>
-        <HeaderWrap>
-          <Header>
-            <Title>Romantic Cabana with view</Title>
-            <Nav>Entire cabin · Armenia</Nav>
-            <RowWrap>
-              <OptionsRow>
-                <Option>
-                  <img src={guests} />
-                  <Label>2 guests</Label>
-                </Option>
-                <Option>
-                  <img src={door} />
-                  <Label>Studio</Label>
-                </Option>
-              </OptionsRow>
-              <OptionsRow>
-                <Option>
-                  <img src={bed} />
-                  <Label>2 beds</Label>
-                </Option>
-                <Option>
-                  <img src={baths} />
-                  <Label>1 bath</Label>
-                </Option>
-              </OptionsRow>
-            </RowWrap>
-          </Header>
-          <User>
-            <UserPic>
-              <Medal />
-            </UserPic>
-            <UserName>
-              <div className="hidden-xs">Yudi & Victoria</div>
-            </UserName>
-          </User>
-        </HeaderWrap>
-        <About>
-          Located in the coffee region, in the Andean mountains of Colombia,
-          South America, a charming cabana made from bamboo, with a great view
-          and a "sendero" or pathway through the bamboo forest which
-          criss-crosses our 5 acre organic farm, leading down to a stream. A
-          place to relax and commune with nature.
-        </About>
-        <Spoiler>Read more about the space</Spoiler>
-        <Contact>Contact host</Contact>
-      </Wrap>
-    </div>
-  </div>
+  <Wrap>
+    <HeaderWrap>
+      <Header>
+        <Title>Romantic Cabana with view</Title>
+        <Nav>Entire cabin · Armenia</Nav>
+        <RowWrap>
+          <OptionsRow>
+            <Option>
+              <img src={guests} />
+              <Label>2 guests</Label>
+            </Option>
+            <Option>
+              <img src={door} />
+              <Label>Studio</Label>
+            </Option>
+          </OptionsRow>
+          <OptionsRow>
+            <Option>
+              <img src={bed} />
+              <Label>2 beds</Label>
+            </Option>
+            <Option>
+              <img src={baths} />
+              <Label>1 bath</Label>
+            </Option>
+          </OptionsRow>
+        </RowWrap>
+      </Header>
+      <User>
+        <UserPic>
+          <Medal />
+        </UserPic>
+        <UserName>
+          <div className="hidden-xs">Yudi & Victoria</div>
+        </UserName>
+      </User>
+    </HeaderWrap>
+    <About>
+      Located in the coffee region, in the Andean mountains of Colombia, South
+      America, a charming cabana made from bamboo, with a great view and a
+      "sendero" or pathway through the bamboo forest which criss-crosses our 5
+      acre organic farm, leading down to a stream. A place to relax and commune
+      with nature.
+    </About>
+    <Spoiler>Read more about the space</Spoiler>
+    <Contact>Contact host</Contact>
+  </Wrap>
 );

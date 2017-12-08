@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { StickyContainer, Sticky } from "react-sticky";
 
 import { media } from "../../media";
 
@@ -28,15 +29,19 @@ const Link = styled.button`
   `};
 `;
 
-export default () => (
-  <div className="container">
-    <div className="col-lg-8">
-      <Navigate>
-        <Link>Overview</Link> ·
-        <Link>Reviews</Link> ·
-        <Link>The Host</Link> ·
-        <Link>Location</Link>
-      </Navigate>
-    </div>
-  </div>
-);
+function Content(params) {
+  const { style } = params;
+
+  console.log("params", params);
+
+  return (
+    <Navigate style={style}>
+      <Link>Overview</Link> ·
+      <Link>Reviews</Link> ·
+      <Link>The Host</Link> ·
+      <Link>Location</Link>
+    </Navigate>
+  );
+}
+
+export default () => <Sticky bottomOffset={0}>{Content}</Sticky>;

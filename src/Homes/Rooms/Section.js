@@ -17,12 +17,8 @@ const Title = styled.h3`
 `;
 
 export default props => (
-  <div className="container">
-    <div className="col-xs-12 col-lg-8">
-      <Section>
-        <Title>{props.title}</Title>
-        {props.children}
-      </Section>
-    </div>
-  </div>
+  <Section>
+    <Title>{props.title}</Title>
+    {props.children}
+  </Section>
 );
