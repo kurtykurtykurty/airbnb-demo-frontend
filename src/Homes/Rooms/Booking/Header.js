@@ -6,8 +6,6 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.2);
-  padding-bottom: 23px;
 `;
 
 const Title = styled.h2`

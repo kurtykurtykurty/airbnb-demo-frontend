@@ -7,6 +7,11 @@ import { Sticky } from "react-sticky";
 import flag from "../flag.svg";
 import cur from "../../../Footer/cur.svg";
 
+const HeadWrap = styled.div`
+  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.2);
+  padding-bottom: 23px;
+`;
+
 const Section = styled.section`
   background: #ffffff;
   border: 1px solid rgba(118, 118, 118, 0.2);
@@ -129,7 +134,9 @@ function Booking({ isSticky, style }) {
   return (
     <div style={{ ...style, paddingTop: isSticky ? navHeight : 24 }}>
       <Section>
-        <Header />
+        <HeadWrap>
+          <Header />
+        </HeadWrap>
         <Body>
           <DatePick>
             <Check>
