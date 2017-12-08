@@ -8,7 +8,10 @@ import twit from "./twitter.svg";
 import inst from "./inst.svg";
 import { media } from "../media";
 
-const Footer = styled.footer`box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);`;
+const Footer = styled.footer`
+  box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);
+`;
+
 const Socle = styled.div`
   padding: 16px 0 24px 0;
 
@@ -16,6 +19,7 @@ const Socle = styled.div`
     padding: 48px 0 48px 0;
   `};
 `;
+
 const Select = styled.select`
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
@@ -25,7 +29,6 @@ const Select = styled.select`
   font-weight: 200;
   line-height: 21px;
   outline: none;
-  width: 100%;
   font-family: CircularAir, sans-serif;
   line-height: normal;
   color: #383838;
@@ -35,7 +38,6 @@ const Select = styled.select`
   background-repeat: no-repeat;
   background-position: 93% center;
   padding: 12px 0 12px 8px;
-  displa: flex;
   ${media.md`
     font-size: 15px
     padding: 14px 0 15px 8px;
@@ -47,6 +49,7 @@ const Select = styled.select`
     padding: 12px 0 13px 16px;
   `};
 `;
+
 const Option = styled.option`
   font-size: 12px;
 
@@ -72,6 +75,7 @@ const LinksTitle = styled.div`
     font-size: 15px;
   `};
 `;
+
 const Link = styled(RLink)`
   display: block;
   text-align: left;
@@ -86,6 +90,7 @@ const Link = styled(RLink)`
     font-size: 15px;
   `};
 `;
+
 const Basement = styled.div`
   display: flex;
   box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);
@@ -114,6 +119,7 @@ const Left = styled.div`
     margin: 0;
   `};
 `;
+
 const Right = styled.div`
   display: flex;
   align-items: center;
@@ -123,7 +129,11 @@ const Right = styled.div`
     justify-content: flex-end;
   `};
 `;
-const Logo = styled.img`margin: 0px 15px 0px 0px;`;
+
+const Logo = styled.img`
+  margin: 0px 15px 0px 0px;
+`;
+
 const Copyright = styled.span`
   font-family: CircularAir, sans-serif;
   line-height: normal;
@@ -134,6 +144,7 @@ const Copyright = styled.span`
   font-size: 15px;
   `};
 `;
+
 const Button = styled.button`
   line-height: 24px;
   text-align: center;
@@ -148,6 +159,7 @@ const Button = styled.button`
     font-size: 15px;
   `};
 `;
+
 const Social = styled.div`
   display: flex;
   align-items: center;

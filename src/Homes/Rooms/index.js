@@ -16,6 +16,7 @@ import Similar from "./Similar";
 import Footer from "../../Footer";
 import Booking from "./Booking";
 import { StickyContainer } from "react-sticky";
+import BookingPanel from "./Booking/BookingPanel";
 
 export default () => (
   <div>
@@ -25,7 +26,7 @@ export default () => (
       <StickyContainer>
         <div className="row">
           <div className="col-xs-12 col-lg-8">
-            <Navigate />
+            <Navigate className="hidden-xs hidden-sm hidden-md" />
             <About />
             <Amenities />
             <Communicate />
@@ -45,5 +46,6 @@ export default () => (
       <Similar />
     </div>
     <Footer />
+    <BookingPanel />
   </div>
 );

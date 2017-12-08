@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { media } from "../../../media";
 import Spoiler from "../Spoiler";
 import userpic from "./userpic.png";
+import Views from "./Views";
 
 import medal from "./medal.svg";
 
@@ -196,6 +197,7 @@ export default () => (
         </UserName>
       </User>
     </HeaderWrap>
+    <Views className="hidden-xs hidden-sm hidden-lg hidden-xl" />
     <About>
       Located in the coffee region, in the Andean mountains of Colombia, South
       America, a charming cabana made from bamboo, with a great view and a
