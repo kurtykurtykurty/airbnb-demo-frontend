@@ -78,7 +78,7 @@ const Label = styled.div`
   color: #383838;
 `;
 
-const navHeight = 48;
+const navHeight = 72;
 
 function Booking({ isSticky, style }) {
   return (
@@ -103,4 +103,4 @@ function Booking({ isSticky, style }) {
   );
 }
 
-export default () => <Sticky topOffset={-24}>{Booking}</Sticky>;
+export default () => <Sticky topOffset={-48}>{Booking}</Sticky>;
