@@ -4,7 +4,7 @@ import SocialButton from "./SocialButton";
 import MobileSocialButton from "./MobileSocialButton";
 import { media } from "../../../media";
 
-import bigroom from "./big_room.png";
+import bigroom from "./big_room.jpg";
 import share from "./share.svg";
 import mobileShare from "./share_mobile.svg";
 import like from "./like.svg";
