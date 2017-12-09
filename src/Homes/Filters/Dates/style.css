@@ -78,3 +78,7 @@
 .DayPicker_transitionContainer__vertical .CalendarDay_container {
   font-size: 12px;
 }
+
+.DayPicker_transitionContainer__vertical .DayPicker_weekHeader {
+  position: fixed;
+}

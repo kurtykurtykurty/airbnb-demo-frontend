@@ -24,6 +24,7 @@ const List = styled.div`
 
 const Wrapper = styled.div`
   margin-bottom: 24px;
+  tabindex: 0;
 
   ${media.md`
     margin-bottom: 40px;

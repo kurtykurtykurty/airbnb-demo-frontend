@@ -34,7 +34,9 @@ const Price = styled.span`
   font-size: 15px;
 `;
 
-const Star = styled.img`margin: 0 4px 0 0;`;
+const Star = styled.img`
+  margin: 0 4px 0 0;
+`;
 
 const RatingSec = styled.div``;
 
@@ -61,7 +63,9 @@ const Info = styled.div`
   padding: 2px 0 0 0;
 `;
 
-const Description = styled.div`margin-top: 8px;`;
+const Description = styled.div`
+  margin-top: 8px;
+`;
 
 export default props => (
   <Card>

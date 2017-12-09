@@ -1,18 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import checkbox from "./chkbx.svg";
-
-const Flag = styled.img`
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  margin-right: 12px;
-`;
+import { CheckBox } from "../../../UI";
+import { isAbsolute } from "path";
 
 const Option = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 24px;
 `;
 
 const Box = styled.div`
@@ -33,6 +27,7 @@ const BoxWrap = styled.div`
   font-size: 12px;
   font-weight: 200;
   text-align: left;
+  cursor: pointer;
 `;
 
 const OptionRow = styled.div`
@@ -40,7 +35,9 @@ const OptionRow = styled.div`
   justify-content: space-between;
 `;
 
-const NoteDescr = styled.div`padding-left: 36px;`;
+const NoteDescr = styled.div`
+  padding-left: 36px;
+`;
 
 const Img = styled.img`
   height: 32px;
@@ -49,19 +46,21 @@ const Img = styled.img`
 
 const Icon = styled.div``;
 
-export default props => (
-  <Option>
-    <OptionRow>
-      <BoxWrap>
-        <Box>
-          <Flag src={checkbox} />
-          {props.typeroom}
-        </Box>
-        <NoteDescr>{props.descr}</NoteDescr>
-      </BoxWrap>
-      <Icon>
-        <Img src={props.roomimg} />
-      </Icon>
-    </OptionRow>
-  </Option>
-);
+export default function(props) {
+  return (
+    <Option>
+      <OptionRow>
+        <BoxWrap onClick={() => props.onChange(props.id, !props.isActive)}>
+          <Box>
+            <CheckBox isActive={props.isActive} />
+            {props.typeroom}
+          </Box>
+          <NoteDescr>{props.descr}</NoteDescr>
+        </BoxWrap>
+        <Icon>
+          <Img src={props.roomimg} />
+        </Icon>
+      </OptionRow>
+    </Option>
+  );
+}
