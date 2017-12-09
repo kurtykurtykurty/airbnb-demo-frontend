@@ -29,21 +29,40 @@ export const Plus = styled.button`
   opacity: ${props => (props.isActive ? 1 : 0.2)};
 `;
 
-export const CheckBoxSlider = styled.button`
+const CheckboxImage = styled.img`
+  display: ${props => (props.isActive ? "block" : "none")};
+`;
+
+const StCheckBoxSlider = styled.button`
   width: 64px;
   height: 40px;
   border: none;
-  background: url(${props =>
-    props.isActive ? checkboxSlideron : checkboxSlideroff});
   cursor: pointer;
+  padding: 0px;
+  background: none;
 `;
 
-export const CheckBox = styled.button`
+export const CheckBoxSlider = props => (
+  <StCheckBoxSlider onClick={props.onClick}>
+    <CheckboxImage src={checkboxSlideron} isActive={props.isActive} />
+    <CheckboxImage src={checkboxSlideroff} isActive={!props.isActive} />
+  </StCheckBoxSlider>
+);
+
+const StCheckBox = styled.button`
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   margin-right: 12px;
   border: none;
-  background: url(${props => (props.isActive ? checkboxon : checkboxoff)});
   cursor: pointer;
+  padding: 0px;
+  background: none;
 `;
+
+export const CheckBox = props => (
+  <StCheckBox>
+    <CheckboxImage src={checkboxon} isActive={props.isActive} />
+    <CheckboxImage src={checkboxoff} isActive={!props.isActive} />
+  </StCheckBox>
+);

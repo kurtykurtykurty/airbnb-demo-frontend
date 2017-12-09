@@ -8,22 +8,25 @@ const Filter = styled.div`
   text-align: left;
 `;
 
+const StOption = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  width: 50%;
+  flex-basis: 50%;
+  cursor: pointer;
+`;
+
 const Label = styled.div`
-  display: inline-block;
   font-family: CircularAir;
-  line-height: normal;
   font-size: 18px;
   font-weight: 200;
   text-align: left;
   color: #383838;
-  margin-bottom: 14px;
-  width: 50%;
-  cursor: pointer;
 `;
 
 const SeeAll = styled.a`
   font-family: CircularAir;
-  line-height: normal;
   font-size: 16px;
   color: #0f7276;
   cursor: pointer;
@@ -42,13 +45,15 @@ const Arrow = styled.img`
 const Container = styled.div`
   width: 100%;
   margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Option = props => (
-  <Label onClick={() => props.onChange(props.id, !props.isActive)}>
+  <StOption onClick={() => props.onChange(props.id, !props.isActive)}>
     <CheckBox isActive={props.isActive} />
-    {props.label}
-  </Label>
+    <Label>{props.label}</Label>
+  </StOption>
 );
 
 export default props => (
