@@ -84,7 +84,6 @@ const Label = styled.div`
 `;
 
 export default function(props) {
-  console.log("isRed", props.isRed);
   return (
     <Card>
       <Like />

@@ -1,47 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import Stars from "../Stars";
+import MobileSocialButton from "../Header/MobileSocialButton";
+import Price from "./Price";
+
+import like from "./like.svg";
+import share from "./share.svg";
 
 const Header = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
-const Title = styled.h2`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 24px;
-  margin: 0;
-  margin-bottom: 9px;
-  color: #383838;
-`;
-
-const Time = styled.span`
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 12px;
-  color: #636363;
-  font-weight: normal;
-  margin-left: 4px;
-`;
-
-const Rate = styled.div`
+const SocialButtons = styled.div`
   display: flex;
-  align-items: center;
-  font-family: CircularAir;
-  line-height: normal;
-  font-size: 12px;
-  color: #383838;
+`;
+
+const MobileShare = styled(MobileSocialButton)`
+  margin-top: 12px;
+  margin-right: 16px;
+`;
+
+const MobileLike = styled(MobileSocialButton)`
+  margin-top: 12px;
 `;
 
 export default () => (
   <Header>
-    <Title>
-      42$<Time>per night</Time>
-    </Title>
-    <Rate>
-      <Stars num={5} size="min" />111
-    </Rate>
+    <Price />
+    <SocialButtons>
+      <MobileShare>
+        <img src={share} />
+      </MobileShare>
+      <MobileLike>
+        <img src={like} />
+      </MobileLike>
+    </SocialButtons>
   </Header>
 );
