@@ -68,7 +68,7 @@ const Check = styled.div`
   color: #383838;
 `;
 
-const DateBox = styled.div`
+const DateBox = styled.input`
   width: 100%;
   background: #ffffff;
   border: 1px solid rgba(118, 118, 118, 0.2);
@@ -104,6 +104,7 @@ const SelectGuests = styled.div`
   font-size: 14px;
   color: #636363;
   margin-top: 8px;
+  cursor: pointer;
 `;
 
 const Request = styled.button`
@@ -156,10 +157,10 @@ export default props => (
       <Body>
         <DatePick>
           <Check>
-            Check In<DateBox>mm/dd/yyyy</DateBox>
+            Check In<DateBox type="text" placeholder="mm/dd/yyyy" />
           </Check>
           <Check>
-            Check Out<DateBox>mm/dd/yyyy</DateBox>
+            Check Out<DateBox type="text" placeholder="mm/dd/yyyy" />
           </Check>
         </DatePick>
         <Guests>
