@@ -17,6 +17,7 @@ import Footer from "../../Footer";
 import Booking from "./Booking";
 import { StickyContainer } from "react-sticky";
 import BookingPanel from "./Booking/BookingPanel";
+import Explore from "./Explore";
 
 export default () => (
   <div>
@@ -44,6 +45,7 @@ export default () => (
       <Map />
       <Report />
       <Similar />
+      <Explore />
     </div>
     <Footer />
     <BookingPanel />

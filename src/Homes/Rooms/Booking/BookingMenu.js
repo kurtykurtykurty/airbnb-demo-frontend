@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Footer from "./Views";
+import { media } from "../../../media";
 
 import flag from "../flag.svg";
 import cur from "../../../Footer/cur.svg";
@@ -9,7 +10,6 @@ import cross from "./cross.svg";
 
 const Container = styled.div`
   background: white;
-  border: 1px solid rgba(118, 118, 118, 0.2);
 `;
 
 const HeadWrap = styled.div`
@@ -21,6 +21,10 @@ const Section = styled.section`
   background: #ffffff;
   box-sizing: border-box;
   padding: 15px 24px 24px 24px;
+
+  ${media.md`
+    border: 1px solid rgba(118, 118, 118, 0.2);
+  `};
 `;
 
 const Body = styled.div`
