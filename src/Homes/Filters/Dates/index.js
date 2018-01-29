@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import moment from "moment";
 import { DayPickerRangeController } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
@@ -27,45 +28,87 @@ const Content = styled.div`
   padding-right: 8px;
 `;
 
-export default class Filter extends React.Component {
-  onOutsideClick = () => {};
-  onPrevMonthClick = () => {};
-  onNextMonthClick = () => {};
+export function getDatesButtonLabel(state) {
+  const isActive = state.openedFilter === "Dates";
+  const { selectedStartDate, selectedEndDate } = state.dates;
+
+  if (isActive) {
+    return `${
+      selectedStartDate ? selectedStartDate.format("MMM Do") : "Check in "
+    } — 
+      ${selectedEndDate ? selectedEndDate.format("MMM Do") : "Check out"}`;
+  }
+
+  const { startDate, endDate } = state.dates;
+  if (startDate && endDate) {
+    return `${startDate.format("MMM Do")} — ${endDate.format("MMM Do")}`;
+  }
+
+  return "Dates";
+}
+
+export default class Dates extends React.Component {
+  state = { focusedInput: "startDate" };
+
+  onDatesChange = ({ startDate, endDate }) => {
+    this.props.onFilterChanged({
+      selectedStartDate: startDate,
+      selectedEndDate: endDate
+    });
+  };
+
+  onFocusChange = focusedInput => {
+    this.setState({ focusedInput: focusedInput || "startDate" });
+  };
 
   render() {
+    const props = this.props;
+    const { data } = props;
+    const { selectedStartDate, selectedEndDate } = data;
+
     return (
-      <Wrapper {...this.props}>
+      <Wrapper onApply={props.onApply} onCancel={props.onCancel}>
         <Content>
           <div className="hidden-xs hidden-sm hidden-md">
             <DayPickerRangeController
+              startDate={selectedStartDate}
+              endDate={selectedEndDate}
+              focusedInput={this.state.focusedInput}
+              onDatesChange={this.onDatesChange}
+              onFocusChange={this.onFocusChange}
+              isDayBlocked={day => day.isBefore(moment(), "day")}
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}
               numberOfMonths={2}
-              onOutsideClick={this.onOutsideClick}
-              onPrevMonthClick={this.onPrevMonthClick}
-              onNextMonthClick={this.onNextMonthClick}
             />
           </div>
           <div className="hidden-xs hidden-sm hidden-lg hidden-xl">
             <DayPickerRangeController
+              startDate={selectedStartDate}
+              endDate={selectedEndDate}
+              focusedInput={this.state.focusedInput}
+              onDatesChange={this.onDatesChange}
+              onFocusChange={this.onFocusChange}
+              isDayBlocked={day => day.isBefore(moment(), "day")}
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}
               numberOfMonths={1}
-              onOutsideClick={this.onOutsideClick}
-              onPrevMonthClick={this.onPrevMonthClick}
-              onNextMonthClick={this.onNextMonthClick}
             />
           </div>
           <div className="hidden-md hidden-lg hidden-xl">
             <MobileDayPicker
-              onCancel={this.props.onCancel}
+              startDate={selectedStartDate}
+              endDate={selectedEndDate}
+              focusedInput={this.state.focusedInput}
+              onDatesChange={this.onDatesChange}
+              onFocusChange={this.onFocusChange}
+              onApply={props.onApply}
+              onReset={props.onReset}
+              isDayBlocked={day => day.isBefore(moment(), "day")}
               orientation="verticalScrollable"
               hideKeyboardShortcutsPanel
               initialVisibleMonth={null}
               numberOfMonths={2}
-              onOutsideClick={this.onOutsideClick}
-              onPrevMonthClick={this.onPrevMonthClick}
-              onNextMonthClick={this.onNextMonthClick}
             />
           </div>
         </Content>

@@ -12,7 +12,7 @@ const Card = styled.div`
 
 const CardFooter = styled.div`
   display: flex;
-  font-family: Circular Air;
+  font-family: CircularAir;
   line-height: normal;
   font-size: 15px;
   color: #383838;
@@ -32,7 +32,9 @@ const Price = styled.span`
   font-size: 15px;
 `;
 
-const Star = styled.img`margin: 0 4px 0 0;`;
+const Star = styled.img`
+  margin: 0 4px 0 0;
+`;
 
 const RatingSec = styled.div``;
 

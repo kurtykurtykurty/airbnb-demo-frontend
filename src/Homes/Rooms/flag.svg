@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>svgexport-63</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-9074 -1179)">
+<g id="svgexport-63">
+<use xlink:href="#path0_fill" fill="url(#pattern0)" transform="translate(9074 1179)"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0" patternUnits="objectBoundingBox" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="matrix(0.0416667 0 0 0.0416667 0 0)"/>
+</pattern>
+<path id="path0_fill" d="M 0 0L 16 0L 16 16L 0 16L 0 0Z"/>
+<image id="image0" width="24" height="24" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAfFJREFUSA21VUFOwkAUpa2wFW+gJ6DuDGHRG1BPYL1BTYCws+4IsOgRegPrDUoCa7t0WW+AOwMEfK/ONDaMTUnLT4b58/vmvZn/ZwatUZMNh0NT07TXzWZz6/v+WtLq0qnSj0YjF/PDw+Hw2Wq16Gd2kXnCwUocrKQPsIW+zTD8CH683++j3W634ArH4/E1/A7iJLxCsw3DWAMTw/fQUtP4C9IEwGe4HleBPgA4mkwmCfzGYDCwdF23hKiJ0CXjGC/QBbPZLOCYBq4QXShjcgdUfYL643w+j+DnTMSiXPCfAUR9LDbAZ7aGrAHzl6jICTrFJAd3zXmpALcDVct13fYpZAVYDyl1+F3ugH6IE+DQqWrb7ZZ1sHkQcgJI00NVcs4X9yBETe1MYDqdhkjTDVXrEGGx0dxMQJCmqnUIgMNES3ICVEXQQatk4gTxTnnpRfvLxkuHsY2TFfNUofB9jgEuvNnENpvNDrAOUn1PPDlUAtxFelNJDPAbwFGJm/0FXAx8hAcPdf598FQCJkDvIH/BWQ7kc4FxfcY0obFIlS1XZMmGHdRSbPIpBZAa3glHCp6lx59IjGZXJVfuQJAG6M8nwDTVIWCI1R51y+Vy3e1273q93vdqtfo4ApQMFKWIFPwjckpyKWGFAuJdN5UzSwZ/AP+O8cxVV27uAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

@@ -29,11 +29,14 @@ const Button = styled.button`
   background: #fff;
 `;
 
-const CancelButton = styled(Button)`color: #636363;`;
+const CancelButton = styled(Button)`
+  color: #636363;
+`;
 
 const Footer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export default props => (
@@ -41,7 +44,7 @@ export default props => (
     {props.children}
     <Footer>
       <CancelButton onClick={props.onCancel}>Cancel</CancelButton>
-      <Button>Apply</Button>
+      <Button onClick={props.onApply}>Apply</Button>
     </Footer>
   </Container>
 );
